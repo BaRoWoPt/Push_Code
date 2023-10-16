@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/icon.svg">
+    <link rel="icon" href="./img/icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./Buy_ticket.css">
+    <link rel="stylesheet" href="./icon/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt vé</title>
+</head>
+
+<body>
+    <div class="header">
+        <a href="./Concert_B.html" class="icon">
+            <img class="icon_page" src="./img/logo_page.png" alt="">
+        </a>
+        <div class="menu-items">
+            <a href="#" class="items border_bottom">
+                <span id="item">Trang Chủ</span>
+            </a>
+            <a href="./Layout_concert.html" class="items">
+                <span id="item">Sự Kiện</span>
+            </a>
+            <a href="#" class="items">
+                <span id="item">Về Chúng Tôi </span>
+            </a>
+        </div>
+        <div class="icon_left">
+            <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
+            <a id="icon_open_sidebar" class=" icon_open_sidebar fa-solid fa-bars "></a>
+        </div>
+        <div class="sidebar">
+            <i id="icon_close_sidebar" class="icon_close_sidebar fa-solid fa-xmark"></i>
+            <main class="sidebar_items">
+                <ul class="option">
+                    <li class="option"><a href="/">Trang Chủ</a></li>
+                    <li class="option"><a href="/">Sự Kiện</a></li>
+                    <li class="option"><a href="/">Về Chúng Tôi</a></li>
+                    <li class="option"><a href="/">Hợp Tác</a></li>
+                    <li class="option"><a href="/">Hỗ Trợ</a></li>
+                </ul>
+            </main>
+            <footer class="sidebar_footer">
+                <footer class="sb_ft_sp">
+                    <img class="icon_footer" src=".//img/logo_concert.png" alt="">
+                    <ul class="footer_nav">
+                        <li class="footer_link"><a href="#" class="navfooter">Support</a></li>
+                        <li class="footer_link"><a href="#" class="navfooter">Privacy</a></li>
+                        <li class="footer_link"><a href="#" class="navfooter">Terms</a></li>
+                    </ul>
+                </footer>
+            </footer>
+        </div>
+        <div id="navsidebar" class="navsidebar">
+            <i id="icon_close_navbar" class="icon_close_sidebar fa-solid fa-xmark"></i>
+            <div class="nav_type">
+                <h2 class="shopping_bag">Giỏ Hàng Của Bạn</h2>
+                <span class="sub_type"> Giỏ hàng của bạn hiện đang trống</span>
+            </div>
+            <footer class="footer_nav">
+                <button class="check_nav">
+                    Check
+                </button>
+            </footer>
+        </div>
+    </div>
+    <div id="buy_container" class="buy_container">
+        <section class="sign_up">
+            <div class="form">
+                <div class="content_form">
+                    <h2>Điền form dưới để đăng kí mua vé trước nhé các bạn ơi.</h2>
+                    <p>Vì số lượng vé có hạn nên mọi người đặt đủ vé với số lượng người tham gia giúp ban tổ chức chúng
+                        mình nhé để cho các bạn khác có vé với nha.
+                    </p>
+                    <form id="form_sign" class="form_sign">
+                        <div class="info">
+                            <label for="fullname" class="label-form">Họ Và Tên</label>
+                            <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form">
+                            <span class="form_message"></span>
+                        </div>
+                        <div class="info">
+                            <label for="thongtin" class="label-form">Số Điện Thoại</label>
+                            <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form">
+                            <span class="form_message"></span>
+                        </div>
+                        <div class="info">
+                            <label for="gmail" class="label-form">Gmail</label>
+                            <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form">
+                            <span class="form_message"></span>
+                        </div>
+                        <div class="info">
+                            <label for="buy_ticket" class="label-form">Số lượng vé</label>
+                            <input id="buy_ticket" placeholder="Số lượng vé bạn muốn mua" type="number" max="100"
+                                min="0" step="1" class="item_form">
+                            <span class="form_message"></span>
+                        </div>
+                    </form>
+                    <div class="submit_form">
+                        <button class="done" type="button">Đặt vé</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pic_ad">
+                <img class="pic_bot" src="./img/img_buy.jpeg" alt="">
+            </div>
+        </section>
+    </div>
+    <script src="./Buy_ticket.js"></script>
+    <script src="./Validator.js"></script>
+</body>
+
+
+</html>

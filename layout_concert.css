@@ -33,7 +33,7 @@ html {
   background-color: #000;
   color: white;
   justify-items: center;
-  z-index: 2;
+  z-index: 99;
 }
 .icon {
   display: flex;
