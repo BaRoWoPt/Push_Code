@@ -4,7 +4,7 @@ window.addEventListener("scroll", function () {
   var scrollTop = document.documentElement.scrollTop;
   if (scrollTop > lastScrollTop) {
     buyContainer.style.top = "-90px";
-    buyContainer.style.zIndex = "99";
+    buyContainer.style.zIndex = "9";
   } else {
     buyContainer.style.top = "0px";
     buyContainer.style.zIndex = "0";

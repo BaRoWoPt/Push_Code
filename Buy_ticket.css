@@ -264,7 +264,7 @@ html {
 }
 .buy_container {
   position: absolute;
-  padding: 90px 0 40px 0;
+  padding: 90px 0 90px 0;
   width: 100vw;
   background-color: black;
   transition: top 0.1s ease-in-out;
@@ -307,6 +307,7 @@ input::placeholder {
   border-radius: 0.5rem;
   line-height: 1;
   text-align: left;
+  margin-bottom: 30px;
 }
 .label-form {
   display: block;
@@ -317,7 +318,6 @@ input::placeholder {
 
 input.item_form {
   font-size: 18px;
-  margin-bottom: 30px;
 }
 
 .item_form {
@@ -336,6 +336,10 @@ input.item_form {
 .item_form:hover {
   opacity: 0.5;
 }
+.form_message {
+  color: white;
+}
+
 .submit_form {
   margin-top: 20px;
 }

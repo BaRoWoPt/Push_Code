@@ -68,13 +68,13 @@
     </div>
     <div id="buy_container" class="buy_container">
         <section class="sign_up">
-            <div class="form">
+            <form id="form_1" class="form">
                 <div class="content_form">
                     <h2>Điền form dưới để đăng kí mua vé trước nhé các bạn ơi.</h2>
                     <p>Vì số lượng vé có hạn nên mọi người đặt đủ vé với số lượng người tham gia giúp ban tổ chức chúng
                         mình nhé để cho các bạn khác có vé với nha.
                     </p>
-                    <form id="form_sign" class="form_sign">
+                    <div class="form_sign">
                         <div class="info">
                             <label for="fullname" class="label-form">Họ Và Tên</label>
                             <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form">
@@ -96,19 +96,30 @@
                                 min="0" step="1" class="item_form">
                             <span class="form_message"></span>
                         </div>
-                    </form>
+                    </div>
                     <div class="submit_form">
                         <button class="done" type="button">Đặt vé</button>
                     </div>
                 </div>
-            </div>
+            </form>
             <div class="pic_ad">
                 <img class="pic_bot" src="./img/img_buy.jpeg" alt="">
             </div>
         </section>
     </div>
+    <script>
+        //Output 
+        validator({
+            form: '#form_1',
+            rules: [
+                validator.isRequired('#fullname'),
+                validator.isEmail('#email')
+            ]
+        });
+    </script>
     <script src="./Buy_ticket.js"></script>
     <script src="./Validator.js"></script>
+
 </body>
 
 
