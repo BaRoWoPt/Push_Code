@@ -107,19 +107,21 @@
             </div>
         </section>
     </div>
+    <script src="./form_test.js"></script>
     <script>
         //Output 
         validator({
             form: '#form_1',
+            errorSelector: '.form_message',
             rules: [
                 validator.isRequired('#fullname'),
-                validator.isEmail('#email')
+                validator.isNumberPhone('#thongtin'),
+                validator.isEmail('#gmail'),
+                validator.isBuyTicket('#buy_ticket'),
             ]
         });
     </script>
     <script src="./Buy_ticket.js"></script>
-    <script src="./Validator.js"></script>
-
 </body>
 
 
