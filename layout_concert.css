@@ -35,6 +35,11 @@ html {
   color: white;
   justify-items: center;
   z-index: 99;
+  transition: transform 0.2s;
+}
+.header--hidden{
+	transform: translateY(-95px);
+	box-shadow: none;
 }
 .icon {
   display: flex;
