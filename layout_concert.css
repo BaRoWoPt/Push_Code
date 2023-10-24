@@ -464,6 +464,17 @@ input::placeholder {
   border-radius: 0.5rem;
   line-height: 1;
   text-align: left;
+  margin-bottom: 24px;
+}
+
+.label-form {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #e0e0e0;
+}
+label.form-label {
+  margin-bottom: 14px;
 }
 input.item_form {
   font-size: 18px;
@@ -483,6 +494,9 @@ input.item_form {
 
 .item_form:hover {
   opacity: 0.5;
+}
+.form_message {
+  color: white;
 }
 .submit_form {
   margin-top: 20px;
@@ -505,7 +519,7 @@ input.item_form {
 }
 .pic_bot {
   width: 100%;
-  height: 600px;
+  height: 100%;
   opacity: 0.8;
 }
 .footer_page1 {

@@ -212,31 +212,41 @@
                 </div>
             </div>
             <section class="sign_up">
-                <div class="form">
+                <form id="form_1" class="form">
                     <div class="content_form">
-                        <h2>Đăng ký để nhận tin tức và cập nhật mới nhất của chúng tôi.</h2>
-                        <p>Hình ảnh sự kiện trực tiếp, chương trình khuyến mại và giảm giá sản phẩm độc quyền trực tiếp
-                            cho
-                            bạn. Bằng cách đăng ký, bạn đồng ý với chính sách và điều khoản về quyền riêng tư của
-                            Eventshop.
-                            Tần suất tin nhắn có thể thay đổi. Tin nhắn hoặc dữ liệu có thể được áp dụng.
+                        <h2>Điền form dưới để đăng kí mua vé trước nhé các bạn ơi.</h2>
+                        <p>Vì số lượng vé có hạn nên mọi người đặt đủ vé với số lượng người tham gia giúp ban tổ chức
+                            chúng
+                            mình nhé để cho các bạn khác có vé với nha.
                         </p>
                         <div class="form_sign">
                             <div class="info">
-                                <input placeholder="Họ Và Tên" type="text" class="item_form">
+                                <label for="fullname" class="label-form">Họ Và Tên</label>
+                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form">
+                                <span class="form_message"></span>
                             </div>
                             <div class="info">
-                                <input placeholder="Số điện thoại" type="text" class="item_form">
+                                <label for="thongtin" class="label-form">Số Điện Thoại</label>
+                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form">
+                                <span class="form_message"></span>
                             </div>
                             <div class="info">
-                                <input placeholder="Gmail" type="text" class="item_form">
+                                <label for="gmail" class="label-form">Gmail</label>
+                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form">
+                                <span class="form_message"></span>
+                            </div>
+                            <div class="info">
+                                <label for="buy_ticket" class="label-form">Số lượng vé</label>
+                                <input id="buy_ticket" placeholder="Số lượng vé bạn muốn mua" type="number" max="100"
+                                    min="0" step="1" class="item_form">
+                                <span class="form_message"></span>
                             </div>
                         </div>
                         <div class="submit_form">
-                            <button class="done" type="button">Đăng Ký</button>
+                            <button class="done" type="button">Đặt vé</button>
                         </div>
                     </div>
-                </div>
+                </form>
                 <div class="pic_ad">
                     <img class="pic_bot" src="./img/pic_bottom.jpeg" alt="">
                 </div>
@@ -257,7 +267,25 @@
         </div>
 
     </div>
+    <script src="./form_test.js"></script>
+    <script>
+        //Output 
+        validator({
+            form: '#form_1',
+            errorSelector: '.form_message',
+            rules: [
+                validator.isRequired('#fullname'),
+                validator.isNumberPhone('#thongtin'),
+                validator.isEmail('#gmail'),
+                validator.isBuyTicket('#buy_ticket'),
+            ],
+            onSubmit: function (data) {
+                console.log(data)
+            }
+        });
+    </script>
+    <script src="./layout_concert.js"></script>
+
 </body>
-<script src="./layout_concert.js"></script>
 
 </html>
