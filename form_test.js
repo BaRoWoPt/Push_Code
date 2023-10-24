@@ -1,19 +1,28 @@
 // ham
 function validator(options) {
   //ham thuc hien validate
+  var selectorRules = {};
   function validate(inputElement, rule) {
     var errorMessage = rule.test(inputElement.value);
-    var errElement = inputElement.parentElement.querySelector(
+    var errorElement = inputElement.parentElement.querySelector(
       options.errorSelector
     );
     if (errorMessage) {
-      errElement.innerText = errorMessage;
-    } else errElement.innerText = " ";
+      errorElement.innerText = errorMessage;
+    } else errorElement.innerText = " ";
   }
   // lay element cua form can validate
   var formElement = document.querySelector(options.form);
   if (formElement) {
+    // var isInvalid=true;
     options.rules.forEach(function (rule) {
+      // luu lai cac rules trong moi input
+      if (Array.isArray(selectorRules[rule.selector])) {
+        selectorRules[rule.selector].push[rule.test];
+      } else {
+        selectorRules[rule.selector] = [rule.tes];
+      }
+      selectorRules[rule.selector] = rule.test;
       console.log(rule.selector);
       var inputElement = formElement.querySelector(rule.selector);
 
@@ -31,6 +40,7 @@ function validator(options) {
         };
       }
     });
+    console.log(selectorRules);
   }
 }
 

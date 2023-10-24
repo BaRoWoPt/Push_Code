@@ -118,7 +118,10 @@
                 validator.isNumberPhone('#thongtin'),
                 validator.isEmail('#gmail'),
                 validator.isBuyTicket('#buy_ticket'),
-            ]
+            ],
+            onSubmit: function (data) {
+                console.log(data)
+            }
         });
     </script>
     <script src="./Buy_ticket.js"></script>
