@@ -10,6 +10,7 @@ html{
   body {
 	width: 100vw;
 	/* overflow-x: hidden; */
+	background-color: #000;
   }
   :root {
 	--column_img_height: 40vh;
@@ -281,6 +282,11 @@ html{
 	transform: translateY(-95px);
 	box-shadow: none;
 }
+.main-container{
+	padding-top: 95px;
+	width: 100%;
+	height:120vh
+}
 .div-left{
 	width:50%;
 	float:left;
@@ -302,117 +308,72 @@ html{
 }
 h1{
 	padding-top:10px;
-	margin-top:6rem;
 	font-weight: bold;
 	margin-left: 5%;
-}
-.pic-info{
-	width:300px;
-	height:300px
-}
-.carousel{
-	width:95%;
-	height:auto;
-	margin-left:5%;
-}
-.scrollbar{
-	display: flex;
-	overflow-x: auto;
-	overflow: hidden;
-	scroll-snap-type: x mandatory;
-	width: 100%;
-	gap: 20px;
 }
 a:hover{
     cursor:pointer;
 }
-.concert-info{
-	height: 100%;
-	width: 100%;
-}
+
 .img, .img2{
 	width:100%;
 	height:100%;
 	object-fit: cover;
 	
 }
-.details{
-	height: 15%;
-	width: 100%;
-	display:flex;
-	gap: 15px;
-	color:white;
-	padding-top: 15px
+.pic-contain{
+	margin-left: 5%;
+	margin-right: 20%;
 }
-.img-container{
-	height:70%;
-	width:100%
-}
-.month{
-	text-transform: uppercase;
+.artist-info{
+	margin-left: 5%;
+	margin-right: 20%;
+	height: auto;
+	font-size: 20px;
 }
 *:where(:not(html,iframe,canvas,img,svg,video,audio,h2,.check_nav):not(svg *,symbol *)) {
     all: unset;
     display: revert;
 }
-.event-list{
-	width:80%;
-	height:auto;
-	margin-left: 5%;
-	margin-right:15%;
+.img2{
+	transition: linear 0.2s
 }
-.button-list{
-	width:100%;
-	height:10%;
-	color:white;
-	padding-bottom: 10px;
-	color:hsl(0, 0%, 28%);
+.youtube-link{
+	opacity: 0.6;
+	font-size: 25px;
+	transition: 0.2s;
 }
-.detailed-date{
-	height:90%;
-	width:100%;
-	list-style-type: none;
+.youtube-link:hover{
+	color: plum;
+	opacity: 1;
 }
-button{
-	border: 1px solid hsl(0, 0%, 12%);
-	border-radius: 15px;
-	line-height:1;
-	padding:10px;
-	white-space: nowrap;
-    background-color: white;
+.img2:hover{
+	opacity: 0.8;
 }
-.ticket-access{
-	width:100%;
-	height:71px;
-	border-top:1px solid hsl(0, 0%, 12%);
+.btn{
+	border: none;
+	padding: 5px 5px;
+	font-size: 25px;
+	position: relative;
+	&::before{
+		transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		content: '';
+		width: 50%;
+		height: 100%;
+		background: white;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }
-.ticket{
-	height:inherit;
-	width:inherit;
-	display:flex;
-	align-items: center;
-	gap:20px;
+& .btn-text{
+	mix-blend-mode: difference;
 }
-.city-event{
-	width:55%;
-	padding-left:30px
-}
-button:hover{
-	cursor: pointer;
-}
-.date{
-	border-right: 1px solid hsl(0, 0%, 12%);
-    padding-right: 5px;
-}
-.action{
-	display: flex;
-	gap:5px;
-	align-items: center;
-	color:hsl(0, 0%, 28%);
-	padding-left: 60px;
-}
-.action:hover{
-    color:white;
+& :hover{
+	&::before{
+		background: white;
+		width: 100%;
+	}
 }
 .footer{
 	width:100%;
@@ -435,6 +396,7 @@ button:hover{
 #logo{
 	width:100px;
 	opacity:0.6;
+	transition: 0.2s;
 }
 #logo:hover{
 	opacity: unset;
@@ -449,6 +411,7 @@ button:hover{
 	border-top:none !important;
 	border-right: 1px solid hsl(0, 0%, 12%);
 	padding-right: 10px;
+	transition: 0.2s;
 }
 .our-com:hover{
 	color: white;
