@@ -7,8 +7,10 @@ function validator(options) {
     var errorElement = inputElement.parentElement.querySelector(
       options.errorSelector
     );
+    // var rules = selectorRules[rule.selector];
     if (errorMessage) {
       errorElement.innerText = errorMessage;
+      inputElement.parentElement.classList.add("invalid");
     } else errorElement.innerText = " ";
   }
   // lay element cua form can validate
@@ -18,9 +20,9 @@ function validator(options) {
     options.rules.forEach(function (rule) {
       // luu lai cac rules trong moi input
       if (Array.isArray(selectorRules[rule.selector])) {
-        selectorRules[rule.selector].push[rule.test];
+        selectorRules[rule.selector].push(rule.test);
       } else {
-        selectorRules[rule.selector] = [rule.tes];
+        selectorRules[rule.selector] = [rule.test];
       }
       selectorRules[rule.selector] = rule.test;
       console.log(rule.selector);
