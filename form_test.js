@@ -23,7 +23,6 @@ function validator(options) {
         selectorRules[rule.selector] = [rule.tes];
       }
       selectorRules[rule.selector] = rule.test;
-      console.log(rule.selector);
       var inputElement = formElement.querySelector(rule.selector);
 
       if (inputElement) {
@@ -40,7 +39,6 @@ function validator(options) {
         };
       }
     });
-    console.log(selectorRules);
   }
 }
 

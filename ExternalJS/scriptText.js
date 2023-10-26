@@ -1,5 +1,3 @@
-console.clear();
-
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const split1 = new SplitText(".wrapper1 p", {
