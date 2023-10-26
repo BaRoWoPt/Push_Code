@@ -421,6 +421,13 @@ h1.content_page {
 .column_down {
   animation: slide-down 10s linear infinite;
 }
+
+.column_up img {
+  display: block;
+  object-fit: cover;
+  object-position: 0 0;
+}
+
 @keyframes slide-up {
   from {
     transform: translateY(0);
