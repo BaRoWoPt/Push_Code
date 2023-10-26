@@ -384,6 +384,13 @@ html {
   position: relative;
 }
 
+.time-show .pic_show {
+  display: block !important;
+  width: 100% !important; 
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
 .time_show h4 {
   display: flex;
   align-items: center;
