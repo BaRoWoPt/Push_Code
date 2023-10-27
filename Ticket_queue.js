@@ -44,3 +44,4 @@ const header = document.querySelector(".header");
 				}
 				lastScrollY = window.scrollY;
 			});	
+
