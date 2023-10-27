@@ -363,7 +363,7 @@ a:hover {
   &::before {
     transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     content: "";
-    width: 5%;
+    width: 50%;
     height: 100%;
     background: white;
     position: absolute;
