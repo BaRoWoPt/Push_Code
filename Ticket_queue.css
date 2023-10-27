@@ -98,8 +98,8 @@ html {
   transition: linear 0.2s;
 }
 .icon_left a:hover {
-  /* color: #fff; */
-  /* background-color: rgba(255, 255, 255, 0.08); */
+   color: #fff; 
+   background-color: rgba(255, 255, 255, 0.08);   
   border-radius: 8px;
   cursor: pointer;
 }
@@ -372,7 +372,7 @@ a:hover {
   &::before {
     transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     content: "";
-    width: 5%;
+    width: 50%;
     height: 100%;
     background: white;
     position: absolute;
@@ -383,7 +383,7 @@ a:hover {
 & .btn-text {
   mix-blend-mode: difference;
 }
-& :hover {
+& .btn:hover {
   &::before {
     background: white;
     width: 100%;
@@ -437,7 +437,6 @@ a:hover {
   border-top: 2px solid #0ebac5;
   border-bottom: 2px solid #0ebac5;
   transition: all 0.5s ease;
-  background-color: transparent;
 }
 
 .Chilles-album::after {
