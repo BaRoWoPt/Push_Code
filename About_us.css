@@ -297,7 +297,7 @@ html {
   width: 100%;
   height: 100%;
   padding-bottom: 50px;
-  padding: 0 40px;
+  padding: 0 10px;
   animation: fadeIn 3s;
   filter: grayscale(100%);
 }
