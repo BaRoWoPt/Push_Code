@@ -370,11 +370,11 @@ a:hover {
   font-size: 25px;
   position: relative;
   &::before {
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     content: "";
-    width: 1%;
+    width: 50%;
     height: 100%;
-    background: white;
+    background: rgb(191, 191, 191);
     position: absolute;
     top: 0;
     left: 0;
