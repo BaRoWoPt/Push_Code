@@ -298,12 +298,13 @@ html {
   /* transform: translateX(-35.25px); */
 }
 .cover {
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
   position: relative;
   display: flex;
   flex-flow: column;
   justify-content: end;
-  width: 100vw;
-  height: 100svh;
 }
 
 h1.content_page {

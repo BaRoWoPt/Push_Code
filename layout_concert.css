@@ -372,7 +372,6 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
-  margin-right: 20px;
   margin-left: 5px;
 }
 .show_option a {
@@ -386,7 +385,7 @@ html {
 
 .time-show .pic_show {
   display: block !important;
-  width: 100% !important; 
+  width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
 }
