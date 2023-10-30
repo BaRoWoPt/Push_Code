@@ -35,7 +35,6 @@ closeNavBar.addEventListener("click", HiddenNavSideBar);
 pages_close.addEventListener("click", function (event) {
   navsidebar.classList.remove("open");
 });
-
 // //////////////////////////////////////////////////////////////////////////////////////////
 // typeWriter Text
 var message1 =
