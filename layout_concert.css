@@ -372,7 +372,6 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
-  margin-right: 20px;
   margin-left: 5px;
 }
 .show_option a {
