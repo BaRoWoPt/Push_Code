@@ -18,6 +18,20 @@
   .wrapper2 {
     padding-left: 20px;
   }
+  .show_option {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .sign_up {
+    display: block;
+  }
+  .form {
+    margin-left: 150px;
+    justify-content: center;
+    align-items: center;
+  }
+  .pic_bot {
+    display: none;
+  }
 }
 @media (max-width: 740px) {
   .header {
@@ -27,14 +41,17 @@
     display: none;
   }
   .sidebar {
-    width: 350px;
-    height: 400px;
+    width: 330px;
+    height: 350px;
   }
   .navsidebar {
-    width: 350px;
+    width: 330px;
   }
   .icon_left {
     margin-right: 0;
+  }
+  .option {
+    margin-top: 14px;
   }
   .icon_footer {
     padding-bottom: 15px;
@@ -49,9 +66,19 @@
   .img_show {
     top: -120vh;
   }
+  .show_option {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pic_show {
+    height: 40vh;
+  }
+  .content_form h2 {
+    font-size: 24;
+  }
   .containerText {
     width: 375px;
   }
+
   #video_concert {
     object-fit: inherit !important;
   }
@@ -64,5 +91,32 @@
   }
   .about-us {
     font-size: 16px;
+  }
+  .left {
+    height: 40vh;
+  }
+  .right {
+    height: 50vh;
+  }
+  #p1 {
+    font-size: 14px;
+  }
+  .crowd {
+    object-fit: cover;
+    height: 50vh;
+  }
+  .main-container {
+  }
+  .img2 {
+    display: none;
+  }
+  .artist-info {
+    font-size: 14px;
+  }
+  .artist-info a {
+    font-size: 24px;
+  }
+  .artist-info p {
+    font-size: 14px;
   }
 }

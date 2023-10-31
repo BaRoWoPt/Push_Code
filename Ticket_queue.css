@@ -591,3 +591,6 @@ a:hover {
   color: white;
   cursor: pointer;
 }
+.artist-info p {
+  padding-top: 15px;
+}
