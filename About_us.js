@@ -38,7 +38,7 @@ pages_close.addEventListener("click", function (event) {
 // //////////////////////////////////////////////////////////////////////////////////////////
 // typeWriter Text
 var message1 =
-  "là một trong những doanh nghiệp uy tín nhất với kinh nghiệm tổ chức nhiều sự kiện âm nhạc. Được thành lập dựa trên mong muốn đem đến cho khách hàng những trải nghiệm âm nhạc tốt nhất. Quyền lợi của khách hàng luôn được chúng tôi ưu tiên hàng đầu trong mọi trường hợp. Sự tin tưởng của các bạn là động lực lớn nhất để chúng tôi không ngừng xây dựng và khắc phục những thiếu sót. Không lời cảm ơn nào là đủ để diễn tả sự trân trọng dành cho niềm tin mà các bạn đặt vào chúng tôi.";
+  "Eventshop là một trong những doanh nghiệp uy tín nhất với kinh nghiệm tổ chức nhiều sự kiện âm nhạc. Được thành lập dựa trên mong muốn đem đến cho khách hàng những trải nghiệm âm nhạc tốt nhất. Quyền lợi của khách hàng luôn được chúng tôi ưu tiên hàng đầu trong mọi trường hợp. Sự tin tưởng của các bạn là động lực lớn nhất để chúng tôi không ngừng xây dựng và khắc phục những thiếu sót. Không lời cảm ơn nào là đủ để diễn tả sự trân trọng dành cho niềm tin mà các bạn đặt vào chúng tôi.";
 var speed1 = 40;
 var i1 = 0;
 function typeWriter1() {

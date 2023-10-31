@@ -1,11 +1,22 @@
 @media (min-width: 1024px) {
-  .containerText {
-    width: 600px;
-  }
 }
 @media (min-width: 740px) and (max-width: 1023px) {
   .menu-items {
     display: none;
+  }
+  .header {
+    width: 100vw;
+  }
+  .footer_nav {
+    margin-top: 0;
+  }
+  #video_concert {
+    height: 100vh;
+    object-fit: inherit;
+  }
+  .wrapper1,
+  .wrapper2 {
+    padding-left: 20px;
   }
 }
 @media (max-width: 740px) {
