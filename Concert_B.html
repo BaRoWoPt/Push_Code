@@ -28,6 +28,9 @@
             <a href="About_us.html" class="items">
                 <span id="item">Về Chúng Tôi </span>
             </a>
+            <a href="PurchaseConfirm.html" class="items">
+                <span id="item">Giỏ hàng </span>
+            </a>
         </div>
         <div class="icon_left">
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
@@ -62,7 +65,7 @@
                 <span class="sub_type"> Giỏ hàng của bạn hiện đang trống</span>
             </div>
             <footer class="footer_nav">
-                <button class="check_nav">
+                <button onclick="window.location.href='PurchaseConfirm.html' " class="check_nav">
                     Check
                 </button>
             </footer>
@@ -79,11 +82,11 @@
                                 <div class="colum_img column_up up_1">
                                     <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
                                     <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Vũ.jpeg" alt="" class="ntpmm_show">
+                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
                                     <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
                                     <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
                                     <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Vũ.jpeg" alt="" class="ntpmm_show">
+                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
                                     <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
                                 </div>
                                 <div class="colum_img column_down">
@@ -99,11 +102,11 @@
                                 <div class="colum_img column_up up_2">
                                     <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
                                     <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Vũ.jpeg" alt="" class="ntpmm_show">
+                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
                                     <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
                                     <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
                                     <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Vũ.jpeg" alt="" class="ntpmm_show">
+                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
                                     <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
                                 </div>
                             </div>
@@ -154,13 +157,13 @@
     </div>
 
     <!--Đoạn text phát sáng-->
-    <div>
+    <div class="light_type">
         <div id="smooth-wrapper">
             <div id="smooth-content">
                 <section id="textSection1">
                     <div class="containerText">
                         <div class="wrapper1">
-                            <p class="white">Làm mới lại những phút giây tuyệt vời nhất của bạn và các nghệ sĩ .</p>
+                            <p class="white">Khám phá cảm xúc, chia sẻ kỷ niệm với sự kiện của bạn.</p>
                         </div>
                     </div>
                 </section>
@@ -172,7 +175,7 @@
                 <section id="textSection2">
                     <div class="containerText">
                         <div class="wrapper2">
-                            <p class="white">Lưu giữ những khoảnh khắc tuyệt vời tại các buổi diễn .</p>
+                            <p class="white">Chinh phục niềm vui, trải nghiệm sự kiện đỉnh cao.</p>
                         </div>
                     </div>
                 </section>
@@ -187,19 +190,6 @@
                     <img id="logo" src="./img/logo_page.png" alt="">
                 </a>
             </div>
-            <div style="margin-left:auto">
-                <ul class="about-us">
-                    <a href="#">
-                        <li class="our-com">Support</li>
-                    </a>
-                    <a href="#">
-                        <li class="our-com">Privacy</li>
-                    </a>
-                    <a href="#">
-                        <li class="our-com" style="border-right: none !important;">Terms</li>
-                    </a>
-                </ul>
-            </div>
         </div>
     </div>
 </body>
@@ -207,7 +197,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<script src="Event_shop.js"></script>
 <script src="Concert_B.js"></script>
 <script src="ExternalJS/gsap.min.js"></script>
 <script src="ExternalJS/ScrollSmoother.min.js"></script>

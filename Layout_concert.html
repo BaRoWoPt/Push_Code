@@ -27,6 +27,9 @@
             <a href="About_us.html" class="items">
                 <span id="item">Về Chúng Tôi </span>
             </a>
+            <a href="PurchaseConfirm.html" class="items">
+                <span id="item">Giỏ hàng </span>
+            </a>
         </div>
         <div class="icon_left">
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
@@ -58,10 +61,10 @@
             <i id="icon_close_navbar" class="icon_close_sidebar fa-solid fa-xmark"></i>
             <div class="nav_type">
                 <h2 class="shopping_bag">Giỏ Hàng Của Bạn</h2>
-                <span class="sub_type"> Giỏ hàng của bạn hiện đang trống</span>
+                <span class="sub_type">Giỏ hàng của bạn hiện đang trống</span>
             </div>
             <footer class="footer_nav">
-                <button class="check_nav">
+                <button onclick="window.location.href='PurchaseConfirm.html'" class="check_nav">
                     Check
                 </button>
             </footer>
@@ -242,12 +245,11 @@
                                     min="0" step="1" class="item_form">
                                 <span class="form_message"></span>
                             </div>
-                        </div>
-                        <div class="submit_form">
-                            <button class="done" type="submit">Đặt vé</button>
+                            <div class="submit_form">
+                                <button class="done" type="submit" onclick="themvaogiohang(event)">Đặt vé</button>
+                            </div>
                         </div>
                     </div>
-
                 </form>
                 <div class="pic_ad">
                     <img class="pic_bot" src="./img/pic_bottom.jpeg" alt="">
@@ -287,7 +289,7 @@
         });
     </script>
     <script src="./layout_concert.js"></script>
-
+    <script src="Event_shop.js"></script>
 </body>
 
 </html>

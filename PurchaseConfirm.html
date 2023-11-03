@@ -4,31 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Về chúng mình</title>
     <link rel="icon" href="./img/icon.svg" type="image/x-icon">
     <link rel="icon" href="./img/icon.svg">
     <link rel="stylesheet" href="./icon/css/all.min.css">
-    <link rel="stylesheet" href="About_us.css">
-    <link rel="stylesheet" href="./responsive.css">
-
+    <link rel="stylesheet" href="PurchaseConfirm.css">
+    <title>Xác nhận đặt vé</title>
 </head>
-
 <body>
     <div class="header">
         <a href="./Concert_B.html" class="icon">
             <img class="icon_page" src="./img/logo_page.png" alt="">
         </a>
         <div class="menu-items">
-            <a href="Concert_B.html" class="items">
+            <a href="./Concert_B.html" class="items">
                 <span id="item">Trang Chủ</span>
             </a>
-            <a href="./Layout_concert.html" class="items">
+            <a href="Layout_concert.html" class="items">
                 <span id="item">Sự Kiện</span>
             </a>
-            <a href="About_us.html" class="items border_bottom">
+            <a href="About_us.html" class="items">
                 <span id="item">Về Chúng Tôi </span>
             </a>
-            <a href="PurchaseConfirm.html" class="items">
+            <a href="PurchaseConfirm.html" class="items border_bottom">
                 <span id="item">Giỏ hàng </span>
             </a>
         </div>
@@ -71,16 +68,34 @@
             </footer>
         </div>
     </div>
-    <div class="container_about">
-        <div class="left">
-
-            <div id="p1">
-            </div>
-
+    <div class="main-container">
+        <h1>Xác nhận đặt vé sự kiện</h1>
+        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện, vui lòng kiểm tra kĩ thông tin bên dưới giúp bọn mình nhé!</p>
+        <table id="cart-table">
+            <thread>
+                <tr style="background-color: grey;">
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Số lượng vé</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thread>
+            <tbody id="cart-body">
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td style="background-color: grey;" colspan="4">Tổng tiền:</td>
+                    <td style="background-color: grey; text-align: center;" id="total-price"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="btn">
+            <button class="purchase">Thanh toán</button>
+            <button onclick="deleteAll()" id="delete-all" class="delete-all">Xoá giỏ hàng</button>
         </div>
-        <div class="right">
-            <img class="crowd" src="img/Crown.jpeg" alt="a crowd in a concert">
-        </div>
+        <p style="padding-top: 10px;">Tin nhắn xác nhận sẽ được gửi qua email trong vòng 7-14 ngày trước sự kiện! Các bạn vui lòng chú ý tin nhắn kèm mã QR nhé!</p>
     </div>
     <div class="footer">
         <div class="footer-container">
@@ -91,9 +106,5 @@
             </div>
         </div>
     </div>
-    <script src="About_us.js"></script>
     <script src="Event_shop.js"></script>
-    </script>
 </body>
-
-</html>

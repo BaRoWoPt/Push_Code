@@ -477,22 +477,6 @@ h1.content_page {
   opacity: unset;
   cursor: pointer;
 }
-.about-us {
-  display: flex;
-  gap: 10px;
-  list-style-type: none;
-}
-.our-com {
-  height: auto !important;
-  border-top: none !important;
-  border-right: 1px solid hsl(0, 0%, 12%);
-  padding-right: 10px;
-  transition: 0.2s;
-}
-.our-com:hover {
-  color: white;
-  cursor: pointer;
-}
 *:where(
     :not(html, iframe, canvas, img, svg, video, audio, h2, .check_nav):not(
         svg *,
@@ -501,4 +485,10 @@ h1.content_page {
   ) {
   all: unset;
   display: revert;
+}
+.wrapper1,
+.wrapper2 {
+  position: absolute;
+  top: 50%;
+  left: 20%;
 }

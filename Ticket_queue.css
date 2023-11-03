@@ -341,7 +341,7 @@ a:hover {
   font-size: 20px;
 }
 *:where(
-    :not(html, iframe, canvas, img, svg, video, audio, h2, .check_nav):not(
+    :not(html, iframe, canvas, img, svg, video, audio, h2, .check_nav,.navsidebar.open,.sidebar.open):not(
         svg *,
         symbol *
       )
@@ -574,22 +574,6 @@ a:hover {
 }
 #logo:hover {
   opacity: unset;
-}
-.about-us {
-  display: flex;
-  gap: 10px;
-  list-style-type: none;
-}
-.our-com {
-  height: auto !important;
-  border-top: none !important;
-  border-right: 1px solid hsl(0, 0%, 12%);
-  padding-right: 10px;
-  transition: 0.2s;
-}
-.our-com:hover {
-  color: white;
-  cursor: pointer;
 }
 .artist-info p {
   padding-top: 15px;
