@@ -502,3 +502,9 @@ h1.content_page {
   all: unset;
   display: revert;
 }
+.wrapper1,
+.wrapper2 {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+}
