@@ -177,6 +177,7 @@ function showgiohang() {
     var nameSpan = nameCell.querySelector("span");
     var nameText = nameSpan.textContent;
     var nameInput = document.createElement("input");
+    nameInput.classList.add("input_btn");
     nameInput.type = "text";
     nameInput.value = nameText;
     nameCell.replaceChild(nameInput, nameSpan);
@@ -185,6 +186,7 @@ function showgiohang() {
     var phoneSpan = phoneCell.querySelector("span");
     var phoneText = phoneSpan.textContent;
     var phoneInput = document.createElement("input");
+    phoneInput.classList.add("input_btn");
     phoneInput.type = "text";
     phoneInput.value = phoneText;
     phoneCell.replaceChild(phoneInput, phoneSpan);
@@ -193,6 +195,7 @@ function showgiohang() {
     var emailSpan = emailCell.querySelector("span");
     var emailText = emailSpan.textContent;
     var emailInput = document.createElement("input");
+    emailInput.classList.add("input_btn");
     emailInput.type = "text";
     emailInput.value = emailText;
     emailCell.replaceChild(emailInput, emailSpan);
@@ -201,6 +204,7 @@ function showgiohang() {
     var quantitySpan = quantityCell.querySelector("span");
     var quantityText = quantitySpan.textContent;
     var quantityInput = document.createElement("input");
+    quantityInput.classList.add("input_btn");
     quantityInput.type = "text";
     quantityInput.value = quantityText;
     quantityCell.replaceChild(quantityInput, quantitySpan);
