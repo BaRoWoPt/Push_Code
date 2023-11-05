@@ -345,6 +345,19 @@
       opacity: unset;
       background-color:  hsl(0, 0%, 12%);
     }
+    .update-cell{
+      padding: 10px;
+      background-color: black;
+      border-radius: 8px;
+      border: 1px solid hsl(0, 0%, 12%);
+      color: white;
+      opacity: 0.6;
+      transition: all 0.2s;
+    }
+    .update-cell:hover{
+      opacity: unset;
+      background-color:  hsl(0, 0%, 12%);
+    }
     .btn{
       padding-top: 10px;
       display: flex;
@@ -380,4 +393,5 @@
       opacity: unset;
       background-color:  hsl(0, 0%, 12%);
     }
+
   

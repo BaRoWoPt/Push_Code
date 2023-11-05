@@ -55,10 +55,10 @@ function themvaogiohang(event){
 		alert("Vui lòng nhập đủ thông tin giúp bọn mình nhé!");
 		return false;
 	}
-function getStoredThongTinKH() {
+    function getStoredThongTinKH() {
 	var gh = sessionStorage.getItem("thongtinKH");
 	return JSON.parse(gh) || [];
- }
+    }
 	thongtinKH = getStoredThongTinKH();
     var foundIndex = -1;
 	for (var i = 0; i < thongtinKH.length; i++) {
@@ -83,65 +83,191 @@ function getStoredThongTinKH() {
 	alert("Vui lòng kiểm tra trong giỏ hàng để xác nhận thông tin nhé");
 	return true;
 }
-function showgiohang(){
-   var gh = sessionStorage.getItem("thongtinKH");
+function showgiohang() {
+	var gh = sessionStorage.getItem("thongtinKH");
 	var giohang = JSON.parse(gh);
 	var cartBody = document.getElementById("cart-body");
-	 var totalPriceCell = document.getElementById("total-price");
+	var totalPriceCell = document.getElementById("total-price");
 	var totalPrice = 0;
-
-	giohang.forEach(function(item,index) {
-	var row = document.createElement("tr");
-
-	var nameCell = document.createElement("td");
-	nameCell.textContent = item[0];
-	row.appendChild(nameCell);
-
-	var phoneCell = document.createElement("td");
-	phoneCell.textContent = item[1];
-	row.appendChild(phoneCell);
-
-    var emailCell = document.createElement("td");
-	emailCell.textContent = item[2];	
-	row.appendChild(emailCell); 
-
-	var quantityCell = document.createElement("td");
-	quantityCell.textContent = item[3];
-	row.appendChild(quantityCell);
-
-	var priceCell = document.createElement("td");
-	var price = calculatePrice(item[3]); 
-	priceCell.textContent = price;
-	row.appendChild(priceCell);
-
-	var deleteCell = document.createElement("td");
-	var deleteButton = document.createElement("button");
-	deleteButton.classList.add("delete-cell")
-	deleteButton.textContent = "Xóa";
-	deleteButton.addEventListener("click", function() {
-   deleteCartItem(index);		
- });
-	deleteCell.appendChild(deleteButton);
-	row.appendChild(deleteCell);
-
-	cartBody.appendChild(row);
-
-	totalPrice += price; 
-
-});
+  
+	giohang.forEach(function (item, index) {
+	  var row = document.createElement("tr");
+  
+	  var nameCell = document.createElement("td");
+	  var nameSpan = document.createElement("span");
+	  nameSpan.textContent = item[0];
+	  nameCell.appendChild(nameSpan);
+	  row.appendChild(nameCell);
+  
+	  var phoneCell = document.createElement("td");
+	  var phoneSpan = document.createElement("span");
+	  phoneSpan.textContent = item[1];
+	  phoneCell.appendChild(phoneSpan);
+	  row.appendChild(phoneCell);
+  
+	  var emailCell = document.createElement("td");
+	  var emailSpan = document.createElement("span");
+	  emailSpan.textContent = item[2];
+	  emailCell.appendChild(emailSpan);
+	  row.appendChild(emailCell);
+  
+	  var quantityCell = document.createElement("td");
+	  var quantitySpan = document.createElement("span");
+	  quantitySpan.textContent = item[3];
+	  quantityCell.appendChild(quantitySpan);
+	  row.appendChild(quantityCell);
+  
+	  var priceCell = document.createElement("td");
+	  var priceSpan = document.createElement("span");
+	  var price = calculatePrice(item[3]);
+	  priceSpan.textContent = price;
+	  priceCell.appendChild(priceSpan);
+	  row.appendChild(priceCell);
+  
+	  var deleteCell = document.createElement("td");
+	  var deleteButton = document.createElement("button");
+	  deleteButton.classList.add("delete-cell");
+	  deleteButton.textContent = "Xóa";
+	  deleteButton.addEventListener("click", function () {
+		deleteCartItem(index);
+	  });
+	  deleteCell.appendChild(deleteButton);
+	  row.appendChild(deleteCell);
+  
+	  var updateCell = document.createElement("td");
+	  var updateButton = document.createElement("button");
+	  updateButton.classList.add("update-cell");
+	  updateButton.textContent = "Cập nhật";
+	  updateButton.addEventListener("click", function () {
+		enableEditMode(row, index);
+	  });
+	  updateCell.appendChild(updateButton);
+	  row.appendChild(updateCell);
+  
+	  cartBody.appendChild(row);
+  
+	  totalPrice += price;
+	});
+  
 	totalPriceCell.textContent = totalPrice;
-	function calculatePrice(quantity) {		
-	var pricePerTicket = 1000000;
-	return quantity * pricePerTicket;
-}	
+  
+	function calculatePrice(quantity) {
+	  var pricePerTicket = 1000000;
+	  return quantity * pricePerTicket;
+	}
+  
 	function deleteCartItem(index) {
-	giohang.splice(index, 1);
-	sessionStorage.setItem("thongtinKH", JSON.stringify(giohang));
-	location.reload(); 
-  }					
-}
-    function deleteAll(){
-    sessionStorage.removeItem("thongtinKH");
-    location.reload();
-}
-  showgiohang(); 
+	  giohang.splice(index, 1);
+	  sessionStorage.setItem("thongtinKH", JSON.stringify(giohang));
+	  location.reload();
+	}
+  
+	function enableEditMode(row, index) {
+	  var cells = row.getElementsByTagName("td");
+  
+	  var nameCell = cells[0];
+	  var nameSpan = nameCell.querySelector("span");
+	  var nameText = nameSpan.textContent;
+	  var nameInput = document.createElement("input");
+	  nameInput.type = "text";
+	  nameInput.value = nameText;
+	  nameCell.replaceChild(nameInput, nameSpan);
+  
+	  var phoneCell = cells[1];
+	  var phoneSpan = phoneCell.querySelector("span");
+	  var phoneText = phoneSpan.textContent;
+	  var phoneInput = document.createElement("input");
+	  phoneInput.type = "text";
+	  phoneInput.value = phoneText;
+	  phoneCell.replaceChild(phoneInput, phoneSpan);
+  
+	  var emailCell = cells[2];
+	  var emailSpan = emailCell.querySelector("span");
+	  var emailText = emailSpan.textContent;
+	  var emailInput = document.createElement("input");
+	  emailInput.type = "text";
+	  emailInput.value = emailText;
+	  emailCell.replaceChild(emailInput, emailSpan);
+  
+	  var quantityCell = cells[3];
+	  var quantitySpan = quantityCell.querySelector("span");
+	  var quantityText = quantitySpan.textContent;
+	  var quantityInput = document.createElement("input");
+	  quantityInput.type = "text";
+	  quantityInput.value = quantityText;
+	  quantityCell.replaceChild(quantityInput, quantitySpan);
+  
+	  var updateButton = cells[6].querySelector("button");
+	  updateButton.textContent = "Lưu";
+	  updateButton.removeEventListener("click", function () {
+		enableEditMode(row, index);
+	  });
+	  updateButton.addEventListener("click", function () {
+		saveChanges(row, index);
+	  });
+	}
+  
+	function saveChanges(row, index) {
+	  var giohang = JSON.parse(sessionStorage.getItem("thongtinKH"));
+  
+	  var cells = row.getElementsByTagName("td");
+  
+	  var nameCell = cells[0];
+	  var nameInput = nameCell.querySelector("input");
+	  var nameText = nameInput.value;
+	  nameCell.removeChild(nameInput);
+	  var nameSpan = document.createElement("span");
+	  nameSpan.textContent = nameText;
+	  nameCell.appendChild(nameSpan);
+  
+	  var phoneCell = cells[1];
+	  var phoneInput = phoneCell.querySelector("input");
+	  var phoneText = phoneInput.value;
+	  phoneCell.removeChild(phoneInput);
+	  var phoneSpan = document.createElement("span");
+	  phoneSpan.textContent = phoneText;
+	  phoneCell.appendChild(phoneSpan);
+  
+	  var emailCell = cells[2];
+	  var emailInput = emailCell.querySelector("input");
+	  var emailText = emailInput.value;
+	  emailCell.removeChild(emailInput);
+	  var emailSpan = document.createElement("span");
+	  emailSpan.textContent = emailText;
+	  emailCell.appendChild(emailSpan);
+  
+	  var quantityCell = cells[3];
+	  var quantityInput = quantityCell.querySelector("input");
+	  var quantityText = quantityInput.value;
+	  quantityCell.removeChild(quantityInput);
+	  var quantitySpan = document.createElement("span");
+	  quantitySpan.textContent = quantityText;
+	  quantityCell.appendChild(quantitySpan);
+
+	  var updateButton = cells[6].querySelector("button");
+	  updateButton.textContent = "Cập nhật";
+	  updateButton.removeEventListener("click", function () {
+		saveChanges(row, index);
+	  });
+	  updateButton.addEventListener("click", function () {
+		enableEditMode(row, index);
+	  });
+  
+	  giohang[index][0] = nameText;
+	  giohang[index][1] = phoneText;
+	  giohang[index][2] = emailText;
+	  giohang[index][3] = quantityText;
+
+	  sessionStorage.setItem("thongtinKH", JSON.stringify(giohang));
+	  location.reload();
+	  console.log(giohang);
+	}
+  }
+  
+  // Xóa hết bảng
+  function deleteAll() {
+	sessionStorage.removeItem("thongtinKH");
+	location.reload();
+  }
+  
+  showgiohang();
