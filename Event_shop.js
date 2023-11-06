@@ -48,6 +48,7 @@ function themvaogiohang(event) {
   var phoneNumber = document.getElementById("thongtin").value;
   var email = document.getElementById("gmail").value;
   var ticketQuantity = document.getElementById("buy_ticket").value;
+  var showNotif = document.getElementsByClassName("sub_type");
   var khInput = new Array(name, phoneNumber, email, ticketQuantity);
   if (
     name === "" ||
@@ -58,12 +59,10 @@ function themvaogiohang(event) {
     alert("Vui lòng nhập đủ thông tin giúp bọn mình nhé!");
     return false;
   }
-
   function getStoredThongTinKH() {
     var gh = sessionStorage.getItem("thongtinKH");
     return JSON.parse(gh) || [];
   }
-
   thongtinKH = getStoredThongTinKH();
   var foundIndex = -1;
   for (var i = 0; i < thongtinKH.length; i++) {
@@ -84,13 +83,9 @@ function themvaogiohang(event) {
     thongtinKH.push(khInput);
   }
   sessionStorage.setItem("thongtinKH", JSON.stringify(thongtinKH));
-  console.log(thongtinKH);
-  form.reset();
-  window.scrollTo(0, 0);
-  alert("Vui lòng kiểm tra trong giỏ hàng để xác nhận thông tin nhé");
+  window.location.href = "PurchaseConfirm.html";
   return true;
 }
-
 function showgiohang() {
   var gh = sessionStorage.getItem("thongtinKH");
   var giohang = JSON.parse(gh);
@@ -156,7 +151,6 @@ function showgiohang() {
 
     totalPrice += price;
   });
-
   totalPriceCell.textContent = formatCurrency(totalPrice) + " VND";
 
   function calculatePrice(quantity) {
@@ -272,17 +266,31 @@ function showgiohang() {
 
     sessionStorage.setItem("thongtinKH", JSON.stringify(giohang));
     location.reload();
-    console.log(giohang);
   }
 }
-
 function formatCurrency(amount) {
   return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
 function deleteAll() {
   sessionStorage.removeItem("thongtinKH");
   location.reload();
 }
-
+function showNotif(){
+  var giohang = JSON.parse(sessionStorage.getItem("thongtinKH"));
+  var cartElements = document.getElementsByClassName("nav_type");
+  var message = document.createElement("span");
+  message.classList.add("sub_type");
+  for (var i = 0; i < cartElements.length; i++) {
+  var cart = cartElements[i];
+  if (giohang && giohang.length > 0) {
+    message.textContent = "Có đơn đặt vé cần xác nhận!"
+  }
+  else {
+    message.textContent = "Giỏ hàng của bạn hiện đang trống";
+  }
+  cart.appendChild(message);
+}
+}
+showNotif();
 showgiohang();
+
