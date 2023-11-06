@@ -1,14 +1,14 @@
-const container_show = document.querySelector(".page_main");
+const pages_close = document.querySelector(".main-container");
 
 // // process close
 
 // //////////////////////////////////////////////////////////////////////////////////////////
 
-container_show.addEventListener("click", function (event) {
+pages_close.addEventListener("click", function (event) {
   sidebar.classList.remove("open");
 });
 
-container_show.addEventListener("click", function (event) {
+pages_close.addEventListener("click", function (event) {
   navsidebar.classList.remove("open");
 });
 // //////////////////////////////////////////////////////////////////////////////////////////

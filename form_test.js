@@ -90,3 +90,41 @@ validator.isBuyTicket = function (selector) {
     },
   };
 };
+validator.isUsername = function (selector) {
+  return {
+    selector: selector,
+    test: function (value) {
+      var regexUsername =
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+      return regexUsername.test(value)
+        ? undefined
+        : "Vui lòng nhập đúng tên đăng nhập đã được cung cấp";
+    },
+  };
+};
+validator.isPassword = function (selector) {
+  return {
+    selector: selector,
+    test: function (value) {
+      var regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20}$/;
+      return regexPassword.test(value)
+        ? undefined
+        : "Vui lòng nhập đúng mật khẩu đã được cung cấp";
+    },
+  };
+};
+function togglePassword() {
+  var passwordInput = document.getElementById("password");
+  var eyeIcon = document.getElementById("eyeIcon");
+
+  // Kiểm tra xem hiện đang là kiểu password hay không
+  var isPasswordType = passwordInput.type === "password";
+
+  // Thay đổi kiểu hiển thị
+  passwordInput.type = isPasswordType ? "text" : "password";
+
+  // Đảo ngược trạng thái của biểu tượng con mắt
+  eyeIcon.className = isPasswordType
+    ? "fa-solid fa-eye"
+    : "fa-solid fa-eye-slash";
+}

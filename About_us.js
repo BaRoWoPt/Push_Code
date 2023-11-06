@@ -11,3 +11,17 @@ function typeWriter1() {
   }
 }
 typeWriter1();
+const About_container = document.querySelector(".container_about");
+
+// // process close
+
+// //////////////////////////////////////////////////////////////////////////////////////////
+
+About_container.addEventListener("click", function (event) {
+  sidebar.classList.remove("open");
+});
+
+About_container.addEventListener("click", function (event) {
+  navsidebar.classList.remove("open");
+});
+// //////////////////
