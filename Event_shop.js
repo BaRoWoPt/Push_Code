@@ -41,6 +41,7 @@ window.addEventListener("scroll", () => {
 });
 
 var thongtinKH = new Array();
+
 function themvaogiohang(event) {
   event.preventDefault();
   var form = document.getElementById("form_1");
@@ -50,6 +51,7 @@ function themvaogiohang(event) {
   var ticketQuantity = document.getElementById("buy_ticket").value;
   var showNotif = document.getElementsByClassName("sub_type");
   var khInput = new Array(name, phoneNumber, email, ticketQuantity);
+
   if (
     name === "" ||
     phoneNumber === "" ||
@@ -65,6 +67,7 @@ function themvaogiohang(event) {
   }
   thongtinKH = getStoredThongTinKH();
   var foundIndex = -1;
+
   for (var i = 0; i < thongtinKH.length; i++) {
     if (
       thongtinKH[i][0] === name &&
@@ -75,6 +78,7 @@ function themvaogiohang(event) {
       break;
     }
   }
+
   if (foundIndex !== -1) {
     var previousQuantity = parseInt(thongtinKH[foundIndex][3], 10);
     var newQuantity = parseInt(ticketQuantity, 10);
@@ -82,8 +86,9 @@ function themvaogiohang(event) {
   } else {
     thongtinKH.push(khInput);
   }
+
   sessionStorage.setItem("thongtinKH", JSON.stringify(thongtinKH));
-  window.location.href = "PurchaseConfirm.html";
+  window.location.href = 'PurchaseConfirm.html'
   return true;
 }
 function showgiohang() {
