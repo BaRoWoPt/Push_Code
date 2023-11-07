@@ -1,14 +1,14 @@
-const login_nav_close = document.querySelector(".login_container");
+const loginclose = document.querySelector(".notificate");
 
 // // process close
 
 // //////////////////////////////////////////////////////////////////////////////////////////
 
-login_nav_close.addEventListener("click", function (event) {
+loginclose.addEventListener("click", function (event) {
   sidebar.classList.remove("open");
 });
 
-login_nav_close.addEventListener("click", function (event) {
+loginclose.addEventListener("click", function (event) {
   navsidebar.classList.remove("open");
 });
 // //////////////////////////////////////////////////////////////////////////////////////////

@@ -10,7 +10,6 @@ function validator(options) {
     // var rules = selectorRules[rule.selector];
     if (errorMessage) {
       errorElement.innerText = errorMessage;
-      inputElement.parentElement.classList.add("invalid");
     } else errorElement.innerText = " ";
   }
   // lay element cua form can validate
@@ -94,8 +93,7 @@ validator.isUsername = function (selector) {
   return {
     selector: selector,
     test: function (value) {
-      var regexUsername =
-        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+      var regexUsername = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
       return regexUsername.test(value)
         ? undefined
         : "Vui lòng nhập đúng tên đăng nhập đã được cung cấp";

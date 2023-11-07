@@ -88,7 +88,7 @@ function themvaogiohang(event) {
   }
 
   sessionStorage.setItem("thongtinKH", JSON.stringify(thongtinKH));
-  window.location.href = 'PurchaseConfirm.html'
+  window.location.href = "PurchaseConfirm.html";
   return true;
 }
 function showgiohang() {
@@ -280,22 +280,20 @@ function deleteAll() {
   sessionStorage.removeItem("thongtinKH");
   location.reload();
 }
-function showNotif(){
+function showNotif() {
   var giohang = JSON.parse(sessionStorage.getItem("thongtinKH"));
   var cartElements = document.getElementsByClassName("nav_type");
   var message = document.createElement("span");
   message.classList.add("sub_type");
   for (var i = 0; i < cartElements.length; i++) {
-  var cart = cartElements[i];
-  if (giohang && giohang.length > 0) {
-    message.textContent = "Có đơn đặt vé cần xác nhận!"
+    var cart = cartElements[i];
+    if (giohang && giohang.length > 0) {
+      message.textContent = "Có đơn đặt vé cần xác nhận!";
+    } else {
+      message.textContent = "Giỏ hàng của bạn hiện đang trống";
+    }
+    cart.appendChild(message);
   }
-  else {
-    message.textContent = "Giỏ hàng của bạn hiện đang trống";
-  }
-  cart.appendChild(message);
-}
 }
 showNotif();
 showgiohang();
-
