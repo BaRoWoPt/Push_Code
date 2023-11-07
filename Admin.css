@@ -252,7 +252,7 @@ html {
   cursor: pointer;
 }
 *:where(
-    :not(html, iframe, canvas, img, svg, video, audio, h2, .check_nav):not(
+    :not(html, iframe, canvas, img, svg, video, audio, h2,  ):not(
         svg *,
         symbol *
       )
