@@ -50,9 +50,12 @@
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src=".//img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="#" class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="#" class="navfooter">Facebook</a></li>
-                        <li class="footer_link"><a href="#" class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
+                                class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
+                                class="navfooter">Facebook</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
+                                class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -224,26 +227,27 @@
                         </p>
                         <div class="form_sign">
                             <div class="info">
-                                <label for="fullname" class="label-form">Họ Và Tên</label>
+                                <label for="fullname" class="label-form ">Họ Và Tên</label>
                                 <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form">
-                                <span class="form_message"></span>
+                                <span class="form_message error"></span>
                             </div>
                             <div class="info">
-                                <label for="thongtin" class="label-form">Số Điện Thoại</label>
+                                <label for="thongtin" class="label-form ">Số Điện Thoại</label>
                                 <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form">
-                                <span class="form_message"></span>
+                                <span class="form_message error"></span>
                             </div>
                             <div class="info">
-                                <label for="gmail" class="label-form">Gmail</label>
+                                <label for="gmail" class="label-form ">Gmail</label>
                                 <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form">
-                                <span class="form_message"></span>
+                                <span class="form_message error"></span>
                             </div>
                             <div class="info">
-                                <label for="buy_ticket" class="label-form">Số lượng vé</label>
+                                <label for="buy_ticket" class="label-form ">Số lượng vé</label>
                                 <input id="buy_ticket" placeholder="Số lượng vé bạn muốn mua" type="number" max="100"
                                     min="0" step="1" class="item_form">
-                                <span class="form_message"></span>
+                                <span class="form_message error" id="buyTicketError"></span>
                             </div>
+                            <span class="full_info"></span>
                             <div class="submit_form">
                                 <button class="done" type="submit" onclick="themvaogiohang(event)">Đặt vé</button>
                             </div>

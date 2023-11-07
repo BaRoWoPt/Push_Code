@@ -86,7 +86,7 @@ validator.isBuyTicket = function (selector) {
     selector: selector,
     test: function (value) {
       // Check if the value is an integer and greater than 0
-      if (Number.isInteger(value) && value > 0) {
+      if (value > 0) {
         return undefined; // Validation passed
       } else {
         return "Bạn phải nhập đúng số lượng vé";

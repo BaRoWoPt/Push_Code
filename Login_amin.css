@@ -22,6 +22,9 @@ html {
 .img_warning {
   filter: invert(100%);
 }
+.form_message.error {
+  color: rgb(223, 44, 44);
+}
 .header {
   position: fixed;
   display: flex;

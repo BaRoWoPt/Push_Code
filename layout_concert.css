@@ -23,6 +23,9 @@ html {
   clear: both;
 }
 
+.form_message.error {
+  color: rgb(223, 88, 88);
+}
 .header {
   top: 0;
   right: 0;
