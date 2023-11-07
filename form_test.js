@@ -89,7 +89,7 @@ validator.isBuyTicket = function (selector) {
       if (Number.isInteger(value) && value > 0) {
         return undefined; // Validation passed
       } else {
-        return "Số lượng vé bạn muốn mua phải là số nguyên dương lớn hơn 0";
+        return "Bạn phải nhập đúng số lượng vé";
       }
     },
   };
