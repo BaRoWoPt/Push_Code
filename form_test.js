@@ -85,7 +85,12 @@ validator.isBuyTicket = function (selector) {
   return {
     selector: selector,
     test: function (value) {
-      return value > 0 ? undefined : "Số lượng vé bạn muốn mua phải lớn hơn 0";
+      // Check if the value is an integer and greater than 0
+      if (Number.isInteger(value) && value > 0) {
+        return undefined; // Validation passed
+      } else {
+        return "Số lượng vé bạn muốn mua phải là số nguyên dương lớn hơn 0";
+      }
     },
   };
 };
