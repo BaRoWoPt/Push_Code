@@ -185,6 +185,7 @@ html {
   align-items: center;
   margin-left: auto;
   gap: 18px;
+  margin-top: 30px;
 }
 .footer_nav li > a {
   position: relative;
@@ -367,9 +368,9 @@ p {
   cursor: pointer;
 }
 *:where(
-    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+    :not(html, iframe, canvas, img, svg, video, audio,):not(svg *, symbol *)
   ) {
-  color: unset;
+  all: unset;
   text-decoration: none;
 }
 @keyframes text-glow {
