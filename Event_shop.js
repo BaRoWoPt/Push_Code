@@ -204,8 +204,14 @@ function showgiohang() {
     var quantityText = quantitySpan.textContent;
     var quantityInput = document.createElement("input");
     quantityInput.classList.add("input_btn");
-    quantityInput.type = "text";
+    quantityInput.type ="number";
     quantityInput.value = quantityText;
+    quantityInput.addEventListener("input", function() {
+      var value = parseInt(quantityInput.value);
+      if (!Number.isInteger(value))   {
+        quantityInput.value = Math.floor(value);
+      }
+    });
     quantityCell.replaceChild(quantityInput, quantitySpan);
 
     var updateButton = cells[6].querySelector("button");
