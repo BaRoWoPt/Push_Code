@@ -7,7 +7,10 @@
 body {
   width: 100vw;
   background-color: #000;
-  overflow-x: hidden;
+  background-image: url(./img/warning.jpg);
+  background-size: cover; /* Đảm bảo hình ảnh nằm vừa với kích thước của phần tử */
+  background-position: center;
+  margin: 0; /* Xóa margin mặc định của body */
 }
 :root {
   --column_img_height: 40vh;
@@ -220,7 +223,7 @@ html {
     width: 100%;
   }
 }
-.main-container{
+.main-container {
   padding-top: 95px;
   height: 100vh;
 }
@@ -252,7 +255,7 @@ html {
   cursor: pointer;
 }
 *:where(
-    :not(html, iframe, canvas, img, svg, video, audio, h2,  ):not(
+    :not(html, iframe, canvas, img, svg, video, audio, h2, ):not(
         svg *,
         symbol *
       )
