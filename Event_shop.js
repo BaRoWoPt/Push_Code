@@ -207,8 +207,8 @@ function showgiohang() {
     quantityInput.type = "number";
     quantityInput.value = quantityText;
     quantityInput.addEventListener("input", function () {
-      var value = parseInt(quantityInput.value);
-      if (!Number.isInteger(value)) {
+      var value = quantityInput.value.replace(/[,]/g, "");
+      if (!Number.isInteger(value) || Number.is) {
         quantityInput.value = Math.floor(value);
       }
     });

@@ -272,10 +272,13 @@ html {
   transform: translateX(8px);
 }
 .main-container {
-  height: 100vh;
+   /* height: 91vh; */
   padding-top: 95px;
   color: white;
   margin-left: 10%;
+}
+h1,
+p {
   font-size: 20px;
 }
 .footer {
