@@ -281,7 +281,7 @@ html {
 .page_nav {
   display: block;
   width: 100vw;
-  height: 3703.38px;
+  height: 100vh;
 }
 .sticky {
   position: sticky;
