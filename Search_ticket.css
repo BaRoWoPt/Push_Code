@@ -9,6 +9,7 @@ body {
   background-image: url(./img/warning.jpg);
   background-size: cover; /* Đảm bảo hình ảnh nằm vừa với kích thước của phần tử */
   background-position: center;
+  background-repeat: no-repeat;
   margin: 0; /* Xóa margin mặc định của body */
 }
 :root {

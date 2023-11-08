@@ -9,6 +9,7 @@ body {
   background-image: url(./img/purchase.jpg);
   background-size: cover; /* Đảm bảo hình ảnh nằm vừa với kích thước của phần tử */
   background-position: center;
+  background-repeat: no-repeat;
   margin: 0; /* Xóa margin mặc định của body */
 }
 :root {
@@ -275,8 +276,8 @@ html {
   transform: translateX(8px);
 }
 .main-container {
-  height: 100vh;
-  padding-top: 95px;
+  height: 91vh;
+  padding-top: 9vh;
   color: white;
   margin-left: 10%;
   font-size: 20px;
