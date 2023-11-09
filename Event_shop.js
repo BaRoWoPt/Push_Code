@@ -207,9 +207,12 @@ function showgiohang() {
     quantityInput.type = "number";
     quantityInput.value = quantityText;
     quantityInput.addEventListener("input", function () {
-      var value = parseInt(quantityInput.value);
-      if (!Number.isInteger(value)) {
-        quantityInput.value = Math.floor(value);
+      var value = quantityInput.value.replace(/[,]/g, "");
+      value = Math.floor(value);
+      if (!Number.isInteger(value) || value <= 0) {
+        quantityInput.value = " ";
+      } else {
+        quantityInput.value = value;
       }
     });
     quantityCell.replaceChild(quantityInput, quantitySpan);
