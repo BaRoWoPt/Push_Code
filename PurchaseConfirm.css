@@ -5,12 +5,13 @@
 }
 body {
   width: 100vw;
+  height: 100vh; /* Đảm bảo chiều cao của body bằng chiều cao của viewport */
   background-color: #000;
   background-image: url(./img/purchase.jpg);
-  background-size: cover; /* Đảm bảo hình ảnh nằm vừa với kích thước của phần tử */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0; /* Xóa margin mặc định của body */
+  margin: 0;
 }
 :root {
   --column_img_height: 40vh;
@@ -276,12 +277,15 @@ html {
   transform: translateX(8px);
 }
 .main-container {
-  /* height: 91vh; */
+  height: 89vh;
   padding-top: 95px;
   color: white;
   margin-left: 10%;
 }
-h1,
+h1 {
+  font-size: 30px;
+  text-shadow: 0 10px 10px rgba(255, 255, 255, 0.658);
+}
 p {
   font-size: 20px;
 }
@@ -289,7 +293,7 @@ p {
   width: 100%;
   height: 70px;
   clear: both;
-  background-color: black;
+  /* background-color: black; */
   position: relative;
   color: hsl(0, 0%, 50%);
   padding-top: 15px;
