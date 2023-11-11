@@ -14,14 +14,14 @@
 
 <body>
     <div class="header">
-        <a href="./Concert_B.html" class="icon">
+        <a href="./Concert_B.php" class="icon">
             <img class="icon_page" src="./img/logo_page.png" alt="">
         </a>
         <div class="menu-items">
-            <a href="Admin.html" class="items border_bottom">
+            <a href="Admin.php" class="items border_bottom">
                 <span id="item">Khách Hàng</span>
             </a>
-            <a href="./Personnel.html" class="items">
+            <a href="./Personnel.php" class="items">
                 <span id="item">Nhân Sự</span>
             </a>
         </div>
@@ -33,8 +33,8 @@
             <i id="icon_close_sidebar" class="icon_close_sidebar fa-solid fa-xmark"></i>
             <main class="sidebar_items">
                 <ul class="option">
-                    <li class="option"><a href="Admin.html">Khách Hàng</a></li>
-                    <li class="option"><a href="Personnel.html">Nhân Sự</a></li>
+                    <li class="option"><a href="Admin.php">Khách Hàng</a></li>
+                    <li class="option"><a href="Personnel.php">Nhân Sự</a></li>
                 </ul>
             </main>
             <footer class="sidebar_footer">
@@ -56,7 +56,7 @@
     <div class="footer">
         <div class="footer-container">
             <div class="company_name">
-                <a class="company-logo" href="./Concert_B.html">
+                <a class="company-logo" href="./Concert_B.php">
                     <img id="logo" src="./img/logo_page.png" alt="">
                 </a>
             </div>

@@ -12,22 +12,23 @@
     <link rel="stylesheet" href="./icon/css/all.min.css">
 </head>
 <div class="header">
-    <a href="./Concert_B.html" class="icon">
+    <a href="./Concert_B.php" class="icon">
         <img class="icon_page" src="./img/logo_page.png" alt="">
     </a>
     <div class="menu-items">
-        <a href="Concert_B.html" class="items border_bottom">
+        <a href="Concert_B.php" class="items border_bottom">
             <span id="item">Trang Chủ</span>
         </a>
-        <a href="./Layout_concert.html" class="items">
+        <a href="./Layout_concert.php" class="items">
             <span id="item">Sự Kiện</span>
         </a>
-        <a href="About_us.html" class="items">
+        <a href="About_us.php" class="items">
             <span id="item">Về Chúng Tôi </span>
         </a>
+
     </div>
     <div class="icon_left">
-        <a style="color: #ffffff;" href="Search_ticket.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a style="color: #ffffff;" href="Search_ticket.php"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
         <a id="icon_open_sidebar" class=" icon_open_sidebar fa-solid fa-bars "></a>
     </div>
@@ -35,10 +36,10 @@
         <i id="icon_close_sidebar" class="icon_close_sidebar fa-solid fa-xmark"></i>
         <main class="sidebar_items">
             <ul class="option">
-                <li class="option"><a href="Concert_B.html">Trang Chủ</a></li>
-                <li class="option"><a href="Layout_concert.html">Sự Kiện</a></li>
-                <li class="option"><a href="About_us.html">Về Chúng Tôi</a></li>
-                <li class="option"><a href="PurchaseConfirm.html">Giỏ Hàng</a></li>
+                <li class="option"><a href="Concert_B.php">Trang Chủ</a></li>
+                <li class="option"><a href="Layout_concert.php">Sự Kiện</a></li>
+                <li class="option"><a href="About_us.php">Về Chúng Tôi</a></li>
+                <li class="option"><a href="PurchaseConfirm.php">Giỏ Hàng</a></li>
                 <li class="option"><a href="#">Quản lí</a></li>
             </ul>
         </main>
@@ -62,7 +63,7 @@
             <h2 class="shopping_bag">Giỏ Hàng Của Bạn</h2>
         </div>
         <footer class="footer_nav">
-            <button onclick="window.location.href='PurchaseConfirm.html' " class="check_nav">
+            <button onclick="window.location.href='PurchaseConfirm.php' " class="check_nav">
                 Check
             </button>
         </footer>
@@ -73,7 +74,7 @@
         <h2>Chào Bạn! Trang này chỉ dành cho người quản lý, vui lòng đăng nhập tài khoản admin!</h2>
     </div>
     <section class="sign_up" id="sign_up">
-        <form id="form_2" class="form" action="/Layout_concert.html" method="get">
+        <form id="form_2" class="form" action="/Layout_concert.php" method="get">
             <div class="content_form">
                 <div class="form_sign">
                     <div class="info">
@@ -99,7 +100,7 @@
 </div>
 <footer class="foooter_page1">
     <div class="lg_end">
-        <a href="./Concert_B.html">
+        <a href="./Concert_B.php">
             <img id="lg_ft" src="./img/logo_page.png" alt=""></a>
 
     </div>

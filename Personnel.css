@@ -7,7 +7,7 @@
 body {
   width: 100vw;
   background-color: #000;
-  /* background-image: url(./img/warning.jpg); */
+  background-image: url(./img/warning.jpg);
   background-size: cover; /* Đảm bảo hình ảnh nằm vừa với kích thước của phần tử */
   background-position: center;
   margin: 0; /* Xóa margin mặc định của body */

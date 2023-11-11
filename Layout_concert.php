@@ -14,28 +14,25 @@
 
 <body>
     <div class="header">
-        <a href="./Concert_B.html" class="icon">
+        <a href="./Concert_B.php" class="icon">
             <img class="icon_page" src="./img/logo_page.png" alt="">
         </a>
         <div class="menu-items">
-            <a href="./Concert_B.html" class="items">
+            <a href="./Concert_B.php" class="items">
                 <span id="item">Trang Chủ</span>
             </a>
-            <a href="Layout_concert.html" class="items border_bottom">
+            <a href="./Layout_concert.php" class="items border_bottom">
                 <span id="item">Sự Kiện</span>
             </a>
-            <a href="About_us.html" class="items">
+            <a href="./About_us.php" class="items">
                 <span id="item">Về Chúng Tôi </span>
             </a>
-            <a href="Search_ticket.html" class="items ">
+            <a href="./Search_ticket.php" class="items ">
                 <span id="item">Kiểm tra vé </span>
-            </a>
-            <a href="blank1.html" class="items">
-                <span id="item">Thông tin vé </span>
             </a>
         </div>
         <div class="icon_left">
-            <a style="color: #ffffff;" href="Search_ticket.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a style="color: #ffffff;" href="Search_ticket.php"><i class="fa-solid fa-magnifying-glass"></i></a>
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
             <a id="icon_open_sidebar" class=" icon_open_sidebar fa-solid fa-bars "></a>
         </div>
@@ -43,11 +40,11 @@
             <i id="icon_close_sidebar" class="icon_close_sidebar fa-solid fa-xmark"></i>
             <main class="sidebar_items">
                 <ul class="option">
-                    <li class="option"><a href="Concert_B.html">Trang Chủ</a></li>
-                    <li class="option"><a href="Layout_concert.html">Sự Kiện</a></li>
-                    <li class="option"><a href="About_us.html">Về Chúng Tôi</a></li>
-                    <li class="option"><a href="PurchaseConfirm.html">Giỏ Hàng</a></li>
-                    <li class="option"><a href="Login_admin.html">Quản lí</a></li>
+                    <li class="option"><a href="Concert_B.php">Trang Chủ</a></li>
+                    <li class="option"><a href="Layout_concert.php">Sự Kiện</a></li>
+                    <li class="option"><a href="About_us.php">Về Chúng Tôi</a></li>
+                    <li class="option"><a href="PurchaseConfirm.php">Giỏ Hàng</a></li>
+                    <li class="option"><a href="Login_admin.php">Quản lí</a></li>
 
                 </ul>
             </main>
@@ -71,7 +68,7 @@
                 <h2 class="shopping_bag">Giỏ Hàng Của Bạn</h2>
             </div>
             <footer class="footer_nav">
-                <button onclick="window.location.href='PurchaseConfirm.html'" class="check_nav">
+                <button onclick="window.location.href='./PurchaseConfirm.php'" class="check_nav">
                     Check
                 </button>
             </footer>
@@ -223,7 +220,7 @@
                 </div>
             </div>
             <section class="sign_up" id="sign_up">
-                <form id="form_1" class="form" action="/Layout_concert.html" method="get">
+                <form id="form_1" class="form" action="PurchaseConfirm.php" method="post">
                     <div class="content_form">
                         <h2>Điền form dưới để đăng kí mua vé trước nhé các bạn ơi.</h2>
                         <p>Vì số lượng vé có hạn nên mọi người đặt đủ vé với số lượng người tham gia giúp ban tổ chức
@@ -233,39 +230,40 @@
                         <div class="form_sign">
                             <div class="info">
                                 <label for="fullname" class="label-form ">Họ Và Tên</label>
-                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form">
+                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="thongtin" class="label-form ">Số Điện Thoại</label>
-                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form">
+                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="gmail" class="label-form ">Gmail</label>
-                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form">
+                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="buy_ticket" class="label-form ">Số lượng vé</label>
                                 <input id="buy_ticket" placeholder="Số lượng vé bạn muốn mua" type="number" max="100"
-                                    min="0" step="1" class="item_form">
+                                    min="0" step="1" class="item_form" name="buy_ticket">
                                 <span class="form_message error" id="buyTicketError"></span>
                             </div>
                             <span class="full_info"></span>
                             <div class="submit_form">
-                                <button class="done" type="submit" onclick="themvaogiohang(event)">Đặt vé</button>
+                                <button class="done" type="submit" name="btn-submit" >Đặt vé</button>
                             </div>
                         </div>
                     </div>
                 </form>
+                <!--onclick="themvaogiohang(event)"-->
                 <div class="pic_ad">
                     <img class="pic_bot" src="./img/pic_bottom.jpeg" alt="">
                 </div>
             </section>
             <footer class="foooter_page1">
                 <div class="lg_end">
-                    <a href="./Concert_B.html">
+                    <a href="./Concert_B.php">
                         <img id="lg_ft" src="./img/logo_page.png" alt=""></a>
 
                 </div>
@@ -273,6 +271,7 @@
         </div>
 
     </div>
+    
     <script src="./form_test.js"></script>
     <script>
         //Output 
@@ -290,8 +289,10 @@
             }
         });
     </script>
+    
     <script src="./layout_concert.js"></script>
     <script src="Event_shop.js"></script>
+    
 </body>
 
 </html>

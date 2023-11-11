@@ -368,7 +368,7 @@ p {
   cursor: pointer;
 }
 *:where(
-    :not(html, iframe, canvas, img, svg, video, audio, ):not(svg *, symbol *)
+    :not(html, iframe, canvas, img, svg, video, audio,):not(svg *, symbol *)
   ) {
   all: unset;
   text-decoration: none;
