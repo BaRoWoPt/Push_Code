@@ -278,29 +278,8 @@ html {
 .check_nav:hover {
   transform: translateX(8px);
 }
-.container_about {
-  flex-direction: column;
-  display: flex;
-}
-.left {
-  background-color: #000;
-  width: 100%;
-  padding-top: 40px;
-  line-height: 1.5;
-}
-.right {
-  background-color: #000;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-}
-
-.crowd {
-  width: 100%;
-  height: 100%;
-  padding: 0 10px;
-  animation: fadeIn 3s;
-  filter: grayscale(100%);
+.page_blank {
+  height: 80vh;
 }
 .logo {
   height: auto;
@@ -310,22 +289,6 @@ html {
 }
 .logo:hover {
   opacity: 1;
-}
-p {
-  color: white;
-  font-size: 25px;
-  margin-right: 40px;
-  padding-bottom: 30px;
-}
-#p1 {
-  text-shadow: #949494;
-  text-align: justify;
-  color: white;
-  font-size: 25px;
-  padding-right: 40px;
-  padding-left: 40px;
-  padding-bottom: 30px;
-  animation: text-glow 2s linear infinite;
 }
 .footer {
   width: 100%;
