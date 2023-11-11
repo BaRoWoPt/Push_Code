@@ -85,7 +85,9 @@
     <div>
 
     <div class="page_blank" >
+        <div class="text">
         <p>hello world<p>
+        </div>
     </div>
 
 
