@@ -5,7 +5,8 @@
 }
 body {
   width: 100vw;
-  background-color: black;
+  background-color: white;
+  color:black;
   /* overflow-x: hidden; */
 }
 :root {

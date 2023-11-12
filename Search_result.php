@@ -1,9 +1,18 @@
-<?php
-     if(isset($_POST['btn-search'])){
-          $fullname = $_POST['fullname'];
-          $phone = $_POST['thongtin'];
-          $email = $_POST['gmail'];
-     }
+<?php 
+    require 'database/connect.php';
+
+    if(isset($_POST['btn-search'])){
+        $fullname = $_POST['fullname'];
+        $telephone = $_POST['thongtin'];
+        $email = $_POST['gmail'];
+        $sql = "select * from `customersorders` where 
+                `fullname` like '%$fullname%' and
+                `telephone` like '%$telephone%' and
+                `email` like '%$email%'";
+
+        $result = $conn->query($sql);
+    }
+    $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,11 +91,58 @@
         </div>
     </div>
 
-    <div>
-
+    
     <div class="page_blank" >
-        <div class="text">
-        <p>hello world<p>
+        <div class="text-result">
+            
+            <?php if($result->num_rows == 0) { ?>
+                <p> <?php echo "Không tìm thấy đơn vé của bạn!"; ?> </p>
+            <?php } else { ?>            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã đơn vé</th>
+                        <th>Họ và Tên</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Số lượng vé</th>
+                        <th>Thành tiền</th>
+                        <th>Ngày đăng ký</th>
+                        <th>Hạn cuối thanh toán</th>
+                        <th>Tình trạng</th>
+                        <th>Tuỳ chỉnh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        while($row = $result->fetch_assoc()){ ?>    
+                        <tr>                        
+                            <td> <?php  $resOrdID = $row["OrderID"];
+                                        echo $resOrdID; ?> </td>
+                            <td> <?php  $resName = $row["fullname"];
+                                        echo $resName ?> </td>
+                            <td> <?php  $resPhone = $row["telephone"];
+                                        echo $resPhone ?> </td>
+                            <td> <?php  $resMail = $row["email"];
+                                        echo $resMail ?> </td>
+                            <td> <?php  $resTicket = $row["ticket"];
+                                        echo $resTicket ?> </td>
+                            <td> <?php  $total = $resTicket * 1000000;
+                                        $money = number_format($total, 0, ',', '.') . ' VNĐ'; 
+                                        print_r($money); ?> </td>
+                            <td> <?php  $resRegDate = $row["regis_day"];
+                                        echo $resRegDate ?> </td>
+                            <td> <?php  $resPayDay = $row["payment_day"];
+                                        echo $resPayDay ?> </td>
+                            <td> <?php  $resStat = $row["status"];
+                                        echo $resStat ?> </td>                            
+                            <td><button class="btn" name="btn-update"><a href="Update_Order.php?Order=<?php echo $resOrdID ?>">Cập nhật</a></button></td>
+                            <td><button class="btn" name="btn-delete" onclick="DeleteAlert()"><a href="Cancel_Order.php?Order=<?php echo $resOrdID ?>">Huỷ đơn</a></button></td>
+                    </tr>
+                    <?php } ?> 
+                </tbody>
+            </table>
+            <?php } ?>
         </div>
     </div>
 
@@ -100,6 +156,7 @@
             </div>
         </div>
     </div>
+    <script>function DeleteAlert(){alert("Đơn hàng của bạn đã được huỷ thành công!");}</script>
 </body>
 <script src="search_result.js"></script>
 <script src="Event_shop.js"></script>

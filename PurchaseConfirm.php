@@ -1,3 +1,36 @@
+<?php
+    require 'database/connect.php';
+
+    if(isset($_POST['btn-submit'])){
+        $fullname = $_POST['fullname'];
+        $phone = $_POST['thongtin'];
+        $email = $_POST['gmail'];
+        $tickets = $_POST['buy_ticket'];
+        $total = $tickets * 1000000;
+        $money = number_format($total, 0, ',', '.') . ' VNĐ'; 
+        $date = date("d/m/Y",strtotime('+3 days'));
+        
+        $subject = "Chào mừng bạn đến với sự kiện của chúng tôi";
+        $body = "Thân chào bạn $fullname,
+    Chúng tôi rất vui với sự hiện diện của bạn tại sự kiện, vui lòng thanh toán $money tới:
+    Số tài khoản:   XXXX-XXXX-XXXX-XXXX
+    Ngân hàng:      YYYYY-bank
+    Trước ngày:     $date
+    
+    Thân ái.
+    The Event Shop";
+        $header = "From: The.Event.Shop.proj@gmail.com";
+        
+        $sql = "insert into `customersorders`(`fullname`, `telephone`, `email`, `ticket`) VALUES ('$fullname','$phone','$email','$tickets')";
+
+        $conn->query($sql);
+
+        //tạm tắt tính năng gửi mail
+        //mail($email,$subject,$body,$header);
+    }
+    $conn->close();
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -75,18 +108,9 @@
         </div>
     </div>
     <div class="main-container">
-        <h1>Xác nhận đặt vé sự kiện</h1>
-        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện, thông tin đơn hàng của bạn!</p>
-
-            <?php
-                //require 'database/connect.php';
-                if(isset($_POST['btn-submit'])){
-                    $fullname = $_POST['fullname'];
-                    $phone = $_POST['thongtin'];
-                    $email = $_POST['gmail'];
-                    $tickets = $_POST['buy_ticket'];
-            }     
-            ?>
+        <h1>Xác nhận đặt vé sự kiện thành công</h1>
+        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện. Vui lòng kiểm tra Email và làm theo Hướng dẫn thanh toán, thông tin đơn hàng của bạn!</p>
+            
             <table id="cart-table">
                 <thread>
                     <tr style="background-color: grey;">
@@ -112,11 +136,7 @@
                             <?php echo $tickets; ?>
                         </td>
                         <td>
-                            <?php 
-                            $total = $tickets * 1000000;
-                            $money = number_format($total, 0, ',', '.') . ' VNĐ'; 
-                            print_r($money);
-                            ?>
+                            <?php echo $money; ?>
                         </td>
                     </tr>
 
@@ -129,8 +149,8 @@
                 </tfoot>
             </table>
             <div style="padding:10px;">
-                <p>
-                    Nếu bạn thấy đơn hàng của bạn có sai sót, vui lòng nhấn vào 
+                <p>                    
+                    Nếu bạn thấy đơn hàng của bạn có sai sót hoặc muốn xem chi tiết đơn hàng, vui lòng nhấn vào 
                     <a href="./Search_ticket.php" class="search-link">Đây!</a> và điền thông tin vé. Chúng tôi sẽ hỗ trợ bạn!
                 </p>
             </div>
