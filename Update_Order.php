@@ -33,40 +33,42 @@ $conn->close();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cập nhật Đơn vé</title>
-    <link rel="stylesheet" href="Update_Order.css">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Cập nhật Đơn vé</title>
+     <link rel="icon" href="./img/icon.svg" 19type="image/x-icon">
+     <link rel="icon" href="./img/icon.svg">
+     <link rel="stylesheet" href="Update_Order.css">
 </head>
 
 <body>
-    <form id="form-update" method="POST">
-        <h2 class="head-update">CẬP NHẬT ĐƠN VÉ</h2>
-        <div class="form-group">
-            <label for="fullname">Họ và tên:</label>
-            <input type="text" id="fullname" name="fullname" value="<?php echo $oldName ?>">
-        </div>
-        <div class="form-group">
-            <label for="thongtin">Điện thoại:</label>
-            <input type="text" id="thongtin" name="thongtin" value="<?php echo $oldPhone ?>">
-        </div>
-        <div class="form-group">
-            <label for="gmail">Email:</label>
-            <input type="text" id="gmail" name="gmail" value="<?php echo $oldMail ?>">
-        </div>
-        <div class="form-group">
-            <label for="ticket">Số lượng vé:</label>
-            <input type="text" id="ticket" name="ticket" value="<?php echo $oldTicket ?>">
-        </div>
+     <form id="form-update" method="POST">
+          <h2 class="head-update">CẬP NHẬT ĐƠN VÉ</h2>
+          <div class="form-group">
+               <label for="fullname">Họ và tên:</label>
+               <input type="text" id="fullname" name="fullname" value="<?php echo $oldName ?>">
+          </div>
+          <div class="form-group">
+               <label for="thongtin">Điện thoại:</label>
+               <input type="text" id="thongtin" name="thongtin" value="<?php echo $oldPhone ?>">
+          </div>
+          <div class="form-group">
+               <label for="gmail">Email:</label>
+               <input type="text" id="gmail" name="gmail" value="<?php echo $oldMail ?>">
+          </div>
+          <div class="form-group">
+               <label for="ticket">Số lượng vé:</label>
+               <input type="text" id="ticket" name="ticket" value="<?php echo $oldTicket ?>">
+          </div>
 
-        <input id="btn-update" type="submit" value="Cập nhật" name="btn-form-update" onclick="UpdateNotif()">
-    </form>
+          <input id="btn-update" type="submit" value="Cập nhật" name="btn-form-update" onclick="UpdateNotif()">
+     </form>
 
-    <script>
-    function UpdateNotif() {
-        alert("Thông tin của bạn đã được cập nhật!");
-    }
-    </script>
+     <script>
+          function UpdateNotif() {
+               alert("Thông tin của bạn đã được cập nhật!");
+          }
+     </script>
 </body>
 
 </html>

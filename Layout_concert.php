@@ -9,6 +9,7 @@
     <title>Sự Kiện | Chúng tôi có âm nhạc </title>
     <link rel="stylesheet" href="./layout_concert.css">
     <link rel="stylesheet" href="./responsive.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 
@@ -350,6 +351,7 @@
 
     EnableDisable();
     </script>
+
 </body>
 
 </html>
