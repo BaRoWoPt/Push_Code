@@ -52,12 +52,9 @@
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src=".//img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                                class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
-                                class="navfooter">Facebook</a></li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                                class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -197,9 +194,7 @@
     </div>
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="Event_shop.js"></script>
 <script src="Concert_B.js"></script>
 <script src="ExternalJS/gsap.min.js"></script>
