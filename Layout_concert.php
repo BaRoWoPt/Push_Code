@@ -230,17 +230,20 @@
                         <div class="form_sign">
                             <div class="info">
                                 <label for="fullname" class="label-form ">Họ Và Tên</label>
-                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname">
+                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form"
+                                    name="fullname">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="thongtin" class="label-form ">Số Điện Thoại</label>
-                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin">
+                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form"
+                                    name="thongtin">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="gmail" class="label-form ">Gmail</label>
-                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail">
+                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form"
+                                    name="gmail">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
@@ -251,7 +254,7 @@
                             </div>
                             <span class="full_info"></span>
                             <div class="submit_form">
-                                <button class="done" type="submit" name="btn-submit" >Đặt vé</button>
+                                <button class="done" type="submit" name="btn-submit">Đặt vé</button>
                             </div>
                         </div>
                     </div>
@@ -270,28 +273,53 @@
         </div>
 
     </div>
-    
+
     <script src="./form_test.js"></script>
     <script>
-        //Output 
-        validator({
-            form: '#form_1',
-            errorSelector: '.form_message',
-            rules: [
-                validator.isRequired('#fullname'),
-                validator.isNumberPhone('#thongtin'),
-                validator.isEmail('#gmail'),
-                validator.isBuyTicket('#buy_ticket'),
-            ],
-            onSubmit: function (data) {
-                console.log(data)
-            }
-        });
+    //Output 
+    validator({
+        form: '#form_1',
+        errorSelector: '.form_message',
+        rules: [
+            validator.isRequired('#fullname'),
+            validator.isNumberPhone('#thongtin'),
+            validator.isEmail('#gmail'),
+            validator.isBuyTicket('#buy_ticket'),
+        ],
+        onSubmit: function(data) {
+            console.log(data)
+        }
+    });
+    document.getElementById("fullname").addEventListener("input", EnableDisable);
+    document.getElementById("thongtin").addEventListener("input", EnableDisable);
+    document.getElementById("gmail").addEventListener("input", EnableDisable);
+    document.getElementById("buy_ticket").addEventListener("input", EnableDisable);
+
+    function EnableDisable() {
+
+        var btnSubmit = document.getElementById("done");
+        var name = document.getElementById("fullname").value.trim();
+        var phone = document.getElementById("thongtin").value.trim();
+        var gmail = document.getElementById("gmail").value.trim();
+        var ticketQuantity = document.getElementById("buy_ticket").value.trim();
+
+        if (
+            name === "" ||
+            phone === "" ||
+            gmail === "" ||
+            ticketQuantity === ""
+        ) {
+            btnSubmit.disabled = true;
+        } else {
+            btnSubmit.disabled = false;
+        }
+    };
+    EnableDisable();
     </script>
-    
+
     <script src="./layout_concert.js"></script>
     <script src="Event_shop.js"></script>
-    
+
 </body>
 
 </html>
