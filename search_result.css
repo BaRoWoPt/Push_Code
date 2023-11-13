@@ -283,6 +283,7 @@ html {
 }
 .page_blank {
   height: 80vh;
+  overflow: auto;
 }
 .logo {
   height: auto;

@@ -85,18 +85,21 @@
                 <div class="form_sign">
                     <div class="info">
                         <label for="fullname" class="label-form">Họ Và Tên</label>
-                        <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname" required>
-                        <span class="form_message"></span>
+                        <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname"
+                            required>
+                        <span class="form_message" id="fullname-error"></span>
                     </div>
                     <div class="info">
                         <label for="thongtin" class="label-form">Số Điện Thoại</label>
-                        <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin" required>
-                        <span class="form_message"></span>
+                        <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin"
+                            required>
+                        <span class="form_message" id="thongtin-error"></span>
                     </div>
                     <div class="info">
                         <label for="gmail" class="label-form">Email</label>
-                        <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail" required>
-                        <span class="form_message"></span>
+                        <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail"
+                            required>
+                        <span class="form_message" id="gmail-error"></span>
                     </div>
                     <div class="submit_form">
                         <button class="done" type="submit" name="btn-search">Tìm Kiếm</button>
@@ -119,19 +122,35 @@
 </body>
 <script src="./form_test.js"></script>
 <script>
-    //Output 
-    validator({
-        form: '#form_3',
-        errorSelector: '.form_message',
-        rules: [
-            validator.isRequired('#fullname'),
-            validator.isNumberPhone('#thongtin'),
-            validator.isEmail('#gmail'),
-        ],
-        onSubmit: function (data) {
-            console.log(data)
+//Output 
+validator({
+    form: '#form_3',
+    errorSelector: '.form_message',
+    rules: [
+        validator.isRequired('#fullname'),
+        validator.isNumberPhone('#thongtin'),
+        validator.isEmail('#gmail'),
+    ],
+    onSubmit: function(data) {
+        console.log(data)
+    }
+});
+</script>
+<script>
+document.querySelector('.done').addEventListener('click', function(event) {
+    var inputs = document.querySelectorAll('.item_form');
+    inputs.forEach(function(input) {
+        var errorElement = document.getElementById(input.id + '-error');
+        if (!input.value.trim()) {
+            event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút submit
+            errorElement.innerHTML = 'Vui lòng nhập thông tin.';
+            input.classList.add('error'); // Thêm lớp error để định dạng viền
+        } else {
+            errorElement.innerHTML = ''; // Xóa thông báo lỗi nếu đã nhập đủ thông tin
+            input.classList.remove('error'); // Loại bỏ lớp error nếu có
         }
     });
+});
 </script>
 <script src="Event_shop.js"></script>
 <script src="Search_ticket.js"></script>

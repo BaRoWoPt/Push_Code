@@ -410,5 +410,17 @@ input.item_form {
   opacity: unset;
 }
 text {
-  color: white;  
+  color: white;
+}
+.form_message {
+  color: #ff0000; /* Màu chữ đỏ */
+  font-size: 14px;
+  display: block;
+  margin-top: 8px;
+}
+
+.error {
+  border: 1px solid #ff0000; /* Màu viền đỏ */
+  padding: 8px;
+  border-radius: 4px; /* Độ cong của góc */
 }
