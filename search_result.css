@@ -5,8 +5,10 @@
 }
 body {
   width: 100vw;
-  background-color: white;
-  color:black;
+  background-color: rgba(0, 0, 0, 0.841);
+  background-size: cover; /* Đảm bảo hình ảnh nằm vừa với kích thước của phần tử */
+  background-position: center;
+  margin: 0; /* Xóa margin mặc định của body */
   /* overflow-x: hidden; */
 }
 :root {
@@ -168,7 +170,7 @@ html {
   margin-top: 24px;
 }
 .sidebar_footer {
-  border-top: 1px solid #94949477;
+  border-top: 1px solid #ffffff77;
   margin-top: 40px;
 }
 .sb_ft_sp {
@@ -350,4 +352,77 @@ html {
     color: #ffffff92; /* Màu chữ ban đầu */
     text-shadow: none; /* Không có hiệu ứng glow */
   }
+}
+#table-result-id {
+  width: 100%;
+  color: white;
+}
+#table-head-id {
+  margin-bottom: 10px; /* Điều chỉnh giá trị này để thay đổi sự ngăn cách */
+}
+
+#table-result-id {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table-result-id,
+#table-head-id,
+#table-body-id th,
+#table-body-id td {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#table-result-id th,
+#table-result-id td {
+  padding: 8px;
+  text-align: left;
+}
+#table-result-id {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table-result-id,
+#table-head-id,
+#table-body-id th,
+#table-body-id td {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#table-result-id th,
+#table-result-id td {
+  padding: 8px;
+  text-align: left;
+}
+.btn-client a {
+  text-decoration: none;
+  color: #000000; /* Màu chữ */
+}
+.btn-client {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #000000; /* Màu đường viền */
+  background-color: #fff; /* Màu nền */
+  border-radius: 5px; /* Bo góc */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.btn-client:hover {
+  background-color: rgb(255, 255, 255); /* Màu nền khi hover */
+  color: #474747; /* Màu chữ khi hover */
+  border-color: #fff; /* Màu đường viền khi hover */
+  text-shadow: 0 3px 3px rgb(222, 222, 222);
+}
+.text-note {
+  padding-left: 38%;
+  padding-top: 20%;
+  display: block;
+  font-size: 30px;
+  color: rgb(197, 58, 58);
 }

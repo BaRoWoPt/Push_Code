@@ -1,18 +1,18 @@
-<?php 
-    require 'database/connect.php';
+<?php
+require 'database/connect.php';
 
-    if(isset($_POST['btn-search'])){
-        $fullname = $_POST['fullname'];
-        $telephone = $_POST['thongtin'];
-        $email = $_POST['gmail'];
-        $sql = "select * from `customersorders` where 
+if (isset($_POST['btn-search'])) {
+    $fullname = $_POST['fullname'];
+    $telephone = $_POST['thongtin'];
+    $email = $_POST['gmail'];
+    $sql = "select * from `customersorders` where 
                 `fullname` like '$fullname' and
                 `telephone` like '$telephone' and
                 `email` like '$email'";
 
-        $result = $conn->query($sql);
-    }
-    $conn->close();
+    $result = $conn->query($sql);
+}
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,13 +67,10 @@
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src=".//img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                                class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
-                                class="navfooter">Facebook</a>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                         </li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                                class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -91,18 +88,20 @@
         </div>
     </div>
 
-    
-    <div class="page_blank" >
+
+    <div class="page_blank">
         <div class="text-result">
-            
-            <?php if($result->num_rows == 0) { ?>
+
+            <?php if ($result->num_rows == 0) { ?>
                 <!--chèn thêm các div khác phủ cái thông báo này-->
-                <p> <?php echo "Không tìm thấy đơn vé của bạn!"; ?> </p>
+                <div class="text-note">
+                    <p class="notifi"></p> <?php echo "Không tìm thấy đơn vé của bạn!"; ?> </p>
+                </div>
                 <!--hết thông báo không tìm được-->
             <?php } else { ?>
                 <!--bảng thông báo, chèn các div khác ở đây-->
-            <table id="table-result-id">
-                <thead id="table-head-id"></thead>
+                <table id="table-result-id">
+                    <thead id="table-head-id"></thead>
                     <tr>
                         <th>Mã đơn vé</th>
                         <th>Họ và Tên</th>
@@ -115,36 +114,36 @@
                         <th>Tình trạng</th>
                         <th>Tuỳ chỉnh</th>
                     </tr>
-                </thead>
-                <tbody id="table-body-id">
-                    <?php 
-                        while($row = $result->fetch_assoc()){ ?>    
-                        <tr>                        
-                            <td> <?php  $resOrdID = $row["OrderID"];
+                    </thead>
+                    <tbody id="table-body-id">
+                        <?php
+                        while ($row = $result->fetch_assoc()) { ?>
+                            <tr>
+                                <td> <?php $resOrdID = $row["OrderID"];
                                         echo $resOrdID; ?> </td>
-                            <td> <?php  $resName = $row["fullname"];
+                                <td> <?php $resName = $row["fullname"];
                                         echo $resName ?> </td>
-                            <td> <?php  $resPhone = $row["telephone"];
+                                <td> <?php $resPhone = $row["telephone"];
                                         echo $resPhone ?> </td>
-                            <td> <?php  $resMail = $row["email"];
+                                <td> <?php $resMail = $row["email"];
                                         echo $resMail ?> </td>
-                            <td> <?php  $resTicket = $row["ticket"];
+                                <td> <?php $resTicket = $row["ticket"];
                                         echo $resTicket ?> </td>
-                            <td> <?php  $total = $resTicket * 1000000;
-                                        $money = number_format($total, 0, ',', '.') . ' VNĐ'; 
+                                <td> <?php $total = $resTicket * 1000000;
+                                        $money = number_format($total, 0, ',', '.') . ' VNĐ';
                                         print_r($money); ?> </td>
-                            <td> <?php  $resRegDate = $row["regis_day"];
+                                <td> <?php $resRegDate = $row["regis_day"];
                                         echo $resRegDate ?> </td>
-                            <td> <?php  $resPayDay = $row["payment_day"];
+                                <td> <?php $resPayDay = $row["payment_day"];
                                         echo $resPayDay ?> </td>
-                            <td> <?php  $resStat = $row["status"];
-                                        echo $resStat ?> </td>                            
-                            <td><button class="btn-client" name="btn-update"><a href="Update_Order.php?Order=<?php echo $resOrdID ?>">Cập nhật</a></button></td>
-                            <td><button class="btn-client" name="btn-delete" onclick="DeleteAlert()"><a href="Cancel_Order.php?Order=<?php echo $resOrdID ?>">Huỷ đơn</a></button></td>
-                    </tr>
-                    <?php } ?> 
-                </tbody>
-            </table>
+                                <td> <?php $resStat = $row["status"];
+                                        echo $resStat ?> </td>
+                                <td><button class="btn-client" name="btn-update"><a href="Update_Order.php?Order=<?php echo $resOrdID ?>">Cập nhật</a></button></td>
+                                <td><button class="btn-client" name="btn-delete" onclick="DeleteAlert()"><a href="Cancel_Order.php?Order=<?php echo $resOrdID ?>">Huỷ đơn</a></button></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             <?php } ?>
         </div>
     </div>
@@ -159,7 +158,11 @@
             </div>
         </div>
     </div>
-    <script>function DeleteAlert(){alert("Đơn hàng của bạn đã được huỷ thành công!");}</script>
+    <script>
+        function DeleteAlert() {
+            alert("Đơn hàng của bạn đã được huỷ thành công!");
+        }
+    </script>
 </body>
 <script src="search_result.js"></script>
 <script src="Event_shop.js"></script>
