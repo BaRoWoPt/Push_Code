@@ -38,8 +38,8 @@
      <title>Cập nhật Đơn vé</title>
 </head>
 <body>
-     <form method="POST">
-          <h2>CẬP NHẬT ĐƠN VÉ</h2>
+     <form id="form-update" method="POST">
+               <h2 class="head-update">CẬP NHẬT ĐƠN VÉ</h2>
                <div class="form-group">
                     <label for="fullname">Họ và tên:</label>
                     <input type="text" id="fullname" name="fullname" value="<?php echo $oldName ?>">
@@ -57,7 +57,7 @@
                     <input type="text" id="ticket" name="ticket" value="<?php echo $oldTicket ?>">
                </div>
 
-          <input type="submit" value="Cập nhật" name="btn-form-update" onclick="UpdateNotif()">
+          <input id="btn-update" type="submit" value="Cập nhật" name="btn-form-update" onclick="UpdateNotif()">
      </form>
      
 <script>
