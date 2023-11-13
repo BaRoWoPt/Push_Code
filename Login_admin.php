@@ -1,3 +1,4 @@
+l
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,12 +48,10 @@
             <footer class="sb_ft_sp">
                 <img class="icon_footer" src=".//img/logo_concert.png" alt="">
                 <ul class="footer_nav">
-                    <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                            class="navfooter">Contact</a></li>
+                    <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
                     <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                     </li>
-                    <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                            class="navfooter">Instagram</a></li>
+                    <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                 </ul>
             </footer>
         </footer>
@@ -84,8 +83,7 @@
                     </div>
                     <div id="eyes" class="info">
                         <label for="password" class="label-form">Mật Khẩu</label>
-                        <input id="password" placeholder="Vui lòng nhập mật khẩu" type="password" class="item_form"
-                            name="password">
+                        <input id="password" placeholder="Vui lòng nhập mật khẩu" type="password" class="item_form" name="password">
                         <span class="form_message error"></span>
                         <div class="eye-icon" onclick="togglePassword()">
                             <i id="eyeIcon" class="fa-solid fa-eye-slash"></i>
