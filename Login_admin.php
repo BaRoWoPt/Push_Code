@@ -77,8 +77,8 @@ l
             <div class="content_form">
                 <div class="form_sign">
                     <div class="info">
-                        <label for="username" class="label-form">Tên đăng nhập</label>
-                        <input id="username" placeholder="Tên đăng nhập" type="text" class="item_form" name="username">
+                        <label for="adminname" class="label-form">Tên đăng nhập</label>
+                        <input id="adminname" placeholder="Tên đăng nhập" type="text" class="item_form" name="adminname">
                         <span class="form_message error"></span>
                     </div>
                     <div id="eyes" class="info">
@@ -114,7 +114,7 @@ l
         form: '#form_2',
         errorSelector: '.form_message',
         rules: [
-            validator.isUsername('#username'),
+            validator.isUsername('#adminname'),
             validator.isPassword('#password'),
         ],
 
