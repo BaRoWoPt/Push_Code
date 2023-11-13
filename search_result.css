@@ -419,6 +419,31 @@ html {
   border-color: #fff; /* Màu đường viền khi hover */
   text-shadow: 0 3px 3px rgb(222, 222, 222);
 }
+#table-result-id {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table-head-id {
+  border-bottom: 2px solid #000; /* Đường ngăn giữa thead và hàng đầu tiên */
+}
+
+#table-head-id th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Đường ngăn giữa các ô của hàng đầu tiên */
+}
+
+#table-result-id th,
+#table-result-id td {
+  border: 1px solid #ddd; /* Đường viền cho tất cả các ô */
+  padding: 8px;
+  text-align: left;
+}
+
+#table-result-id .custom-column {
+  border-bottom: none; /* Loại bỏ đường ngăn cho cột "Tuỳ chỉnh" */
+}
 .text-note {
   padding-left: 38%;
   padding-top: 20%;
