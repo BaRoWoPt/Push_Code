@@ -562,3 +562,19 @@ input.item_form {
   color: rgba(255, 255, 255, 0.682);
   margin-left: 5px;
 }
+.error-message {
+  color: #ff0000; /* Màu chữ đỏ */
+  font-size: 14px;
+  display: block;
+  margin-top: 8px;
+}
+div#error-container {
+  margin-top: 15px;
+}
+.error-container {
+  width: 200px;
+  border: 1px solid #ff0000; /* Màu viền đỏ */
+  padding: 8px;
+  border-radius: 4px; /* Độ cong của góc */
+  display: none; /* Ẩn khung ban đầu */
+}

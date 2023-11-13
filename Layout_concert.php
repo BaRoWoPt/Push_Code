@@ -254,7 +254,10 @@
                             </div>
                             <span class="full_info"></span>
                             <div class="submit_form">
-                                <button class="done" type="submit" name="btn-submit">Đặt vé</button>
+                                <button id="done" class="done" type="submit" name="btn-submit">Đặt vé</button>
+                                <div id="error-container" class="error-container">
+                                    <span id="error-message" class="error-message"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -290,36 +293,63 @@
             console.log(data)
         }
     });
+    </script>
+
+    <script src="./layout_concert.js"></script>
+    <script src="Event_shop.js"></script>
+    <script>
+    document.getElementById("done").addEventListener("click", function(event) {
+        var name = document.getElementById("fullname").value.trim();
+        var phone = document.getElementById("thongtin").value.trim();
+        var gmail = document.getElementById("gmail").value.trim();
+        var ticketQuantity = document.getElementById("buy_ticket").value.trim();
+        var errorContainer = document.getElementById("error-container");
+        var errorMessage = document.getElementById("error-message");
+
+        if (name === "" || phone === "" || gmail === "" || ticketQuantity === "") {
+            event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút submit
+            errorMessage.innerHTML = "Vui lòng nhập đủ thông tin.";
+            errorContainer.style.display = "block"; // Hiển thị khung
+        } else {
+            errorMessage.innerHTML = ""; // Xóa thông báo lỗi nếu đã nhập đủ thông tin
+            errorContainer.style.display = "none"; // Ẩn khung
+        }
+    });
+
     document.getElementById("fullname").addEventListener("input", EnableDisable);
     document.getElementById("thongtin").addEventListener("input", EnableDisable);
     document.getElementById("gmail").addEventListener("input", EnableDisable);
     document.getElementById("buy_ticket").addEventListener("input", EnableDisable);
 
-    function EnableDisable() {
+    document.getElementById("fullname").addEventListener("focus", function() {
+        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
+    });
+    document.getElementById("thongtin").addEventListener("focus", function() {
+        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
+    });
+    document.getElementById("gmail").addEventListener("focus", function() {
+        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
+    });
+    document.getElementById("buy_ticket").addEventListener("focus", function() {
+        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
+    });
 
+    function EnableDisable() {
         var btnSubmit = document.getElementById("done");
         var name = document.getElementById("fullname").value.trim();
         var phone = document.getElementById("thongtin").value.trim();
         var gmail = document.getElementById("gmail").value.trim();
         var ticketQuantity = document.getElementById("buy_ticket").value.trim();
 
-        if (
-            name === "" ||
-            phone === "" ||
-            gmail === "" ||
-            ticketQuantity === ""
-        ) {
-            btnSubmit.disabled = true;
+        if (name === "" || phone === "" || gmail === "" || ticketQuantity === "") {
+            btnSubmit.disabled = false; // Cho phép click nút
         } else {
-            btnSubmit.disabled = false;
+            btnSubmit.disabled = false; // Cho phép click nút
         }
-    };
+    }
+
     EnableDisable();
     </script>
-
-    <script src="./layout_concert.js"></script>
-    <script src="Event_shop.js"></script>
-
 </body>
 
 </html>
