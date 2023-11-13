@@ -85,17 +85,17 @@
                 <div class="form_sign">
                     <div class="info">
                         <label for="fullname" class="label-form">Họ Và Tên</label>
-                        <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname">
+                        <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname" required>
                         <span class="form_message"></span>
                     </div>
                     <div class="info">
                         <label for="thongtin" class="label-form">Số Điện Thoại</label>
-                        <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin">
+                        <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin" required>
                         <span class="form_message"></span>
                     </div>
                     <div class="info">
                         <label for="gmail" class="label-form">Email</label>
-                        <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail">
+                        <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail" required>
                         <span class="form_message"></span>
                     </div>
                     <div class="submit_form">

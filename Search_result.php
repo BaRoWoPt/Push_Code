@@ -6,9 +6,9 @@
         $telephone = $_POST['thongtin'];
         $email = $_POST['gmail'];
         $sql = "select * from `customersorders` where 
-                `fullname` like '%$fullname%' and
-                `telephone` like '%$telephone%' and
-                `email` like '%$email%'";
+                `fullname` like '$fullname' and
+                `telephone` like '$telephone' and
+                `email` like '$email'";
 
         $result = $conn->query($sql);
     }
@@ -96,10 +96,13 @@
         <div class="text-result">
             
             <?php if($result->num_rows == 0) { ?>
+                <!--chèn thêm các div khác phủ cái thông báo này-->
                 <p> <?php echo "Không tìm thấy đơn vé của bạn!"; ?> </p>
-            <?php } else { ?>            
-            <table>
-                <thead>
+                <!--hết thông báo không tìm được-->
+            <?php } else { ?>
+                <!--bảng thông báo, chèn các div khác ở đây-->
+            <table id="table-result-id">
+                <thead id="table-head-id"></thead>
                     <tr>
                         <th>Mã đơn vé</th>
                         <th>Họ và Tên</th>
@@ -113,7 +116,7 @@
                         <th>Tuỳ chỉnh</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="table-body-id">
                     <?php 
                         while($row = $result->fetch_assoc()){ ?>    
                         <tr>                        
@@ -136,8 +139,8 @@
                                         echo $resPayDay ?> </td>
                             <td> <?php  $resStat = $row["status"];
                                         echo $resStat ?> </td>                            
-                            <td><button class="btn" name="btn-update"><a href="Update_Order.php?Order=<?php echo $resOrdID ?>">Cập nhật</a></button></td>
-                            <td><button class="btn" name="btn-delete" onclick="DeleteAlert()"><a href="Cancel_Order.php?Order=<?php echo $resOrdID ?>">Huỷ đơn</a></button></td>
+                            <td><button class="btn-client" name="btn-update"><a href="Update_Order.php?Order=<?php echo $resOrdID ?>">Cập nhật</a></button></td>
+                            <td><button class="btn-client" name="btn-delete" onclick="DeleteAlert()"><a href="Cancel_Order.php?Order=<?php echo $resOrdID ?>">Huỷ đơn</a></button></td>
                     </tr>
                     <?php } ?> 
                 </tbody>
