@@ -16,7 +16,6 @@
     Số tài khoản:   XXXX-XXXX-XXXX-XXXX
     Ngân hàng:      YYYYY-bank
     Trước ngày:     $date
-    
     Thân ái.
     The Event Shop";
         $header = "From: The.Event.Shop.proj@gmail.com";
@@ -34,6 +33,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
     <link rel="icon" href="./img/icon.svg">
     <link rel="stylesheet" href="./icon/css/all.min.css">
     <link rel="stylesheet" href="PurchaseConfirm.css">
-    
+
     <title>Xác nhận đặt vé</title>
 </head>
 
@@ -109,52 +109,54 @@
     </div>
     <div class="main-container">
         <h1>Xác nhận đặt vé sự kiện thành công</h1>
-        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện. Vui lòng kiểm tra Email và làm theo Hướng dẫn thanh toán, thông tin đơn hàng của bạn!</p>
-            
-            <table id="cart-table">
-                <thread>
-                    <tr style="background-color: grey;">
-                        <th>Họ và tên</th>
-                        <th>Số điện thoại</th>
-                        <th>Email</th>
-                        <th>Số lượng vé</th>
-                        <th>Thành tiền</th>
-                    </tr>
-                </thread>
-                <tbody id="cart-body">
-                    <tr>
-                        <td>
-                            <?php echo $fullname; ?>
-                        </td>
-                        <td>
-                            <?php echo $phone; ?>
-                        </td>
-                        <td>
-                            <?php echo $email; ?>
-                        </td>
-                        <td>
-                            <?php echo $tickets; ?>
-                        </td>
-                        <td>
-                            <?php echo $money; ?>
-                        </td>
-                    </tr>
+        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện. Vui lòng kiểm tra Email và làm
+            theo Hướng dẫn thanh toán, thông tin đơn hàng của bạn!</p>
 
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td style="background-color: grey;" colspan="4">Tổng tiền:</td>
-                        <td style="background-color: grey; text-align: center;" id="total-price"></td>
-                    </tr>
-                </tfoot>
-            </table>
-            <div style="padding:10px;">
-                <p>                    
-                    Nếu bạn thấy đơn hàng của bạn có sai sót hoặc muốn xem chi tiết đơn hàng, vui lòng nhấn vào 
-                    <a href="./Search_ticket.php" class="search-link">Đây!</a> và điền thông tin vé. Chúng tôi sẽ hỗ trợ bạn!
-                </p>
-            </div>
-            <!--
+        <table id="cart-table">
+            <thread>
+                <tr style="background-color: grey;">
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Số lượng vé</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thread>
+            <tbody id="cart-body">
+                <tr>
+                    <td>
+                        <?php echo $fullname; ?>
+                    </td>
+                    <td>
+                        <?php echo $phone; ?>
+                    </td>
+                    <td>
+                        <?php echo $email; ?>
+                    </td>
+                    <td>
+                        <?php echo $tickets; ?>
+                    </td>
+                    <td>
+                        <?php echo $money; ?>
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td style="background-color: grey;" colspan="4">Tổng tiền:</td>
+                    <td style="background-color: grey; text-align: center;" id="total-price"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div style="padding:10px;">
+            <p>
+                Nếu bạn thấy đơn hàng của bạn có sai sót hoặc muốn xem chi tiết đơn hàng, vui lòng nhấn vào
+                <a href="./Search_ticket.php" class="search-link">Đây!</a> và điền thông tin vé. Chúng tôi sẽ hỗ trợ
+                bạn!
+            </p>
+        </div>
+        <!--
                 <div class="btn">
                     <input type="submit" class="purchase" name="btn-buy" value="Thanh toán"/>
 
@@ -171,7 +173,7 @@
             </div>
         </div>
     </div>
-    
+
     <script src="Event_shop.js"></script>
     <script src="PurchaseConfirm.js"></script>
 </body>

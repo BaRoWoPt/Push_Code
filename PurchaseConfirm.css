@@ -276,7 +276,7 @@ html {
   transform: translateX(8px);
 }
 .main-container {
-   /* height: 91vh; */
+  height: 91vh;
   padding-top: 95px;
   color: white;
   margin-left: 10%;
@@ -407,9 +407,9 @@ tfoot td {
   padding: 6px;
   color: white;
 }
-.search-link{
-  color: #82EEFD;
+.search-link {
+  color: #82eefd;
 }
-.search-link:hover{
-  color: #007FFF;
+.search-link:hover {
+  color: #007fff;
 }
