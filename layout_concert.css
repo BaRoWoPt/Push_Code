@@ -571,10 +571,3 @@ input.item_form {
 div#error-container {
   margin-top: 15px;
 }
-.error-container {
-  width: 200px;
-  border: 1px solid #ff0000; /* Màu viền đỏ */
-  padding: 8px;
-  border-radius: 4px; /* Độ cong của góc */
-  display: none; /* Ẩn khung ban đầu */
-}

@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #000000;
   margin: 0;
   padding: 0;
   display: flex;
@@ -10,10 +10,10 @@ body {
 }
 
 #form-update {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   width: 300px;
 }
 
@@ -31,20 +31,23 @@ input {
   padding: 8px;
   box-sizing: border-box;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #474747;
   border-radius: 4px;
 }
 
 #btn-update {
-  background-color: #000000;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   padding: 10px 15px;
-  border: none;
+  /* border: none; */
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
 }
 
 #btn-update:hover {
-  background-color: #787878;
+  background-color: #d0d0d0;
+}
+.head-update {
+  padding-left: 40px;
 }
