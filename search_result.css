@@ -285,7 +285,7 @@ html {
   height: 80vh;
   overflow: auto;
   display: flex;
-  JUSTIFY-CONTENT: CENTER;
+  justify-content: CENTER;
 }
 .logo {
   height: auto;
@@ -357,12 +357,11 @@ html {
   }
 }
 .text-result {
-  padding: 0 8px 0 8px;
+  padding: 50px 8px 0 8px;
 }
 #table-result-id {
   width: 100%;
   color: white;
-  
 }
 #table-head-id {
   margin-bottom: 10px; /* Điều chỉnh giá trị này để thay đổi sự ngăn cách */
