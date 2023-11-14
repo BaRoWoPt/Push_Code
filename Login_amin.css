@@ -390,3 +390,6 @@ input.item_form {
   right: 0;
   transform: translate(-50%, -50%);
 }
+.error-message {
+  color: red;
+}

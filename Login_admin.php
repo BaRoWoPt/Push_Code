@@ -48,10 +48,12 @@ l
             <footer class="sb_ft_sp">
                 <img class="icon_footer" src=".//img/logo_concert.png" alt="">
                 <ul class="footer_nav">
-                    <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                    <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
+                            class="navfooter">Contact</a></li>
                     <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                     </li>
-                    <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
+                    <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
+                            class="navfooter">Instagram</a></li>
                 </ul>
             </footer>
         </footer>
@@ -78,23 +80,29 @@ l
                 <div class="form_sign">
                     <div class="info">
                         <label for="adminname" class="label-form">Tên đăng nhập</label>
-                        <input id="adminname" placeholder="Tên đăng nhập" type="text" class="item_form" name="adminname">
+                        <input id="adminname" placeholder="Tên đăng nhập" type="text" class="item_form"
+                            name="adminname">
                         <span class="form_message error"></span>
                     </div>
                     <div id="eyes" class="info">
                         <label for="password" class="label-form">Mật Khẩu</label>
-                        <input id="password" placeholder="Vui lòng nhập mật khẩu" type="password" class="item_form" name="password">
+                        <input id="password" placeholder="Vui lòng nhập mật khẩu" type="password" class="item_form"
+                            name="password">
                         <span class="form_message error"></span>
                         <div class="eye-icon" onclick="togglePassword()">
                             <i id="eyeIcon" class="fa-solid fa-eye-slash"></i>
                         </div>
                     </div>
                     <div class="submit_form">
-                        <button class="done" type="submit">Đăng Nhập</button>
+                        <button class="done" type="button" id="done">Đăng Nhập</button>
+                        <div id="error-container" class="error-container">
+                            <span id="error-message" class="error-message"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </form>
+    </section>
 </div>
 <footer class="foooter_page1">
     <div class="lg_end">
@@ -109,18 +117,36 @@ l
 </body>
 <script src="./form_test.js"></script>
 <script>
-    //Output 
-    validator({
-        form: '#form_2',
-        errorSelector: '.form_message',
-        rules: [
-            validator.isUsername('#adminname'),
-            validator.isPassword('#password'),
-        ],
+//Output 
+validator({
+    form: '#form_2',
+    errorSelector: '.form_message',
+    rules: [
+        validator.isUsername('#adminname'),
+        validator.isPassword('#password'),
+    ],
 
-    });
+});
 </script>
 <script src="./Event_shop.js"></script>
 <script src="./Login_admin.js"></script>
+<script>
+document.getElementById("done").addEventListener("click", function(event) {
+    var adminname = document.getElementById("adminname").value.trim();
+    var password = document.getElementById("password").value.trim();
+    var errorContainer = document.getElementById("error-container");
+    var errorMessage = document.getElementById("error-message");
+
+    if (adminname === "" || password === "") {
+        event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút submit
+        errorMessage.innerHTML = "Vui lòng nhập đủ thông tin.";
+        errorContainer.style.display = "block"; // Hiển thị khung
+    } else {
+        errorMessage.innerHTML = ""; // Xóa thông báo lỗi nếu đã nhập đủ thông tin
+        errorContainer.style.display = "none"; // Ẩn khung
+        document.getElementById("form_2").submit(); // Gửi form nếu thông tin hợp lệ
+    }
+});
+</script>
 
 </html>

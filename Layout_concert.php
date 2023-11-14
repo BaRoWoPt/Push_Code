@@ -316,40 +316,6 @@
             errorContainer.style.display = "none"; // Ẩn khung
         }
     });
-
-    document.getElementById("fullname").addEventListener("input", EnableDisable);
-    document.getElementById("thongtin").addEventListener("input", EnableDisable);
-    document.getElementById("gmail").addEventListener("input", EnableDisable);
-    document.getElementById("buy_ticket").addEventListener("input", EnableDisable);
-
-    document.getElementById("fullname").addEventListener("focus", function() {
-        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
-    });
-    document.getElementById("thongtin").addEventListener("focus", function() {
-        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
-    });
-    document.getElementById("gmail").addEventListener("focus", function() {
-        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
-    });
-    document.getElementById("buy_ticket").addEventListener("focus", function() {
-        document.getElementById("error-container").style.display = "none"; // Ẩn khung khi focus vào trường
-    });
-
-    function EnableDisable() {
-        var btnSubmit = document.getElementById("done");
-        var name = document.getElementById("fullname").value.trim();
-        var phone = document.getElementById("thongtin").value.trim();
-        var gmail = document.getElementById("gmail").value.trim();
-        var ticketQuantity = document.getElementById("buy_ticket").value.trim();
-
-        if (name === "" || phone === "" || gmail === "" || ticketQuantity === "") {
-            btnSubmit.disabled = false; // Cho phép click nút
-        } else {
-            btnSubmit.disabled = false; // Cho phép click nút
-        }
-    }
-
-    EnableDisable();
     </script>
 
 </body>

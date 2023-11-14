@@ -354,6 +354,9 @@ html {
     text-shadow: none; /* Không có hiệu ứng glow */
   }
 }
+.text-result {
+  padding: 0 8px 0 8px;
+}
 #table-result-id {
   width: 100%;
   color: white;
