@@ -382,23 +382,6 @@ html {
   padding: 8px;
   text-align: left;
 }
-#table-result-id {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#table-result-id,
-#table-head-id,
-#table-body-id th,
-#table-body-id td {
-  border: 1px solid rgb(255, 255, 255);
-}
-
-#table-result-id th,
-#table-result-id td {
-  padding: 8px;
-  text-align: left;
-}
 .btn-client a {
   text-decoration: none;
   color: #000000; /* Màu chữ */

@@ -101,13 +101,13 @@ $conn->close();
             </div>
             <?php } else { ?>
             <!-- Bảng thông tin đơn vé -->
+            <?php while ($row = $result->fetch_assoc()) { ?>
             <table id="table-result-id">
                 <thead>
                     <th style="text-align:center" colspan="2">Thông tin đơn vé của bạn</th>
                 </thead>
                 
-                <tbody id="table-body-id">
-                    <?php while ($row = $result->fetch_assoc()) { ?>
+                <tbody id="table-body-id">                    
                     <tr>
                         <th>Mã đơn vé</th>    
                         <td><?php echo $row["OrderID"]; ?></td>
@@ -144,6 +144,16 @@ $conn->close();
                         <th>Tình trạng</th>
                         <td><?php echo $row["status"]; ?></td>
                     </tr>
+
+                    <?php
+                        $currentDate = date('Y-m-d');
+                        $payday = date($row["payment_day"]);
+                        if (($row["status"] === "Đã thanh toán")){ ?>
+                                                
+
+                    <td style="font-weight:bold; font-style: italic; color:red;" colspan="2"> <?php echo "Đã hết hạn thanh toán!"; ?></td>
+                    
+                    <?php } else { ?>
                     <tr>
                         <td class="custom-column">
                             <form action="Update_Order.php" method="get">
@@ -159,6 +169,8 @@ $conn->close();
                             </form>
                         </td>
                     </tr>
+                    <?php } ?>
+
                     <?php } ?>
                 </tbody>
             </table>
