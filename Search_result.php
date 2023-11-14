@@ -103,31 +103,48 @@ $conn->close();
             <!-- Bảng thông tin đơn vé -->
             <table id="table-result-id">
                 <thead>
-                    <tr>
-                        <th>Mã đơn vé</th>
-                        <th>Họ và Tên</th>
-                        <th>Số điện thoại</th>
-                        <th>Email</th>
-                        <th>Số lượng vé</th>
-                        <th>Thành tiền</th>
-                        <th>Ngày đăng ký</th>
-                        <th>Hạn cuối thanh toán</th>
-                        <th>Tình trạng</th>
-                        <th>Tuỳ chỉnh</th>
-                    </tr>
+                    <th style="text-align:center" colspan="2">Thông tin đơn vé của bạn</th>
                 </thead>
+                
                 <tbody id="table-body-id">
                     <?php while ($row = $result->fetch_assoc()) { ?>
                     <tr>
+                        <th>Mã đơn vé</th>    
                         <td><?php echo $row["OrderID"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Họ và Tên</th>
                         <td><?php echo $row["fullname"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Số điện thoại</th>
                         <td><?php echo $row["telephone"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
                         <td><?php echo $row["email"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Số lượng vé</th>
                         <td><?php echo $row["ticket"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Thành tiền</th>
                         <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Ngày đăng ký</th>
                         <td><?php echo $row["regis_day"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Hạn cuối thanh toán</th>
                         <td><?php echo $row["payment_day"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Tình trạng</th>
                         <td><?php echo $row["status"]; ?></td>
+                    </tr>
+                    <tr>
                         <td class="custom-column">
                             <form action="Update_Order.php" method="get">
                                 <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
