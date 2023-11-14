@@ -1,33 +1,33 @@
 <?php
-    require 'database/connect.php';
+require 'database/connect.php';
 
-    if(isset($_POST['btn-submit'])){
-        $fullname = $_POST['fullname'];
-        $phone = $_POST['thongtin'];
-        $email = $_POST['gmail'];
-        $tickets = $_POST['buy_ticket'];
-        $total = $tickets * 1000000;
-        $money = number_format($total, 0, ',', '.') . ' VNĐ'; 
-        $date = date("d/m/Y",strtotime('+3 days'));
-        
-        $subject = "Chào mừng bạn đến với sự kiện của chúng tôi";
-        $body = "Thân chào bạn $fullname,
+if (isset($_POST['btn-submit'])) {
+    $fullname = $_POST['fullname'];
+    $phone = $_POST['thongtin'];
+    $email = $_POST['gmail'];
+    $tickets = $_POST['buy_ticket'];
+    $total = $tickets * 1000000;
+    $money = number_format($total, 0, ',', '.') . ' VNĐ';
+    $date = date("d/m/Y", strtotime('+3 days'));
+
+    $subject = "Chào mừng bạn đến với sự kiện của chúng tôi";
+    $body = "Thân chào bạn $fullname,
     Chúng tôi rất vui với sự hiện diện của bạn tại sự kiện, vui lòng thanh toán $money tới:
     Số tài khoản:   XXXX-XXXX-XXXX-XXXX
     Ngân hàng:      YYYYY-bank
     Trước ngày:     $date
     Thân ái.
     The Event Shop";
-        $header = "From: The.Event.Shop.proj@gmail.com";
-        
-        $sql = "insert into `customersorders`(`fullname`, `telephone`, `email`, `ticket`) VALUES ('$fullname','$phone','$email','$tickets')";
+    $header = "From: The.Event.Shop.proj@gmail.com";
 
-        $conn->query($sql);
+    $sql = "insert into `customersorders`(`fullname`, `telephone`, `email`, `ticket`) VALUES ('$fullname','$phone','$email','$tickets')";
 
-        //tạm tắt tính năng gửi mail
-        //mail($email,$subject,$body,$header);
-    }
-    $conn->close();
+    $conn->query($sql);
+
+    //tạm tắt tính năng gửi mail
+    // mail($email, $subject, $body, $header);
+}
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -84,13 +84,10 @@
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src=".//img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                                class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
-                                class="navfooter">Facebook</a>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                         </li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                                class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
