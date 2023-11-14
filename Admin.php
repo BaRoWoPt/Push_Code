@@ -1,3 +1,10 @@
+<?php
+    require 'database/connect.php';
+
+    $sql = "select * from `customersorders`";
+    $result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,9 +28,9 @@
             <a href="Admin.php" class="items border_bottom">
                 <span id="item">Khách Hàng</span>
             </a>
-            <a href="./Personnel.php" class="items">
+            <!--<a href="./Personnel.php" class="items">
                 <span id="item">Nhân Sự</span>
-            </a>
+            </a>-->
         </div>
         <div class="icon_left">
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
@@ -34,7 +41,7 @@
             <main class="sidebar_items">
                 <ul class="option">
                     <li class="option"><a href="Admin.php">Khách Hàng</a></li>
-                    <li class="option"><a href="Personnel.php">Nhân Sự</a></li>
+                    <!--<li class="option"><a href="Personnel.php">Nhân Sự</a></li>-->
                 </ul>
             </main>
             <footer class="sidebar_footer">
@@ -52,7 +59,21 @@
             </footer>
         </div>
     </div>
-    <div class="main-container"></div>
+    
+    <div class="main-container">
+        <div style="background-color:#858373; color:white";>
+            <div><button>Lọc</button></div>   
+            <div>
+                <table>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
     <div class="footer">
         <div class="footer-container">
             <div class="company_name">

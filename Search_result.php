@@ -148,19 +148,22 @@ $conn->close();
                     <?php
                         $currentDate = date('Y-m-d');
                         $payday = date($row["payment_day"]);
-                        if (($row["status"] === "Đã thanh toán")){ ?>
+                        if (($row["status"] === "Chưa thanh toán")
+                        && ($currentDate > $payday)){ ?>
                                                 
 
                     <td style="font-weight:bold; font-style: italic; color:red;" colspan="2"> <?php echo "Đã hết hạn thanh toán!"; ?></td>
                     
                     <?php } else { ?>
                     <tr>
+                        <?php if (!($row["status"] === "Đã thanh toán")) { ?>
                         <td class="custom-column">
                             <form action="Update_Order.php" method="get">
                                 <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
                                 <button type="submit" class="btn-client" name="btn-update">Cập nhật</button>
                             </form>
                         </td>
+                        <?php } ?>
                         <td>
                             <form action="Cancel_Order.php" method="get"
                                 onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
