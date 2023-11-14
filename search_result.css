@@ -284,6 +284,8 @@ html {
 .page_blank {
   height: 80vh;
   overflow: auto;
+  display: flex;
+  JUSTIFY-CONTENT: CENTER;
 }
 .logo {
   height: auto;
@@ -360,6 +362,7 @@ html {
 #table-result-id {
   width: 100%;
   color: white;
+  
 }
 #table-head-id {
   margin-bottom: 10px; /* Điều chỉnh giá trị này để thay đổi sự ngăn cách */

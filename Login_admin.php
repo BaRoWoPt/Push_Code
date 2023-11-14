@@ -75,7 +75,7 @@ l
         <h2>Chào Bạn! Trang này chỉ dành cho người quản lý, vui lòng đăng nhập tài khoản admin!</h2>
     </div>
     <section class="sign_up" id="sign_up">
-        <form id="form_2" class="form" action="/Layout_concert.php" method="get">
+        <form id="form_2" class="form" action="Admin.php" method="POST">
             <div class="content_form">
                 <div class="form_sign">
                     <div class="info">
