@@ -289,7 +289,6 @@ p {
   width: 100%;
   height: 70px;
   clear: both;
-  background-color: black;
   position: relative;
   color: hsl(0, 0%, 50%);
   padding-top: 15px;
@@ -366,7 +365,6 @@ tfoot td {
 }
 .btn {
   padding-top: 10px;
-  display: flex;
   justify-content: space-between;
 }
 .purchase {
@@ -384,22 +382,6 @@ tfoot td {
   opacity: unset;
   background-color: hsl(0, 0%, 12%);
 }
-.delete-all {
-  font-size: 25px;
-  padding: 10px;
-  background-color: black;
-  border-radius: 8px;
-  border: 1px solid hsl(0, 0%, 12%);
-  color: white;
-  opacity: 0.6;
-  margin-right: 10%;
-  transition: all 0.2s;
-}
-.delete-all:hover {
-  opacity: unset;
-  background-color: hsl(0, 0%, 12%);
-}
-
 .input_btn {
   background-color: #949494;
   border-radius: 1px;

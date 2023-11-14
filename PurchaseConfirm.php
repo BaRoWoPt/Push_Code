@@ -146,20 +146,16 @@ $conn->close();
                 </tr>
             </tfoot>
         </table>
-        <div style="padding:10px;">
+        <div class="btn">
+            <input type="submit" class="purchase" name="btn-buy" value="Thanh toán"/>
+        </div>
+        <div style="padding-top: 10px;">
             <p>
                 Nếu bạn thấy đơn hàng của bạn có sai sót hoặc muốn xem chi tiết đơn hàng, vui lòng nhấn vào
                 <a href="./Search_ticket.php" class="search-link">Đây!</a> và điền thông tin vé. Chúng tôi sẽ hỗ trợ
                 bạn!
             </p>
-        </div>
-        <!--
-                <div class="btn">
-                    <input type="submit" class="purchase" name="btn-buy" value="Thanh toán"/>
-
-                    <button id="delete-all" class="delete-all" name="btn-delAll">Xoá giỏ hàng</button>
-                </div>
-            -->
+        </div>          
     </div>
     <div class="footer">
         <div class="footer-container">
