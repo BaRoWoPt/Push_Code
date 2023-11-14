@@ -357,7 +357,10 @@ html {
   }
 }
 .text-result {
-  padding: 50px 8px 0 8px;
+  padding: 20px 8px 30px 8px;
+  display: flex;
+  justify-content: space-between; /* Canh giữa các phần tử */
+  gap: 20px; /* Khoảng cách giữa các phần tử */
 }
 #table-result-id {
   width: 100%;
@@ -434,8 +437,7 @@ html {
   border-bottom: none; /* Loại bỏ đường ngăn cho cột "Tuỳ chỉnh" */
 }
 .text-note {
-  padding-left: 38%;
-  padding-top: 20%;
+  padding-top: 40%;
   display: block;
   font-size: 30px;
   color: rgb(197, 58, 58);
