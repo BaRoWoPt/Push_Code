@@ -65,31 +65,37 @@
             <form class="button-control" method="get">
                 <table>
                     <tr>
-                        <td><button class="btn" id="pay-day" name="payday"><a href="Admin.php?sort=payday">Sắp xếp theo: Hạn thanh toán</a></button></td>
-                        <td><button class="btn" id="paid" name="paid"><a href="Admin.php?sort=paid">Lọc: Đã thanh toán</a></button></td>
-                        <td><button class="btn" id="cancel" name="cancel"><a href="Admin.php?sort=cancel">Lọc: Đã huỷ đơn/chờ hoàn tiền</a></button></td>
-                        <td><button class="btn" id="unpaid" name="unpaid"><a href="Admin.php?sort=unpaid">Lọc: Chưa thanh toán</a></button></td>
+                        <td><button class="btn-sort" id="pay-day-latest" name="payday_latest"><a href="Admin.php?sort=payday_latest">Hạn thanh toán mới nhất</a></button></td>
+                        <td><button class="btn-sort" id="pay-day-oldest" name="payday_oldest"><a href="Admin.php?sort=payday_oldest">Hạn thanh toán cũ nhất</a></button></td>
+                        <td><button class="btn-sort" id="paid" name="paid"><a href="Admin.php?sort=paid">Lọc: Đã thanh toán</a></button></td>
+                        <td><button class="btn-sort" id="cancel" name="cancel"><a href="Admin.php?sort=cancel">Lọc: Đã huỷ đơn/chờ hoàn tiền</a></button></td>
+                        <td><button class="btn-sort" id="unpaid" name="unpaid"><a href="Admin.php?sort=unpaid">Lọc: Chưa thanh toán</a></button></td>
                     </tr>
                 </table>                
             </form>
+
+
             <div>
                 <table>
                     <tr>
-                        <td>Mã đơn vé</td>
-                        <td>Tên khách hàng</td>
-                        <td>Số điện thoại</td>
-                        <td>Email</td>
-                        <td>Số lượng vé</td>
-                        <td>Thành tiền</td>
-                        <td>Ngày đăng ký</td>
-                        <td>Hạn cuối thanh toán</td>
-                        <td>Tình trạng</td>
-                        <td>Chức năng</td>
+                        <th>Mã đơn vé</th>
+                        <th>Tên khách hàng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Số lượng vé</th>
+                        <th>Thành tiền</th>
+                        <th>Ngày đăng ký</th>
+                        <th>Hạn cuối thanh toán</th>
+                        <th>Tình trạng</th>
+                        <th>Chức năng</th>
                     </tr>
                     <?php 
                         if(isset($_GET['sort'])){
-                            if($_GET['sort'] =='payday'){
+                            if($_GET['sort'] =='payday_latest'){
                                 $sql .= " order by `payment_day` desc";
+                            }
+                            if($_GET['sort'] =='payday_oldest'){
+                                $sql .= " order by `payment_day` asc";
                             }
                             if($_GET['sort'] =='paid'){
                                 $sql .= " where `status` = 'Đã thanh toán' order by `payment_day`";
@@ -116,13 +122,64 @@
                         <td><?php echo $row["regis_day"]; ?></td>
                         <td><?php echo $row["payment_day"]; ?></td>
                         <td><?php echo $row["status"]; ?></td>
-                        <td></td>
+                        <td>
+                            <form class="order-control" method="get">                         
+
+                                <?php if ($row["status"] === 'Chưa thanh toán') {
+                                    $currentDate = date('Y-m-d');
+                                    $payday = date($row["payment_day"]);
+                                    if ($currentDate > $payday) { ?>
+
+                                        <button class="btn-control" style="color: red" name="cancel" value="<?php echo $row["OrderID"];?>">Huỷ đơn vé</button>
+
+                                <?php } else { ?>
+
+                                        <button class="btn-control" style="color: green" name="purchase" value="<?php echo $row["OrderID"];?>">Xác nhận thanh toán</button>
+                            
+                                <?php } } else if ($row["status"] === 'Đã huỷ đơn') {?>
+
+                                        <button class="btn-control" style="color: blue" name= "refund" value="<?php echo $row["OrderID"];?>">Hoàn tiền</button>
+
+                                <?php } ?> 
+
+                            </form>                         
+                        </td>
                     </tr>
                     <?php } ?>
                 </table>
             </div>
         </div>
     </div>
+
+    <?php 
+        if (isset($_GET['cancel'])) {
+            $id = $_GET['cancel'];
+            $sql1 = "delete from `customersorders` where `OrderId` = $id";
+            
+            $conn->query($sql1);
+
+            echo "<script>alert('Xoá đơn vé thành công')</script>";
+            echo "<script>window.location.href = 'admin.php';</script>";
+        }
+        if (isset($_GET['purchase'])) {
+            $id = $_GET['purchase'];
+            $sql1 = "update `customersorders` set `status` = 'Đã thanh toán' where `OrderId` = $id";
+
+            $conn->query($sql1);
+
+            echo "<script>alert('Cập nhật trạng thái thành công!')</script>";
+            echo "<script>window.location.href = 'admin.php';</script>";
+        }
+        if (isset($_GET['refund'])) {
+            $id = $_GET['refund'];
+            $sql1 = "delete from `customersorders` where `OrderId` = $id";
+            
+            $conn->query($sql1);
+
+            echo "<script>alert('Đã hoàn tiền cho khách!')</script>";
+            echo "<script>window.location.href = 'admin.php';</script>";
+        }
+    ?>
 
 
     <div class="footer">
