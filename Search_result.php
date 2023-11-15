@@ -144,38 +144,43 @@ $conn->close();
                         <th>Tình trạng</th>
                         <td><?php echo $row["status"]; ?></td>
                     </tr>
-
-                    <?php
+                    
+                    <tr>
+                    <?php if($row["status"] === 'Chưa thanh toán'){
                         $currentDate = date('Y-m-d');
                         $payday = date($row["payment_day"]);
-                        if (($row["status"] === "Chưa thanh toán")
-                        && ($currentDate > $payday)){ ?>
-                                                
-
-                    <td style="font-weight:bold; font-style: italic; color:red;" colspan="2"> <?php echo "Đã hết hạn thanh toán!"; ?></td>
+                        if ($currentDate > $payday){ ?>
                     
-                    <?php } else { ?>
-                    <tr>
-                        <?php if (!($row["status"] === "Đã thanh toán")) { ?>
+                        <td style="font-weight:bold; font-style: italic; color:red;" colspan="2"> <?php echo "Đã hết hạn thanh toán!"; ?></td>
+                    
+                        <?php } else { ?>
                         <td class="custom-column">
                             <form action="Update_Order.php" method="get">
                                 <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
                                 <button type="submit" class="btn-client" name="btn-update">Cập nhật</button>
                             </form>
                         </td>
-                        <?php } ?>
                         <td>
                             <form action="Cancel_Order.php" method="get"
-                                onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
-                                <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
-                                <button type="submit" class="btn-client" name="btn-delete">Huỷ đơn</button>
+                            onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
+                            <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
+                            <button type="submit" class="btn-client" name="btn-delete">Huỷ đơn</button>
                             </form>
                         </td>
+                        <?php } } else if ($row["status"] === 'Đã huỷ đơn') { ?>                   
+                        <td style="font-weight:bold; font-style: italic; color:orange;" colspan="2"> <?php echo "Đã huỷ / chờ hoàn tiền!"; ?></td>
+                        <?php } else { ?>
+                        <td colspan="2">
+                            <form action="Cancel_Order.php" method="get"
+                            onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
+                            <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
+                            <button type="submit" class="btn-client" name="btn-cancel">Hoàn tiền</button>
+                            </form>
+                        </td>
+                        <?php } ?>
                     </tr>
-                    <?php } ?>
-
-                    <?php } ?>
                 </tbody>
+                <?php } ?>
             </table>
             <?php } ?>
         </div>

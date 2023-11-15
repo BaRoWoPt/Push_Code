@@ -1,7 +1,7 @@
 <?php
     require 'database/connect.php';
 
-    $sql = "select * from `customersorders`";
+    $sql = "select * from `customersorders` ";
     $result = $conn->query($sql);
 ?>
 
@@ -39,9 +39,9 @@
         <div class="sidebar">
             <i id="icon_close_sidebar" class="icon_close_sidebar fa-solid fa-xmark"></i>
             <main class="sidebar_items">
-                <ul class="option">
+                <ul class="option">                    
                     <li class="option"><a href="Admin.php">Khách Hàng</a></li>
-                    <!--<li class="option"><a href="Personnel.php">Nhân Sự</a></li>-->
+                    <li class="option"><a href="#">Đăng xuất</a></li>
                 </ul>
             </main>
             <footer class="sidebar_footer">
@@ -61,13 +61,64 @@
     </div>
     
     <div class="main-container">
-        <div style="background-color:#858373; color:white";>
-            <div><button>Lọc</button></div>   
+        <div style="background-color:#404C5C; color:white";>
+            <form class="button-control" method="get">
+                <table>
+                    <tr>
+                        <td><button class="btn" id="pay-day" name="payday"><a href="Admin.php?sort=payday">Sắp xếp theo: Hạn thanh toán</a></button></td>
+                        <td><button class="btn" id="paid" name="paid"><a href="Admin.php?sort=paid">Lọc: Đã thanh toán</a></button></td>
+                        <td><button class="btn" id="cancel" name="cancel"><a href="Admin.php?sort=cancel">Lọc: Đã huỷ đơn/chờ hoàn tiền</a></button></td>
+                        <td><button class="btn" id="unpaid" name="unpaid"><a href="Admin.php?sort=unpaid">Lọc: Chưa thanh toán</a></button></td>
+                    </tr>
+                </table>                
+            </form>
             <div>
                 <table>
                     <tr>
+                        <td>Mã đơn vé</td>
+                        <td>Tên khách hàng</td>
+                        <td>Số điện thoại</td>
+                        <td>Email</td>
+                        <td>Số lượng vé</td>
+                        <td>Thành tiền</td>
+                        <td>Ngày đăng ký</td>
+                        <td>Hạn cuối thanh toán</td>
+                        <td>Tình trạng</td>
+                        <td>Chức năng</td>
+                    </tr>
+                    <?php 
+                        if(isset($_GET['sort'])){
+                            if($_GET['sort'] =='payday'){
+                                $sql .= " order by `payment_day` desc";
+                            }
+                            if($_GET['sort'] =='paid'){
+                                $sql .= " where `status` = 'Đã thanh toán' order by `payment_day`";
+                            }
+                            if($_GET['sort'] =='cancel'){
+                                $sql .= " where `status` = 'Đã huỷ đơn' order by `payment_day` ";
+                            }
+                            if($_GET['sort'] =='unpaid'){
+                                $sql .= " where `status` = 'Chưa thanh toán' order by `payment_day` ";
+                            }
+                            $result = $conn->query($sql);
+                            $sql = "select * from `customersorders` ";
+                        }
+
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td><?php echo $row["OrderID"]; ?></td>
+                        <td><?php echo $row["fullname"]; ?></td>
+                        <td><?php echo $row["telephone"]; ?></td>
+                        <td><?php echo $row["email"]; ?></td>
+                        <td><?php echo $row["ticket"]; ?></td>
+                        <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
+                        <td><?php echo $row["regis_day"]; ?></td>
+                        <td><?php echo $row["payment_day"]; ?></td>
+                        <td><?php echo $row["status"]; ?></td>
                         <td></td>
                     </tr>
+                    <?php } ?>
                 </table>
             </div>
         </div>
