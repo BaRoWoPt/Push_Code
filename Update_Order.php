@@ -11,21 +11,21 @@ $oldMail = $row['email'];
 $oldTicket = $row['ticket'];
 
 if (isset($_POST['btn-form-update'])) {
-     $fullname = $_POST['fullname'];
-     $telephone = $_POST['thongtin'];
-     $email = $_POST['gmail'];
-     $ticket = $_POST['ticket'];
-     $sql = "update `customersorders` set 
+    $fullname = $_POST['fullname'];
+    $telephone = $_POST['thongtin'];
+    $email = $_POST['gmail'];
+    $ticket = $_POST['ticket'];
+    $sql = "update `customersorders` set 
                     `fullname` = '$fullname', `telephone` = '$telephone',
                     `email` = '$email', `ticket` = '$ticket'
                     where `OrderID` = '$orderID'";
 
-     $result = $conn->query($sql);
-     if ($result) {
-          header('location:Concert_B.php');
-     } else {
-          die(mysqli_error($conn));
-     }
+    $result = $conn->query($sql);
+    if ($result) {
+        header('location:Concert_B.php');
+    } else {
+        die(mysqli_error($conn));
+    }
 }
 $conn->close();
 ?>
@@ -54,24 +54,48 @@ $conn->close();
         <div class="info">
             <label for="fullname">Họ và tên:</label>
             <input type="text" id="fullname" name="fullname" value="<?php echo $oldName ?>">
+            <span class="form_message error"></span>
+
         </div>
         <div class="info">
             <label for="thongtin">Điện thoại:</label>
             <input type="text" id="thongtin" name="thongtin" value="<?php echo $oldPhone ?>">
+            <span class="form_message error"></span>
+
         </div>
         <div class="info">
             <label for="gmail">Email:</label>
             <input type="text" id="gmail" name="gmail" value="<?php echo $oldMail ?>">
+            <span class="form_message error"></span>
+
         </div>
         <div class="info">
             <label for="ticket">Số lượng vé:</label>
             <input type="text" id="ticket" name="ticket" value="<?php echo $oldTicket ?>">
+            <span class="form_message error"></span>
+
         </div>
 
         <input id="btn-update" type="submit" value="Cập nhật" name="btn-form-update">
         <span id="error-message"></span>
     </form>
-
+    <script src="./form_test.js"></script>
+    <script>
+    //Output 
+    validator({
+        form: '#form_3',
+        errorSelector: '.form_message',
+        rules: [
+            validator.isRequired('#fullname'),
+            validator.isNumberPhone('#thongtin'),
+            validator.isEmail('#gmail'),
+            validator.isBuyTicket('#ticket'),
+        ],
+        onSubmit: function(data) {
+            console.log(data)
+        }
+    });
+    </script>
     <script>
     function validateForm() {
         var fullname = document.getElementById('fullname').value;

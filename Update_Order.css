@@ -51,3 +51,6 @@ input {
 .head-update {
   padding-left: 40px;
 }
+.form_message {
+  color: red;
+}
