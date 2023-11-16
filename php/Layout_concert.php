@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./icon/css/all.min.css">
-    <link rel="icon" href="./img/icon.svg">
+    <link rel="stylesheet" href="../icon/css/all.min.css">
+    <link rel="icon" href="../img/icon.svg">
     <title>Sự Kiện | Chúng tôi có âm nhạc </title>
-    <link rel="stylesheet" href="./layout_concert.css">
-    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="../css/layout_concert.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
@@ -16,7 +16,7 @@
 <body>
     <div class="header">
         <a href="./Concert_B.php" class="icon">
-            <img class="icon_page" src="./img/logo_page.png" alt="">
+            <img class="icon_page" src="../img/logo_page.png" alt="">
         </a>
         <div class="menu-items">
             <a href="./Concert_B.php" class="items">
@@ -51,7 +51,7 @@
             </main>
             <footer class="sidebar_footer">
                 <footer class="sb_ft_sp">
-                    <img class="icon_footer" src=".//img/logo_concert.png" alt="">
+                    <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
                         <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
                                 class="navfooter">Contact</a></li>
@@ -130,91 +130,91 @@
                 <div class="show_option">
                     <a href="Artist/MCK.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/mck.jpeg" alt="">
+                            <img class="pic_show" src="../img/mck.jpeg" alt="">
                             <h4 class="name">MCK</h4>
                         </div>
                     </a>
                     <a href="Artist/Tlinh.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/ntpmm_12.jpeg" alt="">
+                            <img class="pic_show" src="../img/ntpmm_12.jpeg" alt="">
                             <h4 class="name">TLINH</h4>
                         </div>
                     </a>
                     <a href="Artist/Hdung.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/Hdung.jpeg" alt="">
+                            <img class="pic_show" src="../img/Hdung.jpeg" alt="">
                             <h4 class="name">Hoàng Dũng</h4>
                         </div>
                     </a>
                     <a href="Artist/Mono.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/mono.webp" alt="">
+                            <img class="pic_show" src="../img/mono.webp" alt="">
                             <h4 class="name">MOno</h4>
                         </div>
                     </a>
                     <a href="Artist/LowG.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/low g.jpeg" alt="">
+                            <img class="pic_show" src="../img/low g.jpeg" alt="">
                             <h4 class="name">Low G</h4>
                         </div>
                     </a>
                     <a href="Artist/Thắng.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="img/thắng.jpeg" alt="">
+                            <img class="pic_show" src="../img/thắng.jpeg" alt="">
                             <h4 class="name">Thắng</h4>
                         </div>
                     </a>
                     <a href="Artist/Chillies.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/Chillies.jpg" alt="">
+                            <img class="pic_show" src="../img/Chillies.jpg" alt="">
                             <h4 class="name">Chillies</h4>
                         </div>
                     </a>
                     <a href="Artist/Obito.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/Obito.webp" alt="">
+                            <img class="pic_show" src="../img/Obito.webp" alt="">
                             <h4 class="name">Obito</h4>
                         </div>
                     </a>
                     <a href="Artist/WrenEvans.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/win_1.jpeg" alt="">
+                            <img class="pic_show" src="../img/win_1.jpeg" alt="">
                             <h4 class="name">Wren Evans</h4>
                         </div>
                     </a>
                     <a href="Artist/7uppercuts.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/7up.jpg" alt="">
+                            <img class="pic_show" src="../img/7up.jpg" alt="">
                             <h4 class="name">7uppercuts</h4>
                         </div>
                     </a>
                     <a href="Artist/Cá Hồi Hoang.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/ca hoi hoang.png" alt="">
+                            <img class="pic_show" src="../img/ca hoi hoang.png" alt="">
                             <h4 class="name">Cá Hồi Hoang</h4>
                         </div>
                     </a>
                     <a href="Artist/WeanLê.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/Wean.jpg" alt="">
+                            <img class="pic_show" src="../img/Wean.jpg" alt="">
                             <h4 class="name">Wean</h4>
                         </div>
                     </a>
                     <a href="Artist/Hieuthuhai.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/Hieuthuhai.webp" alt="">
+                            <img class="pic_show" src="../img/Hieuthuhai.webp" alt="">
                             <h4 class="name">Hieuthuhai</h4>
                         </div>
                     </a>
                     <a href="Artist/Đen Vâu.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/den vau.webp" alt="">
+                            <img class="pic_show" src="../img/den vau.webp" alt="">
                             <h4 class="name">Đen vâu</h4>
                         </div>
                     </a>
                     <a href="Artist/Vũ.html" class="singer">
                         <div class="time_show">
-                            <img class="pic_show" src="./img/Vũ.jpg" alt="">
+                            <img class="pic_show" src="../img/Vũ.jpg" alt="">
                             <h4 class="name">vũ</h4>
                         </div>
                     </a>
@@ -264,13 +264,13 @@
                     </div>
                 </form>
                 <div class="pic_ad">
-                    <img class="pic_bot" src="./img/pic_bottom.jpeg" alt="">
+                    <img class="pic_bot" src="../img/pic_bottom.jpeg" alt="">
                 </div>
             </section>
             <footer class="foooter_page1">
                 <div class="lg_end">
                     <a href="./Concert_B.php">
-                        <img id="lg_ft" src="./img/logo_page.png" alt=""></a>
+                        <img id="lg_ft" src="../img/logo_page.png" alt=""></a>
 
                 </div>
             </footer>
@@ -278,7 +278,7 @@
 
     </div>
 
-    <script src="./form_test.js"></script>
+    <script src="../js/form_test.js"></script>
     <script>
     //Output 
     validator({
@@ -296,8 +296,8 @@
     });
     </script>
 
-    <script src="./layout_concert.js"></script>
-    <script src="Event_shop.js"></script>
+    <script src="../js/layout_concert.js"></script>
+    <script src="../js/Event_shop.js"></script>
     <script>
     document.getElementById("done").addEventListener("click", function(event) {
         var name = document.getElementById("fullname").value.trim();

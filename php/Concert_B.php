@@ -5,24 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chúng tôi có âm nhạc - Thứ giúp bạn thoải mái.</title>
-    <link rel="icon" href="./img/icon.svg" type="image/x-icon">
-    <link rel="icon" href="./img/icon.svg">
-    <link rel="stylesheet" href="Concert_B.css">
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="./icon/css/all.min.css">
-    <link rel="stylesheet" href="TextCSS.css">
+    <link rel="icon" href="../img/icon.svg" type="image/x-icon">
+    <link rel="icon" href="../img/icon.svg">
+    <link rel="stylesheet" href="../Concert_B.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../icon/css/all.min.css">
+    <link rel="stylesheet" href="../css/TextCSS.css">
 </head>
 
 <body>
     <div class="header">
         <a href="./Concert_B.php" class="icon">
-            <img class="icon_page" src="./img/logo_page.png" alt="">
+            <img class="icon_page" src="../img/logo_page.png" alt="">
         </a>
         <div class="menu-items">
             <a href="Concert_B.php" class="items border_bottom">
                 <span id="item">Trang Chủ</span>
             </a>
-            <a href="./Layout_concert.php" class="items">
+            <a href="Layout_concert.php" class="items">
                 <span id="item">Sự Kiện</span>
             </a>
             <a href="About_us.php" class="items">
@@ -50,7 +50,7 @@
             </main>
             <footer class="sidebar_footer">
                 <footer class="sb_ft_sp">
-                    <img class="icon_footer" src=".//img/logo_concert.png" alt="">
+                    <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
                         <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
                         <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a></li>
@@ -80,34 +80,34 @@
                         <div class="cover">
                             <div class="img_show">
                                 <div class="colum_img column_up up_1">
-                                    <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/Wean.jpg" alt="" class="ntpmm_show">
+                                    <img src="../img/Obito.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/mck.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/Wean.jpg" alt="" class="ntpmm_show">
+                                    <img src="../img/Obito.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/mck.jpeg" alt="" class="ntpmm_show">
                                 </div>
                                 <div class="colum_img column_down">
-                                    <img src="./img/mono.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/low g.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/Hieuthuhai.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/7up.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/mono.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/low g.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/Hieuthuhai.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/7up.jpg" alt="" class="ntpmm_show">
+                                    <img src="../img/mono.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/low g.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/Hieuthuhai.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/7up.jpg" alt="" class="ntpmm_show">
+                                    <img src="../img/mono.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/low g.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/Hieuthuhai.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/7up.jpg" alt="" class="ntpmm_show">
                                 </div>
                                 <div class="colum_img column_up up_2">
-                                    <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
-                                    <img src="./img/Wean.jpg" alt="" class="ntpmm_show">
-                                    <img src="./img/Obito.webp" alt="" class="ntpmm_show">
-                                    <img src="./img/mck.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/Wean.jpg" alt="" class="ntpmm_show">
+                                    <img src="../img/Obito.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/mck.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/ntpmm_12.jpeg" alt="" class="ntpmm_show">
+                                    <img src="../img/Wean.jpg" alt="" class="ntpmm_show">
+                                    <img src="../img/Obito.webp" alt="" class="ntpmm_show">
+                                    <img src="../img/mck.jpeg" alt="" class="ntpmm_show">
                                 </div>
                             </div>
                             <div class="footer_page">
@@ -149,7 +149,7 @@
         <div class="page_video_show">
             <div class="page_video">
                 <video autoplay muted loop id="video_concert" style="width: 100%; object-fit: cover;">
-                    <source src="./video/video_concert.mp4" type="video/mp4">
+                    <source src="../video/video_concert.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -187,7 +187,7 @@
         <div class="footer-container">
             <div class="company_name">
                 <a class="company-logo" href="./Concert_B.php">
-                    <img id="logo" src="./img/logo_page.png" alt="">
+                    <img id="logo" src="../img/logo_page.png" alt="">
                 </a>
             </div>
         </div>
@@ -195,13 +195,13 @@
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="Event_shop.js"></script>
-<script src="Concert_B.js"></script>
-<script src="ExternalJS/gsap.min.js"></script>
-<script src="ExternalJS/ScrollSmoother.min.js"></script>
-<script src="ExternalJS/ScrollTrigger.min.js"></script>
-<script src="ExternalJS/SplitText3.min.js"></script>
-<script src="ExternalJS/scriptText.js"></script>
+<script src="../js/Event_shop.js"></script>
+<script src="../js/Concert_B.js"></script>
+<script src="../ExternalJS/gsap.min.js"></script>
+<script src="../ExternalJS/ScrollSmoother.min.js"></script>
+<script src="../ExternalJS/ScrollTrigger.min.js"></script>
+<script src="../ExternalJS/SplitText3.min.js"></script>
+<script src="../ExternalJS/scriptText.js"></script>
 
 
 </html>

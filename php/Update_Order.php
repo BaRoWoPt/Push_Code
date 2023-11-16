@@ -36,7 +36,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cập Nhật Đơn Vé</title>
-    <link rel="stylesheet" href="./Update_Order.css">
+    <link rel="stylesheet" href="../css/Update_Order.css">
 
     <style>
     #error-message {
@@ -79,7 +79,7 @@ $conn->close();
         <input id="btn-update" type="submit" value="Cập nhật" name="btn-form-update">
         <span id="error-message"></span>
     </form>
-    <script src="./form_test.js"></script>
+    <script src="../js/form_test.js "></script>
     <script>
     //Output 
     validator({

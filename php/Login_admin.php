@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chúng tôi có âm nhạc - Thứ giúp bạn thoải mái.</title>
-    <link rel="icon" href="./img/icon.svg" type="image/x-icon">
-    <link rel="icon" href="./img/icon.svg">
-    <link rel="stylesheet" href="Login_amin.css">
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="./icon/css/all.min.css">
+    <link rel="icon" href="../img/icon.svg" type="image/x-icon">
+    <link rel="icon" href="../img/icon.svg">
+    <link rel="stylesheet" href="../css/Login_amin.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../icon/css/all.min.css">
 </head>
 <div class="header">
     <a href="./Concert_B.php" class="icon">
-        <img class="icon_page" src="./img/logo_page.png" alt="">
+        <img class="icon_page" src="../img/logo_page.png" alt="">
     </a>
     <div class="menu-items">
         <a href="Concert_B.php" class="items border_bottom">
@@ -45,7 +45,7 @@
         </main>
         <footer class="sidebar_footer">
             <footer class="sb_ft_sp">
-                <img class="icon_footer" src=".//img/logo_concert.png" alt="">
+                <img class="icon_footer" src="../img/logo_concert.png" alt="">
                 <ul class="footer_nav">
                     <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
                             class="navfooter">Contact</a></li>
@@ -108,7 +108,7 @@
 <footer class="foooter_page1">
     <div class="lg_end">
         <a href="./Concert_B.php">
-            <img id="lg_ft" src="./img/logo_page.png" alt=""></a>
+            <img id="lg_ft" src="../img/logo_page.png" alt=""></a>
 
     </div>
 </footer>
@@ -116,7 +116,7 @@
 <body>
 
 </body>
-<script src="./form_test.js"></script>
+<script src="../js/form_test.js"></script>
 <script>
 //Output 
 validator({
@@ -129,8 +129,8 @@ validator({
 
 });
 </script>
-<script src="./Event_shop.js"></script>
-<script src="./Login_admin.js"></script>
+<script src="../js/Event_shop.js"></script>
+<script src="../js/Login_admin.js"></script>
 <script>
 document.querySelector('#done').addEventListener('click', function(event) {
     var inputs = document.querySelectorAll('.item_form');

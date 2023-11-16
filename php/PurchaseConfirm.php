@@ -37,10 +37,10 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/icon.svg" type="image/x-icon">
-    <link rel="icon" href="./img/icon.svg">
-    <link rel="stylesheet" href="./icon/css/all.min.css">
-    <link rel="stylesheet" href="PurchaseConfirm.css">
+    <link rel="icon" href="../img/icon.svg" type="image/x-icon">
+    <link rel="icon" href="../img/icon.svg">
+    <link rel="stylesheet" href="../icon/css/all.min.css">
+    <link rel="stylesheet" href="../css/PurchaseConfirm.css">
 
     <title>Xác nhận đặt vé</title>
 </head>
@@ -48,7 +48,7 @@ $conn->close();
 <body>
     <div class="header">
         <a href="./Concert_B.php" class="icon">
-            <img class="icon_page" src="./img/logo_page.png" alt="">
+            <img class="icon_page" src="../img/logo_page.png" alt="">
         </a>
         <div class="menu-items">
             <a href="./Concert_B.php" class="items">
@@ -82,7 +82,7 @@ $conn->close();
             </main>
             <footer class="sidebar_footer">
                 <footer class="sb_ft_sp">
-                    <img class="icon_footer" src=".//img/logo_concert.png" alt="">
+                    <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
                         <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
                         <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
@@ -98,7 +98,7 @@ $conn->close();
                 <h2 class="shopping_bag">Giỏ Hàng Của Bạn</h2>
             </div>
             <footer class="footer_nav">
-                <button onclick="window.location.href='../PurchaseConfirm.php'" class="check_nav">
+                <button onclick="window.location.href='PurchaseConfirm.php'" class="check_nav">
                     Check
                 </button>
             </footer>
@@ -161,12 +161,12 @@ $conn->close();
         <div class="footer-container">
             <div class="company_name">
                 <a class="company-logo" href="./Concert_B.php">
-                    <img id="logo" src="./img/logo_page.png" alt="">
+                    <img id="logo" src="../img/logo_page.png" alt="">
                 </a>
             </div>
         </div>
     </div>
 
-    <script src="Event_shop.js"></script>
-    <script src="PurchaseConfirm.js"></script>
+    <script src="../js/Event_shop.js"></script>
+    <script src="../js/PurchaseConfirm.js"></script>
 </body>
