@@ -7,8 +7,8 @@
     <title>Chúng tôi có âm nhạc - Thứ giúp bạn thoải mái.</title>
     <link rel="icon" href="../img/icon.svg" type="image/x-icon">
     <link rel="icon" href="../img/icon.svg">
-    <link rel="stylesheet" href="../Concert_B.css">
-    <link rel="stylesheet" href="../responsive.css">
+    <link rel="stylesheet" href="../css/Concert_B.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../icon/css/all.min.css">
     <link rel="stylesheet" href="../css/TextCSS.css">
 </head>

@@ -1,5 +1,5 @@
 <?php
-require 'database/connect.php';
+require '../database/connect.php';
 
 if (isset($_POST['btn-submit'])) {
     $fullname = $_POST['fullname'];

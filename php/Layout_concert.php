@@ -128,91 +128,91 @@
             </div>
             <div class="show_container">
                 <div class="show_option">
-                    <a href="Artist/MCK.html" class="singer">
+                    <a href="../Artist/MCK.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/mck.jpeg" alt="">
                             <h4 class="name">MCK</h4>
                         </div>
                     </a>
-                    <a href="Artist/Tlinh.html" class="singer">
+                    <a href="../Artist/Tlinh.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/ntpmm_12.jpeg" alt="">
                             <h4 class="name">TLINH</h4>
                         </div>
                     </a>
-                    <a href="Artist/Hdung.html" class="singer">
+                    <a href="../Artist/Hdung.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/Hdung.jpeg" alt="">
                             <h4 class="name">Hoàng Dũng</h4>
                         </div>
                     </a>
-                    <a href="Artist/Mono.html" class="singer">
+                    <a href="../Artist/Mono.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/mono.webp" alt="">
                             <h4 class="name">MOno</h4>
                         </div>
                     </a>
-                    <a href="Artist/LowG.html" class="singer">
+                    <a href="../Artist/LowG.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/low g.jpeg" alt="">
                             <h4 class="name">Low G</h4>
                         </div>
                     </a>
-                    <a href="Artist/Thắng.html" class="singer">
+                    <a href="../Artist/Thắng.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/thắng.jpeg" alt="">
                             <h4 class="name">Thắng</h4>
                         </div>
                     </a>
-                    <a href="Artist/Chillies.html" class="singer">
+                    <a href="../Artist/Chillies.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/Chillies.jpg" alt="">
                             <h4 class="name">Chillies</h4>
                         </div>
                     </a>
-                    <a href="Artist/Obito.html" class="singer">
+                    <a href="../Artist/Obito.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/Obito.webp" alt="">
                             <h4 class="name">Obito</h4>
                         </div>
                     </a>
-                    <a href="Artist/WrenEvans.html" class="singer">
+                    <a href="../Artist/WrenEvans.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/win_1.jpeg" alt="">
                             <h4 class="name">Wren Evans</h4>
                         </div>
                     </a>
-                    <a href="Artist/7uppercuts.html" class="singer">
+                    <a href="../Artist/7uppercuts.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/7up.jpg" alt="">
                             <h4 class="name">7uppercuts</h4>
                         </div>
                     </a>
-                    <a href="Artist/Cá Hồi Hoang.html" class="singer">
+                    <a href="../Artist/Cá Hồi Hoang.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/ca hoi hoang.png" alt="">
                             <h4 class="name">Cá Hồi Hoang</h4>
                         </div>
                     </a>
-                    <a href="Artist/WeanLê.html" class="singer">
+                    <a href="../Artist/WeanLê.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/Wean.jpg" alt="">
                             <h4 class="name">Wean</h4>
                         </div>
                     </a>
-                    <a href="Artist/Hieuthuhai.html" class="singer">
+                    <a href="../Artist/Hieuthuhai.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/Hieuthuhai.webp" alt="">
                             <h4 class="name">Hieuthuhai</h4>
                         </div>
                     </a>
-                    <a href="Artist/Đen Vâu.html" class="singer">
+                    <a href="../Artist/Đen Vâu.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/den vau.webp" alt="">
                             <h4 class="name">Đen vâu</h4>
                         </div>
                     </a>
-                    <a href="Artist/Vũ.html" class="singer">
+                    <a href="../Artist/Vũ.html" class="singer">
                         <div class="time_show">
                             <img class="pic_show" src="../img/Vũ.jpg" alt="">
                             <h4 class="name">vũ</h4>

@@ -1,5 +1,5 @@
 <?php
-require 'database/connect.php';
+require '../database/connect.php';
 
 if (isset($_POST['btn-search'])) {
     $fullname = $_POST['fullname'];
@@ -98,6 +98,7 @@ $conn->close();
             <!-- Thông báo khi không tìm thấy đơn vé -->
             <div class="text-note">
                 <p class="notifi">Không tìm thấy đơn vé của bạn!</p>
+                <p>Quay trở lại trang tìm kiếm <a style="color: white;" href="./Search_ticket.php"><i class="fa-solid fa-arrow-right"></i></a></p>
             </div>
             <?php } else { ?>
             <!-- Bảng thông tin đơn vé -->

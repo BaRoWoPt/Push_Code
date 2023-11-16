@@ -1,5 +1,5 @@
 <?php
-require 'database/connect.php';
+require '../database/connect.php';
 
 $sql = "select * from `customersorders` ";
 $result = $conn->query($sql);
