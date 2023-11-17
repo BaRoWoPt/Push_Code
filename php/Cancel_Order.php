@@ -1,6 +1,6 @@
 <?php
 
-require 'database/connect.php';
+require '../database/connect.php';
 
 if (isset($_GET['Order'])) {
      $id = $_GET['Order'];

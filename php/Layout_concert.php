@@ -263,6 +263,7 @@
                         </div>
                     </div>
                 </form>
+
                 <div class="pic_ad">
                     <img class="pic_bot" src="../img/pic_bottom.jpeg" alt="">
                 </div>

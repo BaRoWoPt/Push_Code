@@ -1,6 +1,6 @@
 <?php
 
-require 'database/connect.php';
+require '../database/connect.php';
 $orderID = $_GET['Order'];
 $sql = "select * from `customersorders` where `OrderID` = $orderID";
 $result = $conn->query($sql);
