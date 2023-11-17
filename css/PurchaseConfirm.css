@@ -276,10 +276,10 @@ html {
   transform: translateX(8px);
 }
 .main-container {
-  height: 91vh;
+  height: 100vh;
   padding-top: 95px;
   color: white;
-  margin-left: 10%;
+  margin-left: 40px;
 }
 h1,
 p {
