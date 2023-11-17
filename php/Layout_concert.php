@@ -31,6 +31,9 @@
             <a href="./Search_ticket.php" class="items ">
                 <span id="item">Kiểm tra vé </span>
             </a>
+            <a href="../php/Layout_concert.php#sign_up" class="items ">
+                <span id="item">Đặt Vé </span>
+            </a>
         </div>
         <div class="icon_left">
             <a style="color: #ffffff;" href="Search_ticket.php"><i class="fa-solid fa-magnifying-glass"></i></a>

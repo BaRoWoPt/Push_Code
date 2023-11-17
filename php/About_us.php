@@ -31,6 +31,9 @@
             <a href="Search_ticket.php" class="items ">
                 <span id="item">Kiểm tra vé </span>
             </a>
+            <a href="../php/Layout_concert.php#sign_up" class="items ">
+                <span id="item">Đặt Vé </span>
+            </a>
         </div>
         <div class="icon_left">
             <a style="color: #ffffff;" href="Search_ticket.php"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -52,13 +55,10 @@
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                                class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
-                                class="navfooter">Facebook</a>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                         </li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                                class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
