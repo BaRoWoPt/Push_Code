@@ -86,10 +86,10 @@ validator.isBuyTicket = function (selector) {
     selector: selector,
     test: function (value) {
       // Check if the value is an integer and greater than 0
-      if (value > 0) {
+      if (value > 0 && value <= 10) {
         return undefined; // Validation passed
       } else {
-        return "Bạn phải nhập đúng số lượng vé";
+        return "Bạn chỉ được mua tối đa 10 vé";
       }
     },
   };
