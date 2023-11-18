@@ -38,6 +38,10 @@ html {
   justify-items: center;
   z-index: 2;
 }
+.header--hidden {
+  transform: translateY(-95px);
+  box-shadow: none;
+}
 .icon {
   display: flex;
   align-items: center;
