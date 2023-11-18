@@ -195,7 +195,6 @@ $result = $conn->query($sql);
     </div>
 
 </body>
-<script src="../js/Event_shop.js"></script>
 <script src="../js/Admin.js"></script>
 
 </html>
