@@ -34,8 +34,7 @@ $result = $conn->query($sql);
             </a>-->
         </div>
         <div class="icon_left">
-            <label class="name_admin"></label></label>Xin chào
-            <strong><?php echo $_SESSION['adminname']; ?></strong></label>
+            <label>Xin chào <strong><?php echo $_SESSION['adminname']; ?></strong></label>
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
             <a id="icon_open_sidebar" class=" icon_open_sidebar fa-solid fa-bars "></a>
 
