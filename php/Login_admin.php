@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../icon/css/all.min.css">
 </head>
+
+<body>
 <div class="header">
     <a href="./Concert_B.php" class="icon">
         <img class="icon_page" src="../img/logo_page.png" alt="">
@@ -73,38 +75,41 @@
     <div class="noti_warning">
         <h2>Chào Bạn! Trang này chỉ dành cho người quản lý, vui lòng đăng nhập tài khoản admin!</h2>
     </div>
+
     <section class="sign_up" id="sign_up">
-        <form id="form_2" class="form" action="Admin.php" method="POST">
+        <form id="form_2" class="form" action="VerifyLogin.php" method="POST">
             <div class="content_form">
                 <div class="form_sign">
                     <div class="info">
                         <label for="adminname" class="label-form">Tên đăng nhập</label>
-                        <input id="adminname" placeholder="Tên đăng nhập" type="text" class="item_form"
-                            name="adminname">
+                        <input id="adminname" placeholder="Tên đăng nhập" type="text" class="item_form" name="adminname">
                         <span class="form_message error" id="adminname-error"></span>
                     </div>
                     <div id="eyes" class="info">
                         <label for="password" class="label-form">Mật Khẩu</label>
-                        <input id="password" placeholder="Vui lòng nhập mật khẩu" type="password" class="item_form"
-                            name="password">
+                        <input id="password" placeholder="Vui lòng nhập mật khẩu" type="password" class="item_form" name="password">
                         <span class="form_message error" id="password-error"></span>
                         <div class="eye-icon" onclick="togglePassword()">
                             <i id="eyeIcon" class="fa-solid fa-eye-slash"></i>
                         </div>
                     </div>
                     <div class="submit_form">
-                        <button class="done" type="button" id="done">Đăng Nhập</button>
+                        <!--
+                        <button class="done" type="button" id="done" name="login">Đăng Nhập</button>
                         <div id="error-container" class="error-container">
                             <span id="error-message" class="error-message"></span>
+                        -->
+                        <!--chỉnh lại logic button-->
+                        <button name="btn-login">Đăng nhập</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
-
-
-    </section>
+    </section>    
 </div>
+
+
 <footer class="foooter_page1">
     <div class="lg_end">
         <a href="./Concert_B.php">
@@ -112,8 +117,6 @@
 
     </div>
 </footer>
-
-<body>
 
 </body>
 <script src="../js/form_test.js"></script>
