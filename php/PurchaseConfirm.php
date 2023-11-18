@@ -117,10 +117,12 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
         </div>
     </div>
     <div class="main-container">
+        <?php 
+        if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESSION['gmail']) || isset($_SESSION['buy_ticket'])) { ?>
         <h1>Xác nhận đặt vé sự kiện thành công</h1>
         <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện. Vui lòng kiểm tra Email và làm
             theo Hướng dẫn thanh toán, thông tin đơn hàng của bạn!</p>
-
+            <?php }?>    
         <form id="form_4" id="finalconfirm" method="POST">
             <table id="cart-table">
                 <thread>
@@ -164,7 +166,7 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
                 </tfoot>
             </table>
             <div class="btn">
-                <input id="done" type="submit" class="purchase" id="purchase" name="btn-buy" value="Thanh toán" />
+                <input id="done" type="submit" class="purchase"  name="btn-buy" value="Thanh toán" />
                 <div id="error-container" class="error-container">
                     <span id="error-message" class="error-message"></span>
                 </div>
@@ -191,7 +193,7 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
             unset($_SESSION['thongtin']);
             unset($_SESSION['gmail']);
             unset($_SESSION['buy_ticket']);
-            echo '<script>document.getElementById("purchase").setAttribute("hidden", "hidden");</script>';
+            echo '<script>document.getElementById("done").setAttribute("hidden", "hidden");</script>';
         ?>
             <div style="padding-top: 10px;">
                 <p>Đặt vé thành công! Vui lòng kiểm tra email!</p>

@@ -1,6 +1,6 @@
 <?php
 session_start();
 
-unset($_SESSION['fullname']);
-echo "<script>window.location.href = 'Admin.php';</script>"
+unset($_SESSION['adminname']);
+echo "<script>window.location.href = 'Login_admin.php';</script>";
 ?>
