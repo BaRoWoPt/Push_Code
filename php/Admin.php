@@ -1,6 +1,13 @@
 <?php
 session_start();
 require '../database/connect.php';
+if(isset($_SESSION['adminname']))
+{
+    $adminfullname = $_SESSION['adminname'];
+} else {
+    echo "<script>alert('Bạn cần đăng nhập!')</script>";
+    echo "<script>window.location.href = 'Login_admin.php';</script>";
+}
 
 $sql = "select * from `customersorders` ";
 $result = $conn->query($sql);
@@ -34,7 +41,7 @@ $result = $conn->query($sql);
             </a>-->
         </div>
         <div class="icon_left">
-            <label>Xin chào <strong><?php echo $_SESSION['adminname']; ?></strong></label>
+            <label>Xin chào <strong><?php echo $adminfullname; ?></strong></label>
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
             <a id="icon_open_sidebar" class=" icon_open_sidebar fa-solid fa-bars "></a>
 
@@ -44,7 +51,7 @@ $result = $conn->query($sql);
             <main class="sidebar_items">
                 <ul class="option">
                     <li class="option"><a href="Admin.php">Khách Hàng</a></li>
-                    <li class="option"><a href="Login_admin.php">Đăng xuất</a></li>
+                    <li class="option"><a href="Logout.php">Đăng xuất</a></li>
                 </ul>
             </main>
             <footer class="sidebar_footer">
