@@ -37,13 +37,14 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cập Nhật Đơn Vé</title>
     <link rel="stylesheet" href="../css/Update_Order.css">
-
+    <link rel="icon" href="../img/icon.svg" type="image/x-icon">
+    <link rel="icon" href="../img/icon.svg">
     <style>
-    #error-message {
-        color: red;
-        font-size: 14px;
-        margin-top: 5px;
-    }
+        #error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 
@@ -81,40 +82,40 @@ $conn->close();
     </form>
     <script src="../js/form_test.js "></script>
     <script>
-    //Output 
-    validator({
-        form: '#form_3',
-        errorSelector: '.form_message',
-        rules: [
-            validator.isRequired('#fullname'),
-            validator.isNumberPhone('#thongtin'),
-            validator.isEmail('#gmail'),
-            validator.isBuyTicket('#ticket'),
-        ],
-        onSubmit: function(data) {
-            console.log(data)
-        }
-    });
+        //Output 
+        validator({
+            form: '#form_3',
+            errorSelector: '.form_message',
+            rules: [
+                validator.isRequired('#fullname'),
+                validator.isNumberPhone('#thongtin'),
+                validator.isEmail('#gmail'),
+                validator.isTicketQuantity('#ticket'),
+            ],
+            onSubmit: function(data) {
+                console.log(data)
+            }
+        });
     </script>
     <script>
-    function validateForm() {
-        var fullname = document.getElementById('fullname').value;
-        var thongtin = document.getElementById('thongtin').value;
-        var gmail = document.getElementById('gmail').value;
-        var ticket = document.getElementById('ticket').value;
-        var errorMessage = document.getElementById('error-message');
+        function validateForm() {
+            var fullname = document.getElementById('fullname').value;
+            var thongtin = document.getElementById('thongtin').value;
+            var gmail = document.getElementById('gmail').value;
+            var ticket = document.getElementById('ticket').value;
+            var errorMessage = document.getElementById('error-message');
 
-        errorMessage.innerHTML = ""; // Đặt lại thông báo trước mỗi lần kiểm tra
+            errorMessage.innerHTML = ""; // Đặt lại thông báo trước mỗi lần kiểm tra
 
-        if (fullname === "" || thongtin === "" || gmail === "" || ticket === "") {
-            errorMessage.innerHTML = "Vui lòng nhập đầy đủ thông tin!";
-            return false; // Ngăn chặn việc submit nếu có lỗi
+            if (fullname === "" || thongtin === "" || gmail === "" || ticket === "") {
+                errorMessage.innerHTML = "Vui lòng nhập đầy đủ thông tin!";
+                return false; // Ngăn chặn việc submit nếu có lỗi
+            }
+
+            // Các kiểm tra khác nếu cần
+
+            return true; // Cho phép submit nếu không có lỗi
         }
-
-        // Các kiểm tra khác nếu cần
-
-        return true; // Cho phép submit nếu không có lỗi
-    }
     </script>
 
 </body>

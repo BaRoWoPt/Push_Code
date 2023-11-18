@@ -101,8 +101,6 @@
                 </div>
             </div>
         </form>
-
-
     </section>
 </div>
 <footer class="foooter_page1">
@@ -129,8 +127,6 @@ validator({
 
 });
 </script>
-<script src="../js/Event_shop.js"></script>
-<script src="../js/Login_admin.js"></script>
 <script>
 document.querySelector('#done').addEventListener('click', function(event) {
     var inputs = document.querySelectorAll('.item_form');
@@ -147,5 +143,8 @@ document.querySelector('#done').addEventListener('click', function(event) {
     });
 });
 </script>
+<script src="../js/Event_shop.js"></script>
+<script src="../js/Login_admin.js"></script>
+
 
 </html>

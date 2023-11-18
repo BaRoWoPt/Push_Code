@@ -131,3 +131,19 @@ function togglePassword() {
     ? "fa-solid fa-eye"
     : "fa-solid fa-eye-slash";
 }
+validator.isTicketQuantity = function (selector) {
+  var inputElement = document.querySelector(selector);
+  var errorMessage = inputElement.nextElementSibling;
+
+  var isValid = true;
+  var ticketQuantity = parseInt(inputElement.value);
+
+  if (isNaN(ticketQuantity) || ticketQuantity < 1 || ticketQuantity > 10) {
+    isValid = false;
+    errorMessage.innerText = "Số lượng vé phải là số từ 1 đến 10";
+  } else {
+    errorMessage.innerText = "";
+  }
+
+  return isValid;
+};
