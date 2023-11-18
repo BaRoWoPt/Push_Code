@@ -33,14 +33,12 @@ $result = $conn->query($sql);
                 <span id="item">Nhân Sự</span>
             </a>-->
         </div>
-        <div>
-            <!--chỉnh cái label này qua trái-->
-            <label>Xin chào <strong><?php echo $_SESSION['adminname']; ?></strong></label>
-        </div>
         <div class="icon_left">
+            <label class="name_admin"></label></label>Xin chào
+            <strong><?php echo $_SESSION['adminname']; ?></strong></label>
             <a id="icon_chart" class="fa-solid fa-bag-shopping" style="color: #ffffff;"></a>
             <a id="icon_open_sidebar" class=" icon_open_sidebar fa-solid fa-bars "></a>
-            
+
         </div>
         <div class="sidebar">
             <i id="icon_close_sidebar" class="icon_close_sidebar fa-solid fa-xmark"></i>

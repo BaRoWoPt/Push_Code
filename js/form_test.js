@@ -105,6 +105,14 @@ validator.isUsername = function (selector) {
     },
   };
 };
+<label
+  style="
+    font-size: 16px;
+    padding-right: 6px;
+"
+>
+  …
+</label>;
 validator.isPassword = function (selector) {
   return {
     selector: selector,

@@ -355,3 +355,7 @@ tr:nth-child(odd) {
 .btn-control:hover {
   opacity: 0.9;
 }
+.name_admin {
+  font-size: 16px;
+  padding-left: 8px;
+}
