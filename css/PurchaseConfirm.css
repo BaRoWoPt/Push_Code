@@ -367,6 +367,7 @@ tfoot td {
   padding-top: 10px;
   justify-content: space-between;
 }
+.home,
 .purchase {
   font-size: 25px;
   padding: 10px;
@@ -378,6 +379,7 @@ tfoot td {
   order: -1;
   transition: all 0.2s;
 }
+.home:hover,
 .purchase:hover {
   opacity: unset;
   background-color: hsl(0, 0%, 12%);
@@ -394,4 +396,27 @@ tfoot td {
 }
 .search-link:hover {
   color: #007fff;
+}
+.item_form {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #949494;
+}
+.item_form:hover {
+  border: 1px solid #08090a;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .item_form {
+    width: 100%; /* You can adjust this based on your design */
+  }
+
+  #cart-table {
+    overflow-x: auto; /* Add horizontal scroll for smaller screens if needed */
+  }
+}
+#error-message {
+  color: red;
 }

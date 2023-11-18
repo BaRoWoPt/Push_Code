@@ -30,7 +30,9 @@
             <a href="Search_ticket.php" class="items border_bottom">
                 <span id="item">Kiểm tra vé </span>
             </a>
-
+            <a href="../php/Layout_concert.php#sign_up" class="items ">
+                <span id="item">Đặt Vé </span>
+            </a>
         </div>
         <div class="icon_left">
             <a style="color: #ffffff;" href="Search_ticket.php"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -53,13 +55,10 @@
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                                class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
-                                class="navfooter">Facebook</a>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                         </li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                                class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -85,20 +84,17 @@
                 <div class="form_sign">
                     <div class="info">
                         <label for="fullname" class="label-form">Họ Và Tên</label>
-                        <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname"
-                            required>
+                        <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname" required>
                         <span class="form_message" id="fullname-error"></span>
                     </div>
                     <div class="info">
                         <label for="thongtin" class="label-form">Số Điện Thoại</label>
-                        <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin"
-                            required>
+                        <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin" required>
                         <span class="form_message" id="thongtin-error"></span>
                     </div>
                     <div class="info">
                         <label for="gmail" class="label-form">Email</label>
-                        <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail"
-                            required>
+                        <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail" required>
                         <span class="form_message" id="gmail-error"></span>
                     </div>
                     <div class="submit_form">
@@ -122,34 +118,34 @@
 </body>
 <script src="../js/form_test.js"></script>
 <script>
-//Output 
-validator({
-    form: '#form_3',
-    errorSelector: '.form_message',
-    rules: [
-        validator.isRequired('#fullname'),
-        validator.isNumberPhone('#thongtin'),
-        validator.isEmail('#gmail'),
-    ],
-    onSubmit: function(data) {
-        console.log(data)
-    }
-});
-</script>
-<script>
-document.querySelector('.done').addEventListener('click', function(event) {
-    var inputs = document.querySelectorAll('.item_form');
-    inputs.forEach(function(input) {
-        var errorElement = document.getElementById(input.id + '-error');
-        if (!input.value.trim()) {
-            event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút submit
-            errorElement.innerHTML = 'Vui lòng nhập thông tin.';
-            input.classList.add('error'); // Thêm lớp error để định dạng viền
-        } else {
-            errorElement.innerHTML = ''; // Xóa thông báo lỗi nếu đã nhập đủ thông tin
-            input.classList.remove('error'); // Loại bỏ lớp error nếu có
+    //Output 
+    validator({
+        form: '#form_3',
+        errorSelector: '.form_message',
+        rules: [
+            validator.isRequired('#fullname'),
+            validator.isNumberPhone('#thongtin'),
+            validator.isEmail('#gmail'),
+        ],
+        onSubmit: function(data) {
+            console.log(data)
         }
     });
-});
+</script>
+<script>
+    document.querySelector('.done').addEventListener('click', function(event) {
+        var inputs = document.querySelectorAll('.item_form');
+        inputs.forEach(function(input) {
+            var errorElement = document.getElementById(input.id + '-error');
+            if (!input.value.trim()) {
+                event.preventDefault(); // Ngăn chặn sự kiện mặc định của nút submit
+                errorElement.innerHTML = 'Vui lòng nhập thông tin.';
+                input.classList.add('error'); // Thêm lớp error để định dạng viền
+            } else {
+                errorElement.innerHTML = ''; // Xóa thông báo lỗi nếu đã nhập đủ thông tin
+                input.classList.remove('error'); // Loại bỏ lớp error nếu có
+            }
+        });
+    });
 </script>
 <script src="../js/Event_shop.js"></script>

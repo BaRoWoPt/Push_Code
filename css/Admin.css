@@ -223,7 +223,7 @@ html {
 }
 .main-container {
   padding-top: 95px;
-  height: 100vh;
+  height: auto;
 }
 .footer {
   width: 100%;

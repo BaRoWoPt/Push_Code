@@ -67,13 +67,10 @@ $conn->close();
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
-                                class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
-                                class="navfooter">Facebook</a>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a>
                         </li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
-                                class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -95,95 +92,94 @@ $conn->close();
     <div class="page_blank">
         <div class="text-result">
             <?php if ($result->num_rows == 0) { ?>
-            <!-- Thông báo khi không tìm thấy đơn vé -->
-            <div class="text-note">
-                <p class="notifi">Không tìm thấy đơn vé của bạn!</p>
-                <p>Quay trở lại trang tìm kiếm <a style="color: white;" href="./Search_ticket.php"><i class="fa-solid fa-arrow-right"></i></a></p>
-            </div>
+                <!-- Thông báo khi không tìm thấy đơn vé -->
+                <div class="text-note">
+                    <p class="notifi">Không tìm thấy đơn vé của bạn!</p>
+                    <p>Quay trở lại trang tìm kiếm <a style="color: white;" href="./Search_ticket.php"><i class="fa-solid fa-arrow-right"></i></a></p>
+                </div>
             <?php } else { ?>
-            <!-- Bảng thông tin đơn vé -->
-            <?php while ($row = $result->fetch_assoc()) { ?>
-            <table id="table-result-id">
-                <thead>
-                    <th style="text-align:center" colspan="2">Thông tin đơn vé của bạn</th>
-                </thead>
-                
-                <tbody id="table-body-id">                    
-                    <tr>
-                        <th>Mã đơn vé</th>    
-                        <td><?php echo $row["OrderID"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Họ và Tên</th>
-                        <td><?php echo $row["fullname"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Số điện thoại</th>
-                        <td><?php echo $row["telephone"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td><?php echo $row["email"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Số lượng vé</th>
-                        <td><?php echo $row["ticket"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Thành tiền</th>
-                        <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Ngày đăng ký</th>
-                        <td><?php echo $row["regis_day"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Hạn cuối thanh toán</th>
-                        <td><?php echo $row["payment_day"]; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Tình trạng</th>
-                        <td><?php echo $row["status"]; ?></td>
-                    </tr>
-                    
-                    <tr>
-                    <?php if($row["status"] === 'Chưa thanh toán'){
-                        $currentDate = date('Y-m-d');
-                        $payday = date($row["payment_day"]);
-                        if ($currentDate > $payday){ ?>
-                    
-                        <td style="font-weight:bold; font-style: italic; color:red;" colspan="2"> <?php echo "Đã hết hạn thanh toán!"; ?></td>
-                    
-                        <?php } else { ?>
-                        <td class="custom-column">
-                            <form action="Update_Order.php" method="get">
-                                <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
-                                <button type="submit" class="btn-client" name="btn-update">Cập nhật</button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="Cancel_Order.php" method="get"
-                            onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
-                            <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
-                            <button type="submit" class="btn-client" name="btn-delete">Huỷ đơn</button>
-                            </form>
-                        </td>
-                        <?php } } else if ($row["status"] === 'Đã huỷ đơn') { ?>                   
-                        <td style="font-weight:bold; font-style: italic; color:orange;" colspan="2"> <?php echo "Đã huỷ / chờ hoàn tiền!"; ?></td>
-                        <?php } else { ?>
-                        <td colspan="2">
-                            <form action="Cancel_Order.php" method="get"
-                            onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
-                            <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
-                            <button type="submit" class="btn-client" name="btn-cancel">Hoàn tiền</button>
-                            </form>
-                        </td>
-                        <?php } ?>
-                    </tr>
-                </tbody>
+                <!-- Bảng thông tin đơn vé -->
+                <?php while ($row = $result->fetch_assoc()) { ?>
+                    <table id="table-result-id">
+                        <thead>
+                            <th style="text-align:center" colspan="2">Thông tin đơn vé của bạn</th>
+                        </thead>
+
+                        <tbody id="table-body-id">
+                            <tr>
+                                <th>Mã đơn vé</th>
+                                <td><?php echo $row["OrderID"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Họ và Tên</th>
+                                <td><?php echo $row["fullname"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Số điện thoại</th>
+                                <td><?php echo $row["telephone"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td><?php echo $row["email"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Số lượng vé</th>
+                                <td><?php echo $row["ticket"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Thành tiền</th>
+                                <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Ngày đăng ký</th>
+                                <td><?php echo $row["regis_day"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Hạn cuối thanh toán</th>
+                                <td><?php echo $row["payment_day"]; ?></td>
+                            </tr>
+                            <tr>
+                                <th>Tình trạng</th>
+                                <td><?php echo $row["status"]; ?></td>
+                            </tr>
+
+                            <tr>
+                                <?php if ($row["status"] === 'Chưa thanh toán') {
+                                    $currentDate = date('Y-m-d');
+                                    $payday = date($row["payment_day"]);
+                                    if ($currentDate > $payday) { ?>
+
+                                        <td style="font-weight:bold; font-style: italic; color:red;" colspan="2"> <?php echo "Đã hết hạn thanh toán!"; ?></td>
+
+                                    <?php } else { ?>
+                                        <td class="custom-column">
+                                            <form action="Update_Order.php" method="get">
+                                                <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
+                                                <button type="submit" class="btn-client" name="btn-update">Cập nhật</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="Cancel_Order.php" method="get" onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
+                                                <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
+                                                <button type="submit" class="btn-client" name="btn-delete">Huỷ đơn</button>
+                                            </form>
+                                        </td>
+                                    <?php }
+                                } else if ($row["status"] === 'Đã huỷ đơn') { ?>
+                                    <td style="font-weight:bold; font-style: italic; color:orange;" colspan="2"> <?php echo "Đã huỷ / chờ hoàn tiền!"; ?></td>
+                                <?php } else { ?>
+                                    <td colspan="2">
+                                        <form action="Cancel_Order.php" method="get" onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?')">
+                                            <input type="hidden" name="Order" value="<?php echo $row["OrderID"]; ?>">
+                                            <button type="submit" class="btn-client" name="btn-cancel">Hoàn tiền</button>
+                                        </form>
+                                    </td>
+                                <?php } ?>
+                            </tr>
+                        </tbody>
+                    <?php } ?>
+                    </table>
                 <?php } ?>
-            </table>
-            <?php } ?>
         </div>
     </div>
 
@@ -198,9 +194,9 @@ $conn->close();
         </div>
     </div>
     <script>
-    function DeleteAlert() {
-        alert("Đơn hàng của bạn đã được huỷ thành công!");
-    }
+        function DeleteAlert() {
+            alert("Đơn hàng của bạn đã được huỷ thành công!");
+        }
     </script>
 </body>
 <script src="../js/search_result.js"></script>

@@ -52,7 +52,7 @@ function showNotif() {
     if (giohang && giohang.length > 0) {
       message.textContent = "Có đơn đặt vé cần xác nhận!";
     } else {
-      message.textContent = "Giỏ hàng của bạn hiện đang trống";
+      message.textContent = "Kiểm tra giỏ hàng của bạn!!!";
     }
     cart.appendChild(message);
   }
@@ -110,7 +110,7 @@ showNotif();
 //   return true;
 // }
 
-// 
+//
 
 // function showgiohang() {
 //   var gh = sessionStorage.getItem("thongtinKH");
@@ -137,7 +137,7 @@ showNotif();
 //     row.appendChild(phoneCell);
 
 //     var emailCell = document.createElement("td");
-//     var emailSpan = document.createElement("span");    
+//     var emailSpan = document.createElement("span");
 //     emailSpan.setAttribute('name','emailSpan');
 //     emailSpan.textContent = item[2];
 //     emailCell.appendChild(emailSpan);
@@ -318,4 +318,3 @@ showNotif();
 // }
 
 //showgiohang();
-
