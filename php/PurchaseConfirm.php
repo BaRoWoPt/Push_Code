@@ -1,6 +1,9 @@
 <?php
 session_start();
 require '../database/connect.php';
+$sql_ticket = "SELECT 200-SUM(Ticket) AS ticketleft FROM CustomersOrders WHERE `status` not like 'Đã huỷ đơn'";
+$result = $conn->query($sql_ticket);
+$getticketleft = $result->fetch_assoc();
 
 if (isset($_POST['btn-submit'])) {
     $_SESSION['fullname'] = $_POST['fullname'];
@@ -27,12 +30,6 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
     $money = number_format($total, 0, ',', '.') . ' VNĐ';
     $date = date("d/m/Y", strtotime('+3 days'));
 }
-
-
-
-//tạm tắt tính năng gửi mail
-// mail($email, $subject, $body, $header);
-
 
 ?>
 
@@ -117,9 +114,8 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
     <?php 
         if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESSION['gmail']) || isset($_SESSION['buy_ticket'])) { ?>
 
-        <h1>Xác nhận đặt vé sự kiện thành công</h1>
-        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện. Vui lòng kiểm tra Email và làm
-            theo Hướng dẫn thanh toán, thông tin đơn hàng của bạn!</p>
+        <h1>Xác nhận đặt vé sự kiện</h1>
+        <p style="padding-top: 20px; padding-bottom: 10px;">Cảm ơn đã đặt vé sự kiện. Thông tin đơn hàng của bạn!</p>
             <?php }?>    
 
         <form id="form_4" id="finalconfirm" method="POST">
@@ -175,10 +171,14 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
 
         <?php
         if (!(isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESSION['gmail']) || isset($_SESSION['buy_ticket']))) {
-            echo "<script>disable()</script>";
+            echo '<script>document.getElementById("done").setAttribute("hidden", "hidden");</script>';
         }
 
         if (isset($_POST['btn-buy'])) {
+            if($getticketleft['ticketleft'] - $_POST['finalbuy_ticket'] < 0){
+                $tk = $getticketleft['ticketleft'];
+                echo "<script>alert('Thật đáng tiếc! Chúng tôi chỉ còn lại $tk vé! Mong bạn vui lòng nhập lại số vé của mình!')</script>";
+            } else {                
 
             $final_fullname = $_POST['finalfullname'];
             $final_telephone = $_POST['finalthongtin'];
@@ -193,16 +193,32 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
             unset($_SESSION['gmail']);
             unset($_SESSION['buy_ticket']);
             echo '<script>document.getElementById("done").setAttribute("hidden", "hidden");</script>';
+            
+            $to_email = $final_email;
+            $subject = "Hướng dẫn thanh toán TheEventShop";
+            $headers = array(
+                "MIME-Version" => "1.0",
+                "Content-Type" => "text/html;charset=UTF-8",
+                "From" => "The.Event.Shop.proj@gmail.com",
+                "Reply-To" => "The.Event.Shop.proj@gmail.com"
+           );
+           ob_start();
+           include("Purchase.php");
+           $message = ob_get_contents();
+           ob_get_clean();
+
+            //tạm tắt tính năng gửi mail
+            //mail($to_email, $subject, $message, $headers);
         ?>
             <div style="padding-top: 10px;">
-                <p>Đặt vé thành công! Vui lòng kiểm tra email!</p>
+                <p>Đặt vé thành công! Vui lòng kiểm tra email và làm theo Hướng dẫn thanh toán!</p>
                 <br>
                 <p>Nếu bạn muốn cập nhật đơn hàng hoặc muốn xem chi tiết đơn hàng, vui lòng nhấn vào
                     <a href="./Search_ticket.php" class="search-link">Đây!</a> và điền thông tin vé. Chúng tôi sẽ hỗ trợ
                     bạn!
                 </p>
             </div>
-        <?php }
+        <?php }}
         if (isset($_POST['btn-home'])) {
             echo "<script>window.location.href = 'Concert_B.php';</script>";
         }

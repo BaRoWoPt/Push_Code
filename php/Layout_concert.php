@@ -1,3 +1,10 @@
+<?php
+require '../database/connect.php';
+$sql = "SELECT 200-SUM(Ticket) AS ticketleft FROM CustomersOrders WHERE `status` not like 'Đã huỷ đơn'";
+$result = $conn->query($sql);
+$total = $result->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -227,6 +234,10 @@
                         <p>Vì số lượng vé có hạn nên mọi người đặt đủ vé với số lượng người tham gia giúp ban tổ chức
                             chúng
                             mình nhé để cho các bạn khác có vé với nha.
+                        </p>
+                        <p style="color:white;">
+                            Số vé còn lại <strong><?php echo 
+$total['ticketleft']; ?></strong> vé!
                         </p>
                         <div class="form_sign">
                             <div class="info">
