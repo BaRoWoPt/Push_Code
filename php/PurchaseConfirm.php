@@ -213,7 +213,7 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
             ob_get_clean();
 
             //tạm tắt tính năng gửi mail
-            //mail($to_email, $subject, $message, $headers);
+            mail($to_email, $subject, $message, $headers);
             
             $conn->close();
         ?>
