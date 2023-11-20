@@ -7,10 +7,16 @@ if(isset($_SESSION['adminname']))
 } else {
     echo "<script>alert('Bạn cần đăng nhập!')</script>";
     echo "<script>window.location.href = 'Login_admin.php';</script>";
-}
-
+ }
+$item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 5;
+$current_page = !empty($_GET['page']) ? $_GET['page'] : 1;
+$offset = ($current_page - 1) * $item_per_page;
 $sql = "select * from `customersorders` ";
 $result = $conn->query($sql);
+$records = $result->num_rows;
+$total_page = ceil($records / $item_per_page);
+$sql_paging = $sql." limit ".$item_per_page." offset ".$offset;
+$result_per_page = $conn->query($sql_paging);
 ?>
 
 <!DOCTYPE html>
@@ -68,21 +74,23 @@ $result = $conn->query($sql);
     </div>
 
     <div class="main-container">
-        <div style="color:white" ;>
+        <div style="color:white;">
+            
+
             <form class="button-control" method="get">
                 <table>
                     <tr>
-                        <td><button class="btn-sort" id="pay-day-latest" name="payday_latest"><a href="Admin.php?sort=payday_latest">Hạn thanh toán mới nhất</a></button></td>
-                        <td><button class="btn-sort" id="pay-day-oldest" name="payday_oldest"><a href="Admin.php?sort=payday_oldest">Hạn thanh toán cũ nhất</a></button></td>
-                        <td><button class="btn-sort" id="paid" name="paid"><a href="Admin.php?sort=paid">Lọc: Đã thanh
-                                    toán</a></button></td>
-                        <td><button class="btn-sort" id="cancel" name="cancel"><a href="Admin.php?sort=cancel">Lọc: Đã
-                                    huỷ đơn/chờ hoàn tiền</a></button></td>
-                        <td><button class="btn-sort" id="unpaid" name="unpaid"><a href="Admin.php?sort=unpaid">Lọc: Chưa
-                                    thanh toán</a></button></td>
+                        <td>
+                            <input type="text" class="search" name="search" />
+                        </td>
+                        <td>
+                            <button class="btn-search" name="btn-search">Tìm Mã Vé</button>
+                        </td>
                     </tr>
                 </table>
             </form>
+            
+            
             <div>
                 <table class=control_customer>
                     <tr>
@@ -98,27 +106,24 @@ $result = $conn->query($sql);
                         <th>Chức năng</th>
                     </tr>
                     <?php
-                    if (isset($_GET['sort'])) {
-                        if ($_GET['sort'] == 'payday_latest') {
-                            $sql .= " order by `payment_day` desc";
-                        }
-                        if ($_GET['sort'] == 'payday_oldest') {
-                            $sql .= " order by `payment_day` asc";
-                        }
-                        if ($_GET['sort'] == 'paid') {
-                            $sql .= " where `status` = 'Đã thanh toán' order by `payment_day`";
-                        }
-                        if ($_GET['sort'] == 'cancel') {
-                            $sql .= " where `status` = 'Đã huỷ đơn' order by `payment_day` ";
-                        }
-                        if ($_GET['sort'] == 'unpaid') {
-                            $sql .= " where `status` = 'Chưa thanh toán' order by `payment_day` ";
-                        }
+                    include 'Pagination.php';
+                    if (isset($_GET['btn-search']))
+                    {
+                        $search = $_GET['search'];
+                        $sql = "select * from `customersorders` where `orderid` = $search ";
                         $result = $conn->query($sql);
-                        $sql = "select * from `customersorders` ";
+                        $records = $result->num_rows;
                     }
-
-                    while ($row = $result->fetch_assoc()) {
+                    $sql = "select * from `customersorders` ";
+                    if ($records === 0) {?>
+                        <tr>
+                            <td colspan="10">
+                                <div class="not-found">Không tìm thấy đơn vé!</div>
+                            </td>
+                        </tr>
+                    <?php } else { 
+                    
+                    while ($row = $result_per_page->fetch_assoc()) {
                     ?>
                         <tr>
                             <td><?php echo $row["OrderID"]; ?></td>
@@ -154,9 +159,10 @@ $result = $conn->query($sql);
                                 </form>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php }} ?>
                 </table>
             </div>
+            
         </div>
     </div>
 
@@ -200,7 +206,6 @@ $result = $conn->query($sql);
             </div>
         </div>
     </div>
-
 </body>
 <script src="../js/Admin.js"></script>
 

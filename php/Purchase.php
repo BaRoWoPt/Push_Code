@@ -19,6 +19,7 @@
         <div style="margin-left: 10%;margin-right: 10%; font-size: 25px; line-height: 1.5; border-bottom: 1px solid #808080;padding-bottom: 20px;">
             <p style="font-size: 40px;">Cảm ơn đã đặt vé sự kiện của chúng tôi!</p>
             <p>Eventshop xin xác nhận lại thông tin của khách hàng: </p>
+            <li>Mã đơn vé: <?php echo $newOrderID['OrderID']; ?></li>
             <li>Họ và tên: <?php echo $final_fullname; ?></li>
             <li>Số điện thoại: <?php echo $final_telephone; ?></li>
             <li>Gmail: <?php echo $final_email ?></li>
@@ -33,6 +34,7 @@
             <li>Trước ngày: <?php $currentDate = date('Y-m-d'); 
             echo date('d-m-Y', strtotime($currentDate. ' + 4 days'));
              ?></li>
+            <li>Nội dung: Thanh toan don ve <?php echo $newOrderID['OrderID']; ?></li>
             <li>Xin lưu ý: Vui lòng thanh toán đúng thời hạn nếu không đơn vé sẽ bị huỷ!</li>
         </div>
         <div>

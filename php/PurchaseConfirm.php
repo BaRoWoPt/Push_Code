@@ -179,6 +179,7 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
                 $tk = $getticketleft['ticketleft'];
                 echo "<script>alert('Thật đáng tiếc! Chúng tôi chỉ còn lại $tk vé! Mong bạn vui lòng nhập lại số vé của mình!')</script>";
             } else {                
+                echo '<script>document.getElementById("done").setAttribute("hidden", "hidden");</script>';
 
             $final_fullname = $_POST['finalfullname'];
             $final_telephone = $_POST['finalthongtin'];
@@ -187,13 +188,17 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
 
             $sql = "insert into `customersorders`(`fullname`, `telephone`, `email`, `ticket`) VALUES ('$final_fullname','$final_telephone','$final_email','$final_ticket')";
             $conn->query($sql);
-            $conn->close();
             unset($_SESSION['fullname']);
             unset($_SESSION['thongtin']);
             unset($_SESSION['gmail']);
             unset($_SESSION['buy_ticket']);
-            echo '<script>document.getElementById("done").setAttribute("hidden", "hidden");</script>';
             
+            $sql = "SELECT * FROM `customersorders` ORDER BY `OrderID` DESC LIMIT 1";    
+            $resultID = $conn->query($sql);
+            $newID = $result->fetch_assoc();
+            echo $newID['OrderID'];
+
+
             $to_email = $final_email;
             $subject = "Hướng dẫn thanh toán TheEventShop";
             $headers = array(
@@ -201,14 +206,16 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
                 "Content-Type" => "text/html;charset=UTF-8",
                 "From" => "The.Event.Shop.proj@gmail.com",
                 "Reply-To" => "The.Event.Shop.proj@gmail.com"
-           );
-           ob_start();
-           include("Purchase.php");
-           $message = ob_get_contents();
-           ob_get_clean();
+            );
+            ob_start();
+            include("Purchase.php");
+            $message = ob_get_contents();
+            ob_get_clean();
 
             //tạm tắt tính năng gửi mail
             //mail($to_email, $subject, $message, $headers);
+            
+            $conn->close();
         ?>
             <div style="padding-top: 10px;">
                 <p>Đặt vé thành công! Vui lòng kiểm tra email và làm theo Hướng dẫn thanh toán!</p>
