@@ -193,10 +193,10 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
             unset($_SESSION['gmail']);
             unset($_SESSION['buy_ticket']);
             
-            $sql = "SELECT * FROM `customersorders` ORDER BY `OrderID` DESC LIMIT 1";    
-            $resultID = $conn->query($sql);
-            $newID = $result->fetch_assoc();
-            echo $newID['OrderID'];
+            $getIDvalue = "SELECT `OrderID` AS OrderID FROM `customersorders` ORDER BY `OrderID` DESC LIMIT 2";    
+            $resultID = $conn->query($getIDvalue);
+            $newOrderID = $resultID->fetch_assoc();
+            $newID = $newOrderID['OrderID'] + 1;
 
 
             $to_email = $final_email;
