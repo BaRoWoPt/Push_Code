@@ -110,19 +110,18 @@ $result_per_page = $conn->query($sql_paging);
                     if (isset($_GET['btn-search']))
                     {
                         $search = $_GET['search'];
-                        $sql = "select * from `customersorders` where `orderid` = $search ";
-                        $result = $conn->query($sql);
-                        $records = $result->num_rows;
+                        $sql = "select * from `customersorders` where `OrderID` = $search ";
+                        $result_per_page = $conn->query($sql);
                     }
                     $sql = "select * from `customersorders` ";
-                    if ($records === 0) {?>
+                    $records = $result_per_page->num_rows;
+                    if ($records == 0) {?>
                         <tr>
                             <td colspan="10">
                                 <div class="not-found">Không tìm thấy đơn vé!</div>
                             </td>
                         </tr>
-                    <?php } else { 
-                    
+                    <?php } else {
                     while ($row = $result_per_page->fetch_assoc()) {
                     ?>
                         <tr>
@@ -159,7 +158,7 @@ $result_per_page = $conn->query($sql_paging);
                                 </form>
                             </td>
                         </tr>
-                    <?php }} ?>
+                    <?php } }?>
                 </table>
             </div>
             
