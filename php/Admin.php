@@ -1,13 +1,12 @@
 <?php
 session_start();
 require '../database/connect.php';
-if(isset($_SESSION['adminname']))
-{
+if (isset($_SESSION['adminname'])) {
     $adminfullname = $_SESSION['adminname'];
 } else {
     echo "<script>alert('Bạn cần đăng nhập!')</script>";
     echo "<script>window.location.href = 'Login_admin.php';</script>";
- }
+}
 $item_per_page = !empty($_GET['per_page']) ? $_GET['per_page'] : 5;
 $current_page = !empty($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($current_page - 1) * $item_per_page;
@@ -15,7 +14,7 @@ $sql = "select * from `customersorders` ";
 $result = $conn->query($sql);
 $records = $result->num_rows;
 $total_page = ceil($records / $item_per_page);
-$sql_paging = $sql." limit ".$item_per_page." offset ".$offset;
+$sql_paging = $sql . " limit " . $item_per_page . " offset " . $offset;
 $result_per_page = $conn->query($sql_paging);
 ?>
 
@@ -75,22 +74,18 @@ $result_per_page = $conn->query($sql_paging);
 
     <div class="main-container">
         <div style="color:white;">
-            
-
             <form class="button-control" method="get">
                 <table>
                     <tr>
                         <td>
-                            <input type="text" class="search" name="search" />
-                        </td>
-                        <td>
+                            <input placeholder="Nhập Mã Vé Của Bạn" type="text" class="search" name="search" />
                             <button class="btn-search" name="btn-search">Tìm Mã Vé</button>
                         </td>
                     </tr>
                 </table>
             </form>
-            
-            
+
+
             <div>
                 <table class=control_customer>
                     <tr>
@@ -107,61 +102,61 @@ $result_per_page = $conn->query($sql_paging);
                     </tr>
                     <?php
                     include 'Pagination.php';
-                    if (isset($_GET['btn-search']))
-                    {
+                    if (isset($_GET['btn-search'])) {
                         $search = $_GET['search'];
                         $sql = "select * from `customersorders` where `OrderID` = $search ";
                         $result_per_page = $conn->query($sql);
                     }
                     $sql = "select * from `customersorders` ";
                     $records = $result_per_page->num_rows;
-                    if ($records == 0) {?>
+                    if ($records == 0) { ?>
                         <tr>
                             <td colspan="10">
                                 <div class="not-found">Không tìm thấy đơn vé!</div>
                             </td>
                         </tr>
-                    <?php } else {
-                    while ($row = $result_per_page->fetch_assoc()) {
-                    ?>
-                        <tr>
-                            <td><?php echo $row["OrderID"]; ?></td>
-                            <td><?php echo $row["fullname"]; ?></td>
-                            <td><?php echo $row["telephone"]; ?></td>
-                            <td><?php echo $row["email"]; ?></td>
-                            <td><?php echo $row["ticket"]; ?></td>
-                            <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
-                            <td><?php echo $row["regis_day"]; ?></td>
-                            <td><?php echo $row["payment_day"]; ?></td>
-                            <td><?php echo $row["status"]; ?></td>
-                            <td>
-                                <form class="order-control" method="get">
+                        <?php } else {
+                        while ($row = $result_per_page->fetch_assoc()) {
+                        ?>
+                            <tr>
+                                <td><?php echo $row["OrderID"]; ?></td>
+                                <td><?php echo $row["fullname"]; ?></td>
+                                <td><?php echo $row["telephone"]; ?></td>
+                                <td><?php echo $row["email"]; ?></td>
+                                <td><?php echo $row["ticket"]; ?></td>
+                                <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
+                                <td><?php echo $row["regis_day"]; ?></td>
+                                <td><?php echo $row["payment_day"]; ?></td>
+                                <td><?php echo $row["status"]; ?></td>
+                                <td>
+                                    <form class="order-control" method="get">
 
-                                    <?php if ($row["status"] === 'Chưa thanh toán') {
-                                        $currentDate = date('Y-m-d');
-                                        $payday = date($row["payment_day"]);
-                                        if ($currentDate > $payday) { ?>
+                                        <?php if ($row["status"] === 'Chưa thanh toán') {
+                                            $currentDate = date('Y-m-d');
+                                            $payday = date($row["payment_day"]);
+                                            if ($currentDate > $payday) { ?>
 
-                                            <button class="btn-control" style="color: red" name="cancel" value="<?php echo $row["OrderID"]; ?>">Huỷ đơn vé</button>
+                                                <button class="btn-control" style="color: red" name="cancel" value="<?php echo $row["OrderID"]; ?>">Huỷ đơn vé</button>
 
-                                        <?php } else { ?>
+                                            <?php } else { ?>
 
-                                            <button class="btn-control" style="color: green" name="purchase" value="<?php echo $row["OrderID"]; ?>">Xác nhận thanh toán</button>
+                                                <button class="btn-control" style="color: green" name="purchase" value="<?php echo $row["OrderID"]; ?>">Xác nhận thanh toán</button>
 
-                                        <?php }
-                                    } else if ($row["status"] === 'Đã huỷ đơn') { ?>
+                                            <?php }
+                                        } else if ($row["status"] === 'Đã huỷ đơn') { ?>
 
-                                        <button class="btn-control" style="color: blue" name="refund" value="<?php echo $row["OrderID"]; ?>">Hoàn tiền</button>
+                                            <button class="btn-control" style="color: blue" name="refund" value="<?php echo $row["OrderID"]; ?>">Hoàn tiền</button>
 
-                                    <?php } ?>
+                                        <?php } ?>
 
-                                </form>
-                            </td>
-                        </tr>
-                    <?php } }?>
+                                    </form>
+                                </td>
+                            </tr>
+                    <?php }
+                    } ?>
                 </table>
             </div>
-            
+
         </div>
     </div>
 

@@ -227,7 +227,7 @@ html {
 }
 .main-container {
   padding-top: 95px;
-  height: auto;
+  height: 91vh;
 }
 .footer {
   position: sticky;
@@ -365,4 +365,21 @@ tr:nth-child(odd) {
 .icon_left label {
   font-size: 12px;
   padding-left: 8px;
+}
+.search {
+  padding: 6px;
+}
+.btn-search {
+  padding: 6px;
+}
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.page-item a {
+  text-decoration: none;
+  color: black;
 }
