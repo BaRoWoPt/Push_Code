@@ -63,4 +63,4 @@ jobs:
           app-name: 'GenzFectShow'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_365D0E48B6A6409B8DDA4296EA5C33E1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4EA463820CBD43169CBEFE047B6E38F3 }}
