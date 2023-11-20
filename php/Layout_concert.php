@@ -63,9 +63,12 @@ $total = $result->fetch_assoc();
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a></li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
+                                class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
+                                class="navfooter">Facebook</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
+                                class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -236,28 +239,32 @@ $total = $result->fetch_assoc();
                             mình nhé để cho các bạn khác có vé với nha.
                         </p>
                         <p style="color:white;">
-                            Số vé còn lại <strong><?php echo 
-$total['ticketleft']; ?></strong> vé!
+                            Số vé còn lại <strong style="color:red;"></strong><?php echo
+                                                                                $total['ticketleft']; ?></strong> vé!
                         </p>
                         <div class="form_sign">
                             <div class="info">
                                 <label for="fullname" class="label-form ">Họ Và Tên</label>
-                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form" name="fullname">
+                                <input id="fullname" placeholder="Họ Và Tên" type="text" class="item_form"
+                                    name="fullname">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="thongtin" class="label-form ">Số Điện Thoại</label>
-                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form" name="thongtin">
+                                <input id="thongtin" placeholder="Số điện thoại" type="text" class="item_form"
+                                    name="thongtin">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="gmail" class="label-form ">Gmail</label>
-                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form" name="gmail">
+                                <input id="gmail" placeholder="VD: abcdxyz@gmail.com" type="text" class="item_form"
+                                    name="gmail">
                                 <span class="form_message error"></span>
                             </div>
                             <div class="info">
                                 <label for="buy_ticket" class="label-form ">Số lượng vé</label>
-                                <input id="buy_ticket" placeholder="Số lượng vé bạn muốn mua" type="number" max="100" min="0" step="1" class="item_form" name="buy_ticket">
+                                <input id="buy_ticket" placeholder="Số lượng vé bạn muốn mua" type="number" max="100"
+                                    min="0" step="1" class="item_form" name="buy_ticket">
                                 <span class="form_message error" id="buyTicketError"></span>
                             </div>
                             <span class="full_info"></span>
@@ -285,60 +292,60 @@ $total['ticketleft']; ?></strong> vé!
         </div>
 
     </div>
-
-    <script src="../js/form_test.js"></script>
-    <script>
-        //Output 
-        validator({
-            form: '#form_1',
-            errorSelector: '.form_message',
-            rules: [
-                validator.isRequired('#fullname'),
-                validator.isNumberPhone('#thongtin'),
-                validator.isEmail('#gmail'),
-                validator.isBuyTicket('#buy_ticket'),
-            ],
-            onSubmit: function(data) {
-                console.log(data)
-            }
-        });
-    </script>
-
     <script src="../js/layout_concert.js"></script>
     <script src="../js/Event_shop.js"></script>
+    <script src="../js/form_test.js"></script>
     <script>
-        document.getElementById("done").addEventListener("click", function(event) {
-            var name = document.getElementById("fullname").value.trim();
-            var phone = document.getElementById("thongtin").value.trim();
-            var gmail = document.getElementById("gmail").value.trim();
-            var ticketQuantity = document.getElementById("buy_ticket").value.trim();
-            var errorContainer = document.getElementById("error-container");
-            var errorMessage = document.getElementById("error-message");
+    //Output 
+    validator({
+        form: '#form_1',
+        errorSelector: '.form_message',
+        rules: [
+            validator.isRequired('#fullname'),
+            validator.isNumberPhone('#thongtin'),
+            validator.isEmail('#gmail'),
+            validator.isBuyTicket('#buy_ticket'),
+        ],
+        onSubmit: function(data) {
+            console.log(data)
+        }
+    });
+    </script>
 
-            if (name === "" || phone === "" || gmail === "" || ticketQuantity === "") {
-                event.preventDefault(); // Prevent the default form submission
-                errorMessage.innerHTML = "Vui lòng nhập đủ thông tin.";
-                errorContainer.style.display = "block"; // Show the error container
+
+    <script>
+    document.getElementById("done").addEventListener("click", function(event) {
+        var name = document.getElementById("fullname").value.trim();
+        var phone = document.getElementById("thongtin").value.trim();
+        var gmail = document.getElementById("gmail").value.trim();
+        var ticketQuantity = document.getElementById("buy_ticket").value.trim();
+        var errorContainer = document.getElementById("error-container");
+        var errorMessage = document.getElementById("error-message");
+
+        if (name === "" || phone === "" || gmail === "" || ticketQuantity === "") {
+            event.preventDefault(); // Prevent the default form submission
+            errorMessage.innerHTML = "Vui lòng nhập đủ thông tin.";
+            errorContainer.style.display = "block"; // Show the error container
+        } else {
+            errorMessage.innerHTML = ""; // Clear the error message if all fields are filled
+            errorContainer.style.display = "none"; // Hide the error container
+
+            // Check if there are still error messages displayed
+            var errorMessages = document.querySelectorAll(".form_message.error");
+            var hasErrors = Array.from(errorMessages).some(function(element) {
+                return element.innerHTML.trim() !== "";
+            });
+
+            // If no errors are found, allow the form submission
+            if (!hasErrors) {
+                document.getElementById("done").removeEventListener("click", this);
+                document.getElementById("done").click();
             } else {
-                errorMessage.innerHTML = ""; // Clear the error message if all fields are filled
-                errorContainer.style.display = "none"; // Hide the error container
-
-                // Check if there are still error messages displayed
-                var errorMessages = document.querySelectorAll(".form_message.error");
-                var hasErrors = Array.from(errorMessages).some(function(element) {
-                    return element.innerHTML.trim() !== "";
-                });
-
-                // If no errors are found, allow the form submission
-                if (!hasErrors) {
-                    document.getElementById("done").removeEventListener("click", this);
-                    document.getElementById("done").click();
-                } else {
-                    // Otherwise, prevent the form submission
-                    event.preventDefault();
-                }
+                // Otherwise, prevent the form submission
+                event.preventDefault();
             }
-        });
+        }
+    });
     </script>
 
 </body>
