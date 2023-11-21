@@ -12,6 +12,7 @@ if (isset($_POST['btn-login'])){
           echo "<script>window.location.href = 'Login_admin.php';</script>";
      } else {
           $account = $result->fetch_assoc();
+          $_SESSION['adminID'] = $adminname;
           $_SESSION['adminname'] = $account['fullname'];
           //echo $_SESSION['admin'];
           echo "<script>window.location.href = 'Admin.php';</script>";

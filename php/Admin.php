@@ -2,6 +2,7 @@
 session_start();
 require '../database/connect.php';
 if (isset($_SESSION['adminname'])) {
+    $adminID = $_SESSION['adminID'];
     $adminfullname = $_SESSION['adminname'];
 } else {
     echo "<script>alert('Bạn cần đăng nhập!')</script>";
@@ -56,6 +57,7 @@ $result_per_page = $conn->query($sql_paging);
             <main class="sidebar_items">
                 <ul class="option">
                     <li class="option"><a href="Admin.php">Khách Hàng</a></li>
+                    <li class="option"><a href="ChangePass.php?adminID=<?=$adminID?>">Đổi mật khẩu</a></li>
                     <li class="option"><a href="Logout.php">Đăng xuất</a></li>
                 </ul>
             </main>
