@@ -3,22 +3,25 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+    <link rel="stylesheet" href="../css/ChangePass.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
-     <form method="post">
-          <label for="currpass">Mật khẩu Hiện tại</label>
-          <input type="password" name="currpass"/>
-          <label for="newpass">Mật khẩu Mới</label>
-          <input type="password" name="newpass"/>
-          <label for="re-newpass">Nhập lại Mật khẩu Mới</label>
-          <input type="password" name="re-newpass"/>
-          <input type="submit" name="update" value="Cập nhật"/>
-     </form>
-     <?php 
+    <form method="post">
+        <label for="currpass">Mật khẩu Hiện tại</label>
+        <input type="password" name="currpass" />
+        <label for="newpass">Mật khẩu Mới</label>
+        <input type="password" name="newpass" />
+        <label for="re-newpass">Nhập lại Mật khẩu Mới</label>
+        <input type="password" name="re-newpass" />
+        <input type="submit" name="update" value="Cập nhật" />
+    </form>
+    <?php 
           if (isset($_POST['update'])){
                $currpass = $_POST['currpass'];
                $newpass = $_POST['newpass'];
@@ -50,4 +53,5 @@
      ?>
 
 </body>
+
 </html>
