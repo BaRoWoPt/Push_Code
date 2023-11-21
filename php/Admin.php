@@ -157,6 +157,36 @@ $result_per_page = $conn->query($sql_paging);
                 </table>
             </div>
 
+        </div class="report">
+            <form method="post">
+                <button name="income">Báo cáo</button>
+            </form>
+            <p class="report" style="color:white;">
+            <?php
+                if(isset($_POST['income'])){
+                    $sql_report = "select sum(ticket) as revenueticket from `customersorders` where `status` like 'Đã thanh toán'";
+                
+                    $queryRevenue = $conn->query($sql_report);
+                    $revenue = $queryRevenue->fetch_assoc();
+                    $income = $revenue['revenueticket'] * 1000000;
+                    echo "Tổng doanh thu đến thời điểm hiện tại <strong>".number_format($income, 0, ',', '.') . " VNĐ</strong><br>";
+                    
+                    $currentDate = date('Y-m-d');
+                    $sql_report = "SELECT count(*) AS expiretiket FROM `customersorders` WHERE `payment_day` < CURDATE() and `status` = 'Chưa thanh toán'";
+                    $queryExpire = $conn->query($sql_report);
+                    $expire = $queryExpire->fetch_assoc();
+                    echo "Có <strong>".$expire['expiretiket']."</strong> đơn vé hết hạn!<br>";
+
+                    $sql_report = "SELECT 200-SUM(Ticket) AS ticketleft FROM CustomersOrders WHERE `status` not like 'Đã huỷ đơn'";
+                    $queryTicket = $conn->query($sql_report);
+                    $storeTicket = $queryTicket->fetch_assoc();
+                    echo "Còn <strong>".$storeTicket['ticketleft']."</strong> vé tồn kho.";
+                }
+            ?>
+            </p>
+
+        <div>
+
         </div>
     </div>
 

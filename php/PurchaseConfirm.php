@@ -149,7 +149,7 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
                         </td>
                         <td>
                             <?php echo $money; ?>
-                        </td>
+                        </td>                        
                     </tr>
 
                 </tbody>
@@ -295,6 +295,7 @@ if (isset($_SESSION['fullname']) || isset($_SESSION['thongtin']) || isset($_SESS
             }
         });
     </script>
+    
 
 </body>
 
