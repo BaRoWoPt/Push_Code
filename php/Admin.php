@@ -65,9 +65,12 @@ $result_per_page = $conn->query($sql_paging);
                 <footer class="sb_ft_sp">
                     <img class="icon_footer" src="../img/logo_concert.png" alt="">
                     <ul class="footer_nav">
-                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225" class="navfooter">Contact</a></li>
-                        <li class="footer_link"><a href="https://www.facebook.com/duyle215" class="navfooter">Facebook</a></li>
-                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/" class="navfooter">Instagram</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/profile.php?id=100022231063225"
+                                class="navfooter">Contact</a></li>
+                        <li class="footer_link"><a href="https://www.facebook.com/duyle215"
+                                class="navfooter">Facebook</a></li>
+                        <li class="footer_link"><a href="https://www.instagram.com/oaboad_29/"
+                                class="navfooter">Instagram</a></li>
                     </ul>
                 </footer>
             </footer>
@@ -112,58 +115,61 @@ $result_per_page = $conn->query($sql_paging);
                     $sql = "select * from `customersorders` ";
                     $records = $result_per_page->num_rows;
                     if ($records == 0) { ?>
-                        <tr>
-                            <td colspan="10">
-                                <div class="not-found">Không tìm thấy đơn vé!</div>
-                            </td>
-                        </tr>
-                        <?php } else {
+                    <tr>
+                        <td colspan="10">
+                            <div class="not-found">Không tìm thấy đơn vé!</div>
+                        </td>
+                    </tr>
+                    <?php } else {
                         while ($row = $result_per_page->fetch_assoc()) {
                         ?>
-                            <tr>
-                                <td><?php echo $row["OrderID"]; ?></td>
-                                <td><?php echo $row["fullname"]; ?></td>
-                                <td><?php echo $row["telephone"]; ?></td>
-                                <td><?php echo $row["email"]; ?></td>
-                                <td><?php echo $row["ticket"]; ?></td>
-                                <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
-                                <td><?php echo $row["regis_day"]; ?></td>
-                                <td><?php echo $row["payment_day"]; ?></td>
-                                <td><?php echo $row["status"]; ?></td>
-                                <td>
-                                    <form class="order-control" method="get">
+                    <tr>
+                        <td><?php echo $row["OrderID"]; ?></td>
+                        <td><?php echo $row["fullname"]; ?></td>
+                        <td><?php echo $row["telephone"]; ?></td>
+                        <td><?php echo $row["email"]; ?></td>
+                        <td><?php echo $row["ticket"]; ?></td>
+                        <td><?php echo number_format($row["ticket"] * 1000000, 0, ',', '.') . ' VNĐ'; ?></td>
+                        <td><?php echo $row["regis_day"]; ?></td>
+                        <td><?php echo $row["payment_day"]; ?></td>
+                        <td><?php echo $row["status"]; ?></td>
+                        <td>
+                            <form class="order-control" method="get">
 
-                                        <?php if ($row["status"] === 'Chưa thanh toán') {
+                                <?php if ($row["status"] === 'Chưa thanh toán') {
                                             $currentDate = date('Y-m-d');
                                             $payday = date($row["payment_day"]);
                                             if ($currentDate > $payday) { ?>
 
-                                                <button class="btn-control" style="color: red" name="cancel" value="<?php echo $row["OrderID"]; ?>">Huỷ đơn vé</button>
+                                <button class="btn-control" style="color: red" name="cancel"
+                                    value="<?php echo $row["OrderID"]; ?>">Huỷ đơn vé</button>
 
-                                            <?php } else { ?>
+                                <?php } else { ?>
 
-                                                <button class="btn-control" style="color: green" name="purchase" value="<?php echo $row["OrderID"]; ?>">Xác nhận thanh toán</button>
+                                <button class="btn-control" style="color: green" name="purchase"
+                                    value="<?php echo $row["OrderID"]; ?>">Xác nhận thanh toán</button>
 
-                                            <?php }
+                                <?php }
                                         } else if ($row["status"] === 'Đã huỷ đơn') { ?>
 
-                                            <button class="btn-control" style="color: blue" name="refund" value="<?php echo $row["OrderID"]; ?>">Hoàn tiền</button>
+                                <button class="btn-control" style="color: blue" name="refund"
+                                    value="<?php echo $row["OrderID"]; ?>">Hoàn tiền</button>
 
-                                        <?php } ?>
+                                <?php } ?>
 
-                                    </form>
-                                </td>
-                            </tr>
+                            </form>
+                        </td>
+                    </tr>
                     <?php }
                     } ?>
                 </table>
             </div>
 
         </div class="report">
-            <form method="post">
-                <button name="income">Báo cáo</button>
-            </form>
-            <p class="report" style="color:white;">
+        <form method="post">
+            <button id="report" name="income">Báo cáo</button>
+        </form>
+        <p class="report" style="color:white;">
             <?php
                 if(isset($_POST['income'])){
                     $sql_report = "select sum(ticket) as revenueticket from `customersorders` where `status` like 'Đã thanh toán'";
@@ -185,7 +191,7 @@ $result_per_page = $conn->query($sql_paging);
                     echo "Còn <strong>".$storeTicket['ticketleft']."</strong> vé tồn kho.";
                 }
             ?>
-            </p>
+        </p>
 
         <div>
 
