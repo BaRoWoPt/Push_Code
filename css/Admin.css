@@ -391,3 +391,10 @@ tr:nth-child(odd) {
   width: 60px;
   font-size: 16px;
 }
+#report {
+  padding: 8px;
+  margin: 10px;
+}
+.report {
+  margin-left: 12px;
+}
