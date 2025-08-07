@@ -1,62 +1,63 @@
-# Concert Ticket Booking Website
+# Hệ thống đặt vé concert trực tuyến
 
-This project is a web-based application designed to support the process of viewing, selecting, and booking tickets for concerts. The system provides a modern and interactive user interface while maintaining a structured and secure backend infrastructure. The primary goal is to deliver a seamless experience for users when browsing and purchasing tickets online.
+Đây là một ứng dụng web hỗ trợ người dùng xem thông tin, lựa chọn và đặt vé tham dự các buổi hòa nhạc. Hệ thống được thiết kế với giao diện hiện đại, tương tác trực quan ở phía người dùng, đồng thời đảm bảo tính ổn định và bảo mật ở phía máy chủ. Mục tiêu chính là mang đến trải nghiệm mượt mà, dễ sử dụng trong toàn bộ quy trình đặt vé trực tuyến.
 
-## Overview
+## Tổng quan
 
-The application includes two main components:
+Ứng dụng bao gồm hai thành phần chính:
 
-- A **frontend** focused on visual effects and interactive elements, providing a user-friendly environment for browsing concert information and completing purchases.
-- A **backend** developed with PHP and MySQL, ensuring data consistency, user management, booking logic, and secure transaction handling.
+- **Frontend**: Tập trung vào hiệu ứng thị giác và các yếu tố tương tác, giúp người dùng dễ dàng duyệt thông tin và đặt vé.
+- **Backend**: Phát triển bằng PHP và MySQL, đảm bảo việc xử lý dữ liệu, quản lý người dùng, xử lý logic đặt vé và duy trì tính toàn vẹn dữ liệu.
 
-## Technologies Used
+## Công nghệ sử dụng
 
-### Frontend
+### Giao diện người dùng (Frontend)
 
-The frontend stack emphasizes responsiveness and visual effects, using a mix of CSS technologies:
+Giao diện được xây dựng với các công nghệ web hiện đại, tập trung vào hiệu năng và khả năng hiển thị đẹp mắt:
 
-- **CSS**: Core layout and styling framework (27.1%)
-- **SCSS**: Enhanced styling capabilities using variables, nesting, and mixins (21.8%)
-- **Less**: Modular styling and theme customization (20.9%)
-- **JavaScript**: Handles dynamic behaviors, form validation, and user interactions (15.6%)
-- **HTML**: Structured markup for content rendering (6.6%)
+- **CSS**: Xây dựng bố cục và định dạng giao diện cơ bản (27.1%)
+- **SCSS**: Mở rộng CSS với biến, lồng khối và mixin (21.8%)
+- **Less**: Quản lý giao diện theo hướng mô-đun và tái sử dụng (20.9%)
+- **JavaScript**: Xử lý hành vi tương tác, kiểm tra biểu mẫu và hiệu ứng động (15.6%)
+- **HTML**: Xây dựng cấu trúc nội dung cho trang web (6.6%)
 
-### Backend
+### Xử lý phía máy chủ (Backend)
 
-- **PHP**: Implements server-side logic, handles form submissions, manages session states, and communicates with the database (5.5%)
-- **Hack**: Legacy support for static typing and asynchronous features (2.5%)
-- **MySQL**: Relational database system for storing user data, concert information, and booking transactions
+- **PHP**: Xử lý logic phía máy chủ, quản lý phiên làm việc và tương tác với cơ sở dữ liệu (5.5%)
+- **Hack**: Hỗ trợ một số tính năng mở rộng và kiểu tĩnh (2.5%)
+- **MySQL**: Hệ quản trị cơ sở dữ liệu quan hệ, lưu trữ thông tin người dùng, concert và giao dịch đặt vé
 
-## Key Features
+## Tính năng chính
 
-- Users can browse available concerts and view detailed information for each event
-- Interactive ticket selection interface with dynamic pricing and availability updates
-- User registration and authentication system
-- Booking confirmation with server-side validation
-- Admin panel (optional) for managing concert listings and monitoring sales
+- Người dùng có thể duyệt danh sách concert và xem chi tiết từng sự kiện
+- Giao diện đặt vé tương tác, cập nhật số lượng ghế và giá theo thời gian thực
+- Hệ thống đăng ký và đăng nhập người dùng
+- Xác nhận đặt vé và xử lý thông tin đầu vào phía máy chủ
+- (Tùy chọn) Bảng điều khiển dành cho quản trị viên để quản lý sự kiện và theo dõi doanh thu
 
-## Visual Design and Effects
+## Hiệu ứng và thiết kế thị giác
 
-The frontend is enhanced with various visual effects and transitions, including:
+Giao diện người dùng được nâng cao với các hiệu ứng mượt và phản hồi trực quan:
 
-- Smooth animations on interactions
-- Transition effects between pages and modal popups
-- Responsive layout adapting to different screen sizes
-- Styled form components and buttons for consistent user experience
+- Hiệu ứng chuyển động mượt khi tương tác
+- Chuyển trang và hiển thị popup nhẹ nhàng
+- Giao diện đáp ứng với mọi kích thước màn hình
+- Thành phần biểu mẫu và nút bấm được thiết kế đồng bộ, nhất quán
 
-## Database Overview
+## Cơ sở dữ liệu
 
-The MySQL database is structured to support booking operations with three primary tables:
+Cơ sở dữ liệu MySQL được thiết kế để hỗ trợ các chức năng đặt vé, bao gồm ba bảng chính:
 
-- `users`: Stores user credentials and profile information
-- `bookings`: Links users to concerts and records the number of seats booked and booking status
+- `users`: Lưu thông tin tài khoản người dùng
+- `bookings`: Liên kết người dùng với các sự kiện đã đặt vé, ghi nhận số lượng ghế và trạng thái đơn hàng
 
-## Deployment
+## Triển khai hệ thống
 
-To deploy the application:
+Để triển khai ứng dụng:
 
-1. Clone the repository.
-2. Set up a MySQL database and import the provided schema.
-3. Update database credentials in the configuration file.
-4. Deploy the PHP backend using a compatible web server (Apache, Nginx with PHP-FPM, or PHP built-in server).
-5. Open the application in a modern web browser to begin use.
+1. Sao chép mã nguồn từ kho lưu trữ.
+2. Tạo cơ sở dữ liệu MySQL và nhập lược đồ dữ liệu được cung cấp.
+3. Cập nhật thông tin kết nối cơ sở dữ liệu trong tệp cấu hình.
+4. Triển khai hệ thống phía máy chủ bằng một trong các nền tảng: Apache, Nginx kết hợp PHP-FPM hoặc PHP built-in server.
+5. Truy cập ứng dụng bằng trình duyệt hiện đại để bắt đầu sử dụng.
+
